@@ -1,0 +1,39 @@
+/* :root {
+  --main-color: #0b0909;
+  --secondary-color: #f0f0f0;
+  --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
+  --box-shadow-main: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+} */
+
+.newsletter {
+    background: linear-gradient(
+        to bottom,
+        #ffffff 50%,
+        #f0f0f0 50%
+    );
+}
+.newsletter button:hover {
+  background-color: black !important;
+  color: white;
+  border-color: #ffffff;
+}
+.newsletter>div {
+  background-color: black;
+}
+footer {
+  background-color: #f0f0f0;
+}
+.footer-links > ul > li > a:hover {
+  color: black !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: 0.2s all ease !important;
+}
+.social-icon:hover {
+  color: #ffffff !important;
+  background-color: black !important;
+  transition: 0.2s all ease !important;
+}
