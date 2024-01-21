@@ -12,15 +12,217 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/fontawesome.css" />
+    <!-- Nav & Footer Stye-->
+    <link rel="stylesheet" href="css/NavFooter.css" />
     <!-- Shop Style -->
     <link rel="stylesheet" href="css/shop.css" />
   </head>
   <body>
     <!-- Start Navbar -->
 
-    <!-- Start Footer -->
+    <div
+      id="signup-notice"
+      class="w-100 d-flex justify-content-center align-items-center py-1"
+    >
+      <div class="fw-light">
+        Sign up and get 20% off to your first order.
+        <a href="#" class="text-white fw-normal">Sign Up Now!</a>
+      </div>
+      <div id="signup-dismiss">
+        <i id="dismisser" class="fa-solid fa-x"></i>
+      </div>
+    </div>
 
-    <div class="newsletter">
+
+    <!-- Start Navbar -->
+    <nav class="main-nav container py-3">
+      <div class="d-flex align-items-center">
+        <div class="d-flex h-100 align-items-center">
+          <!-- Bars for small screens-->
+          <button class="open-menu btn mx-1 text-black fs-5 d-block d-lg-none">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="#" class="text-decoration-none text-black fw-bold fs-3">
+            SHOP.CO
+          </a>
+          <!--Mobile Menu-->
+          <div class="mobile-menu position-absolute w-100 d-none">
+            <div
+              class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
+            >
+              <div class="w-100 d-flex align-items-center">
+                <div class="flex-grow-1">Menu</div>
+                <div>
+                  <button class="btn fw-bold close-menu">
+                    <i class="bi bi-x-lg text-white fs-4"></i>
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <ul class="p-0">
+                <li class="mx-2 my-2">
+                  <a class="text-decoration-none text-black" href="#">Shop</a>
+                </li>
+                <li class="mx-2 my-2">
+                  <a class="text-decoration-none text-black" href="#"
+                    >On Sale</a
+                  >
+                </li>
+                <li class="mx-2 my-2">
+                  <a class="text-decoration-none text-black" href="#"
+                    >New Arrivals</a
+                  >
+                </li>
+                <li class="mx-2 my-2">
+                  <a
+                    class="text-decoration-none text-black shop-link"
+                    href="#"
+                  >
+                    Brands
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--End Mobile Menu-->
+        </div>
+
+        <!--V.1 Nav Links-->
+        <!-- <div class="navbar navbar-expand-lg p-3">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav text-black">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link mx-2 dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Shop
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <li><a class="dropdown-item" href="#">Shirts</a></li>
+                    <li><a class="dropdown-item" href="#">Shorts</a></li>
+                    <li><a class="dropdown-item" href="#">Hoodie</a></li>
+                    <li><a class="dropdown-item" href="#">Jeans</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-2" href="#">On Sale</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-2" href="#">New Arrivals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-2" href="#">Brands</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+        <!--V.2 Nav Links-->
+        <div
+          class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center "
+        >
+          <ul class="header-menu-list">
+            <li class="mx-2">
+              <a
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="#"
+                >Shop</a
+              >
+              <!-- <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </button> -->
+              <i class="fa-solid fa-caret-down"></i>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Shirts</a></li>
+                <li><a class="dropdown-item" href="#">Shorts</a></li>
+                <li><a class="dropdown-item" href="#">Hoodie</a></li>
+                <li><a class="dropdown-item" href="#">Jeans</a></li>
+              </ul>
+            </li>
+            <li class="mx-2">
+              <a
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="#"
+                >On Sale</a
+              >
+            </li>
+            <li class="mx-2">
+              <a
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="#"
+                >New Arrivals</a
+              >
+            </li>
+            <li class="mx-2">
+              <a
+                class="text-decoration-none text-black main-menu-link position-relative shop-link"
+                href="#"
+              >
+                Brands
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!--Search-->
+        <div class="mx-auto col-md-4">
+          <form class="d-flex">
+            <button class="btn" type="submit">
+              <i class="fa-solid fa-search"></i>
+            </button>
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+
+        <div class="d-flex">
+          <a href="#" class="mx-2 text-decoration-none text-black fs-5">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <a
+            href="#"
+            class="mx-2 fw-bolder text-decoration-none text-black fs-5"
+          >
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!------------------------------------------------------------------------------------>
+    <!-- Start Shop -->
+
+    <div class="container">
+      <div >
+
+      </div>
+    </div>
+
+
+
+    <!-- End Shop -->
+    <!------------------------------------------------------------------------------------>
+    <!-- Start Footer -->
+    <div class="newsletter mt-4">
       <div class="container px-4 py-4 rounded-4">
         <div class="row">
           <div class="flex-grow-1 col-lg-7 my-3 ms-5">
@@ -37,9 +239,9 @@
                 placeholder="Enter your email address"
               />
             </div>
-            <div class="w-100 my-100">
+            <div class="w-100 my-2">
               <button class="btn bg-white rounded-pill px-5 w-100 py-2">
-                Subcribe to newsletter
+                Subscribe to newsletter
               </button>
             </div>
           </div>
@@ -54,7 +256,7 @@
             <a
               href="#"
               class="text-black fw-bold text-decoration-none fs-3 d-block mb-3"
-              >SHOP.COM</a
+              >SHOP.CO</a
             >
             <p class="text-secondary fw-normal mb-3">
               We have clothes that will give you a new style and you will be
@@ -66,26 +268,26 @@
               <a
                 href="#"
                 target="_blank"
-                class="social-icon mx-2 text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
+                class="social-icon mx-2 text-decoration-none text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
               >
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
               <a
                 href="#"
                 target="_blank"
-                class="mx-2 social-icon d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
                 ><i class="fa-brands fa-facebook-f"></i
               ></a>
               <a
                 href="#"
                 target="_blank"
-                class="mx-2 social-icon d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
               <a
                 href="#"
                 target="_blank"
-                class="mx-2 social-icon d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                class="mx-2 social-icon d-flex text-decoration-none text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
                 ><i class="fa-brands fa-github"></i
               ></a>
             </div>
@@ -212,9 +414,12 @@
       </div>
     </footer>
     <!-- End Footer -->
+    <!----------------------------------------------------------------------------------------->
+
     <!-- import Js FrameWorks -->
     <script src="js/jquery.js"></script>
     <!-- Import Our Scripts -->
     <script src="js/shop.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>
