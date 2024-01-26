@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
-        <!-- Import Css FrameWorks -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <!-- Import OurStyles -->
-            <!-- Main Style (GeneralRules) -->
-        <link rel="stylesheet" href="css/style.css">
-            <!-- cart Style -->
-        <link rel="stylesheet" href="css/cart.css">
-        <!-- import Js FrameWorks -->
-        <script src="js/jquery.js"></script>
-        <!-- Import Our Scripts -->
-        <script src="js/cart.js"></script>
-</head>
-<body> 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/Cart.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+      <h1>your cart</h1>
+      <div class="container">
+        <div class="left"></div>
+        <div class="right">
+          <h2>Order Summary</h2>
+          <div class="price-total">
+            <div class="first">
+              <span>Subtotal</span>
+              <p>$<span class="subtotal">500</span></p>
+            </div>
+            <div class="discount">
+              <span>Discount(-20%)</span>
+              <p>-$<span class="Discount">100</span></p>
+            </div>
+            <div class="fee">
+              <span>Delivery fee</span>
+              <p>$<span class="fees">15</span></p>
+            </div>
+            <div class="total">
+              <span>Total</span>
+              <p>$<span class="Total">700</span></p>
+            </div>
+          </div>
+          <div class="coupon">
+            <input type="text" placeholder="Add promo code" />
+            <button class="apply">Apply</button>
+          </div>
+          <button class="check">
+            Check Out <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="../vendor/bootstrap/js/bootstrap.bundle.js"></script> -->
+    <script src="js/Cart.js"></script>
+    <script src="all.min.js"></script>
+  </body>
 </html>

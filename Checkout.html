@@ -3,19 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-        <!-- Import Css FrameWorks -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <!-- Import OurStyles -->
-            <!-- Main Style (GeneralRules) -->
-        <link rel="stylesheet" href="css/style.css">
-            <!-- Checkout Style -->
-        <link rel="stylesheet" href="css/checkout.css">
-        <!-- import Js FrameWorks -->
-        <script src="js/jquery.js"></script>
-        <!-- Import Our Scripts -->
-        <script src="js/checkout.js"></script>
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="css/CheckOut.css">
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
-<body> 
+<body>
+    
+
+    <div class="main-wrapper">
+        <div class="left">
+            <form id="checkOutForm">
+                <div class="first">
+                    <h2>
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Shipping Details
+                    </h2>
+                    <div class="name">
+                        <div class="firstName">
+                            <label for="firstName">First Name: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="First Name.." id="firstName" name="UserFirstName">
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName">Last Name: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="Last Name.." id="lastName" name="UserLastName">
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <label for="Phone">Mobile No: <span class="required" title="required">*</span></label>
+                        <input type="text" placeholder="Your Mobile.." id="Phone" name="UserPhone">
+                    </div>
+                    <div class="place">
+                        <div class="city">
+                            <label for="City">City: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="Your City.." id="City" name="UserCity">
+                        </div>
+                        <div class="Sreet">
+                            <label for="Street">Address: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="Your Address.." id="street" name="UserAddress">
+                        </div>
+                    </div>
+                    <div class="state">
+                        <label for="State">Choose State: <span class="required" title="required">*</span></label>
+                        <select name="State" required>
+                            <option value="" selected disabled>Choose Your State</option>
+                            <option value="cairo">Cairo</option>
+                            <option value="alex">Alex</option>
+                            <option value="mansoura">Mansoura</option>
+                            <option value="menoufya">Menoufya</option>
+                            <option value="tanta">Tanta</option>
+                            <option value="aswan">Aswan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="second">
+                    <h2>
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        Payment Information
+                    </h2>
+                    <div class="Paymement-methods">
+                        <label>Select Your Card <span class="required" title="required">*</span></label>
+                        <select name="payment" required>
+                            <option value="" disabled selected>Choose Your Method..</option>
+                            <option value="visa">Visa</option>
+                            <option value="master">Master Card</option>
+                            <option value="express">American Express</option>
+                        </select>
+                    </div>
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-no">
+                        <label for="card">Credit Card No: <span class="required" title="required">*</span></label>
+                        <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" id="card" name="UserCardNo">
+                    </div>
+                    <div class="card-name">
+                        <label for="card-Name">Credit Card Name: <span class="required" title="required">*</span></label>
+                        <input type="text" placeholder="Your Card Name.." id="card-Name" name="UserCardName">
+                    </div>
+                    <div class="details">
+                        <div class="exp">
+                            <label for="Exp">Exp: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="00/00" id="Exp" name="UserCardExp">
+                        </div>
+                        <div class="ccv">
+                            <label for="CCV">CCV: <span class="required" title="required">*</span></label>
+                            <input type="text" placeholder="xxx" id="CCV" name="UserCardCCV">
+                        </div>
+                    </div>
+                </div>
+                <div class="error"></div>
+                <button class="btn-one">Purchase</button>
+                <button class="btn-two">Back To Cart</button>
+            </form>
+        </div>
+        <div class="right">
+            <div class="container">
+                <div class="one">
+        <div class="product">
+            <img src="images/electronic-store-product-image-22-400x400.jpg" alt="">
+            <div class="info">
+                <div class="text">
+                    <h2>Gradient Graphic T-shirt</h2>
+                    <p><span>Size: </span>Large</p>
+                    <p><span>Color: </span>White</p>
+                    <h3>$<span class="price">145</span></h3>
+                </div>
+                <div class="buttons">
+                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
+                    <div class="cart-container">
+                        <button class="quantity-btn minus">-</button>
+                        <input readonly type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn plus">+</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/electronic-store-product-image-22-400x400.jpg" alt="">
+            <div class="info">
+                <div class="text">
+                    <h2>Gradient Graphic T-shirt</h2>
+                    <p><span>Size: </span>Large</p>
+                    <p><span>Color: </span>White</p>
+                    <h3>$<span class="price">145</span></h3>
+                </div>
+                <div class="buttons">
+                    <button class="trash" ><i class="fa-solid fa-trash"></i></button>
+                    <div class="cart-container">
+                        <button class="quantity-btn minus">-</button>
+                        <input readonly type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn plus">+</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/electronic-store-product-image-22-400x400.jpg" alt="">
+            <div class="info">
+                <div class="text">
+                    <h2>Gradient Graphic T-shirt</h2>
+                    <p><span>Size: </span>Large</p>
+                    <p><span>Color: </span>White</p>
+                    <h3>$<span class="price">145</span></h3>
+                </div>
+                <div class="buttons">
+                    <button class="trash" ><i class="fa-solid fa-trash"></i></button>
+                    <div class="cart-container">
+                        <button class="quantity-btn minus">-</button>
+                        <input readonly type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn plus">+</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="two">
+        <h2>Order Summary</h2>
+        <div class="price-total">
+            <div class="first">
+                <span>Subtotal</span>
+                <p>$<span>500</span></p>
+            </div>
+            <div class="discount">
+                <span>Discount(-20%)</span>
+                <p>-$<span>100</span></p>
+            </div>
+            <div class="fee">
+                <span>Delivery fee</span>
+                <p>$<span>15</span></p>
+            </div>
+            <div class="total">
+                <span>Total</span>
+                <p>$<span>700</span></p> 
+            </div>
+        </div>
+    </div>
+        </div>
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/all.min.js"></script>
+<script src="js/checkOut.js"></script>
 </body>
 </html>

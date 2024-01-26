@@ -1,0 +1,340 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    padding: 10px;
+}
+.main-wrapper {
+    width: 90%;
+    margin:30px auto;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.main-wrapper h1{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.left {
+    border: 1px solid black;
+    /* width: 45%; */
+    width: 615px;
+    border-radius: 10px;
+}
+.left .product {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px ;
+    position: relative;
+}
+.left .product::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+}
+.left .product:last-child::before {
+    display: none; 
+  }
+
+.left .product img {
+    width: 100px;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+.left .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cart-container {
+    display: flex;
+    align-items: center;
+    
+}
+  
+.quantity-input {
+    width: 50px;
+    height: 30px; 
+    text-align: center;
+    font-size: 16px;
+}
+  
+.quantity-btn {
+    height: 30px; 
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0 10px; 
+    margin: 0;
+    cursor: pointer;
+}
+  
+.quantity-btn:hover {
+    background-color: #45a049;
+}
+  
+.plus,.minus {
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+.trash {
+    margin-bottom: 30px;
+    color: red;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.info .text h2{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    margin-bottom: 8px;
+}
+.info .text{
+    width: 227px;
+}
+.info .text p{
+    font-size: 14px;
+    line-height: 19px;
+}
+.info .text span{
+    font-weight: bold;
+}
+.info .text h3{
+    font-size: 27px;
+    line-height: 29px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+
+.right {
+    border: 1px solid black;
+    /* width: 45%; */
+    width: 450px;
+    padding: 20px 24px ;
+    border-radius: 10px;
+    height: fit-content;
+}
+.right h2{
+    font-size: 24;
+    font-weight: bold;
+    line-height: 32px;
+    margin-bottom: 15px;
+}
+.right .price-total > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.right .price-total > div p {
+    font-weight: bold;
+}
+.right .price-total > div.discount p{
+    color: red;
+}
+
+.right .price-total > div:last-child {
+    position: relative;
+    margin-top: 20px;
+}
+.right .price-total > div:last-child::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+}
+
+.coupon {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+.coupon button {
+    border-radius: 30px;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.coupon input {
+    border-radius: 30px;
+    padding: 10px 16px;
+    border: none;
+    position: relative;
+    border: 1px solid #000;
+    width: 100%;
+    outline: none;
+}
+button.check {
+    border-radius: 30px;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+  }
+  .btn-success {
+    background-color: #28a745;  
+    color: #fff; 
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; 
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+  }
+
+
+  
+/* sign up notice Style*/
+#signup-notice {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  #signup-dismiss{
+    position: absolute;
+    right: 1rem;
+  }
+  #signup-dismiss:hover {
+    cursor: pointer;
+  }
+  
+  /* Nav Style*/
+  
+  /* .main-menu-link:hover::after {
+    width: 100%;
+    transition: 0.5s all ease !important;
+  }
+  .main-menu-link::after {
+    content: " ";
+    transition: 0.5s all ease !important;
+    position: absolute;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  
+  .header-menu-list {
+    display: inline;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none;
+  }
+  .header-menu-list > li {
+    display: inline;
+  }
+  .mobile-menu-active {
+    left: 0 !important;
+  }
+  .mobile-menu {
+    top: 0;
+    left: -100%;
+    height: 100%;
+    z-index: 999;
+  }
+  .main-mobile-menu > ul {
+    list-style: none;
+  }
+  .search-form-main {
+    background-color: #f0f0f0;
+  }
+  .search-form-main > i {
+    transform: rotateY(180deg);
+  }
+   */
+  
+
+  
+
+  @media (max-width : 1214px) {
+    .left {
+        width: 60%;
+    }
+    .right {
+        width: 35%;
+    }
+  }
+
+  @media (max-width : 920px) {
+     .container {
+        flex-direction: column;
+    } 
+    .left {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .right {
+        width: 100%;
+    } 
+  }
+  @media (max-width : 560px) {
+    .left .product img {
+        width: 70px;
+    }
+    .info .text {
+        width: 100%;
+    }
+    .info .text h2{
+        font-size: 1rem;
+    }
+    .info .text span {
+      font-weight: bold;
+    }
+    .buttons .trash {
+        font-size: 15px;
+    }
+    .cart-container {
+        width: 80px;
+    }
+    .quantity-input {
+        width: 30px;
+        height: 20px; 
+    }
+      
+    .quantity-btn {
+        height: 20px; 
+    }
+} 
+
