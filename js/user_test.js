@@ -33,5 +33,11 @@ users.updateUser(1, user4);
 
 // ###### ADDING DATA ##########
 //adding new user
-const user5= new User("Ahmed@gmail.com","Passowrd1","Ahmed Abdallah", "Admin",1,"");
-users.addUser(user5)
+const user5 = new User("Ahmed@gmail.com", "Passowrd1", "Ahmed Abdallah", "Admin", 1, "");
+users.addUser(user5);
+
+const user6 = new User("john@gmail.com", "Passowrd2", "John Doe", "User", 2, "");
+users.addUser(user6);
+
+const user7 = new User("emma@gmail.com", "Passowrd3", "Emma Smith", "User", 3, "");
+users.addUser(user7);
