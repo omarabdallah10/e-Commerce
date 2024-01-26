@@ -39,16 +39,6 @@
 .header-menu-list > li {
   display: inline;
 }
-.hero-main-img {
-  width: 100%;
-  background-image: url("../images/background/main-bg.png");
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.hero-main-img:hover {
-  background-size: 110%;
-}
 .mobile-menu-active {
   left: 0 !important;
 }

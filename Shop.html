@@ -1,9 +1,10 @@
-<!-- --Omar Abdallah-- -->
+<!-- --Omar-- -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Shop</title>
     <!-- Import Css FrameWorks -->
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -16,6 +17,9 @@
     <link rel="stylesheet" href="css/NavFooter.css" />
     <!-- Shop Style -->
     <link rel="stylesheet" href="css/shop.css" />
+    <!-- Progress bar style -->
+    <link rel="stylesheet" href="css/progressBar.css" />
+    k
   </head>
   <body>
     <!-- Start Navbar -->
@@ -33,9 +37,8 @@
       </div>
     </div>
 
-
     <!-- Start Navbar -->
-    <nav class="main-nav container py-3">
+    <nav class="main-nav container pt-3">
       <div class="d-flex align-items-center">
         <div class="d-flex h-100 align-items-center">
           <!-- Bars for small screens-->
@@ -74,10 +77,7 @@
                   >
                 </li>
                 <li class="mx-2 my-2">
-                  <a
-                    class="text-decoration-none text-black shop-link"
-                    href="#"
-                  >
+                  <a class="text-decoration-none text-black shop-link" href="#">
                     Brands
                   </a>
                 </li>
@@ -87,49 +87,9 @@
           <!--End Mobile Menu-->
         </div>
 
-        <!--V.1 Nav Links-->
-        <!-- <div class="navbar navbar-expand-lg p-3">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav text-black">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link mx-2 dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Shop
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li><a class="dropdown-item" href="#">Shirts</a></li>
-                    <li><a class="dropdown-item" href="#">Shorts</a></li>
-                    <li><a class="dropdown-item" href="#">Hoodie</a></li>
-                    <li><a class="dropdown-item" href="#">Jeans</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">On Sale</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">New Arrivals</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">Brands</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-
         <!--V.2 Nav Links-->
         <div
-          class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center "
+          class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center"
         >
           <ul class="header-menu-list">
             <li class="mx-2">
@@ -138,21 +98,6 @@
                 href="#"
                 >Shop</a
               >
-              <!-- <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </button> -->
-              <i class="fa-solid fa-caret-down"></i>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Shirts</a></li>
-                <li><a class="dropdown-item" href="#">Shorts</a></li>
-                <li><a class="dropdown-item" href="#">Hoodie</a></li>
-                <li><a class="dropdown-item" href="#">Jeans</a></li>
-              </ul>
             </li>
             <li class="mx-2">
               <a
@@ -202,7 +147,8 @@
             href="#"
             class="mx-2 fw-bolder text-decoration-none text-black fs-5"
           >
-            <i class="fa-solid fa-user"></i>
+            <!-- <i class="fa-solid fa-user"></i> -->
+            <i class="fa-solid fa-circle-user"></i>
           </a>
         </div>
       </div>
@@ -211,13 +157,553 @@
     <!------------------------------------------------------------------------------------>
     <!-- Start Shop -->
 
-    <div class="container">
-      <div >
+    <div class="container my-5">
+      <hr />
 
+      <div class="breadcrumb">
+        <p class="fs-6">
+          <span
+            ><a href="#" class="text-decoration-none text-secondary"
+              >Shop</a
+            ></span
+          ><span>&nbsp; <i class="fa-solid fa-chevron-right"></i> &nbsp;</span
+          ><span>Jeans</span>
+        </p>
+      </div>
+
+      <!--------------------------------------------------------------------------------------------------->
+      <div class="shop-container">
+        <div class="row">
+          <div
+            class="col-12 rounded-4 col-lg-3 d-lg-block filter-menu-container overflow-y-auto"
+          >
+            <div
+              class="shop-filter border border-1 px-4 py-2 rounded-4 bg-white"
+            >
+              <div class="d-flex align-items-center py-2 border-bottom my-3">
+                <div class="flex-grow-1">
+                  <h1 class="fs-5 fw-bold">Filter</h1>
+                </div>
+                <div>
+                  <i class="fs-5 fa-solid fa-sliders"></i>
+                </div>
+              </div>
+              <div
+                class="sizes my-3 py-2 border-bottom overflow-hidden filter-menu-item"
+              >
+                <div class="d-flex p-2 rounded-2 align-items-center">
+                  <div class="flex-grow-1">
+                    <h1 class="fs-5 fw-bold">Category</h1>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-lg-column flex-wrap justify-content-evenly py-2 size-menu"
+                >
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    T-Shirts
+                  </button>
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    Shorts
+                  </button>
+                  <button
+                    class="btn btn-dark text-black rounded-pill my-2 mx-2 bg-alternative text-white"
+                  >
+                    Hoodies
+                  </button>
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    Pants
+                  </button>
+                </div>
+              </div>
+              <!-- Price -->
+              <div
+                class="price my-3 py-2 border-bottom overflow-hidden filter-menu-item"
+              >
+                <div class="p-2">
+                  <div class="flex-grow-1">
+                    <h1 class="fs-5 fw-bold mb-5">Price</h1>
+                  </div>
+
+                  <div class="middle mb-3 w-100">
+                    <div class="multi-range-slider">
+                      <input
+                        type="range"
+                        id="input-left"
+                        min="0"
+                        max="2000"
+                        value="0"
+                        step="1"
+                      />
+                      <input
+                        type="range"
+                        id="input-right"
+                        min="0"
+                        max="2000"
+                        value="2000"
+                        step="1"
+                      />
+
+                      <div class="slider">
+                        <div class="track"></div>
+                        <div class="range"></div>
+                        <div class="thumb left"></div>
+                        <div class="thumb right"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Size -->
+              <div
+                class="sizes my-3 py-2 border-bottom overflow-hidden filter-menu-item"
+              >
+                <div class="d-flex p-2 rounded-2 align-items-center">
+                  <div class="flex-grow-1">
+                    <h1 class="fs-5 fw-bold">Size</h1>
+                  </div>
+                </div>
+                
+                  <div
+                    class="d-flex flex-lg-column flex-wrap justify-content-evenly py-2  size-menu"
+                  >
+                    <button
+                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                    >
+                      Small
+                    </button>
+                    <button
+                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                    >
+                      Medium
+                    </button>
+                    <button
+                      class="btn btn-dark text-black rounded-pill my-2 mx-2 bg-alternative text-white"
+                    >
+                      Large
+                    </button>
+                    <button
+                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                    >
+                      X-Large
+                    </button>
+                  </div>
+                
+              </div>
+
+              <!-- Apply Filter-->
+              <div class="w-100 my-4">
+                <button
+                  class="btn btn-dark rounded-pill text-center text-white w-100"
+                >
+                  Apply Filter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9">
+            
+            <div class="shop-products py-2 border-bottom">
+              <!-- No Product Found-->
+              <!-- <div
+                class="alert alert-danger d-none d-flex align-items-center"
+                role="alert"
+                id="noPr"
+              >
+                <div class="mx-1">
+                  <i class="fa-solid fa-exclamation-triangle-fill"></i>
+                </div>
+                <div>No product found!</div>
+              </div> -->
+
+              <div class="row align-items-stretch">
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          loading="lazy"
+                          src="images/product1.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Blue men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $360
+                          </div>
+                          <div class="mx-1">
+                            <strike>$420</strike>
+                          </div>
+                          <div class="mx-1">
+                            <span
+                              class="bg-danger-subtle rounded-pill px-2 py-1"
+                              >20%</span
+                            >
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product2.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Red men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $500
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product3.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Pink men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $300
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product4.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">White men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $300
+                          </div>
+                          <div class="mx-1">
+                            <strike>$430</strike>
+                          </div>
+                          <div class="mx-1">
+                            <span
+                              class="bg-danger-subtle rounded-pill px-2 py-1"
+                              >30%</span
+                            >
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product5.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Light men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $345
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product6.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $400
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product7.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Green men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $420
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product8.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Orange men shirt</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $329
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 py-1 px-2 my-4">
+                  <div class="shop-item h-100">
+                    <div
+                      class="product-container bg-transparent h-100 p-2 rounded-3"
+                    >
+                      <a
+                        href="product.html"
+                        class="text-black text-decoration-none"
+                      >
+                        <img
+                          loading="lazy"
+                          src="images/product9.png"
+                          alt="product"
+                          class="w-100 rounded-4"
+                        />
+                        <h2 class="my-3">Jeans men short</h2>
+                        <p>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                        </p>
+                        <div class="d-flex px-1">
+                          <div class="mx-1 fw-bold" data-item-type="price">
+                            $150
+                          </div>
+                          <div class="mx-1">
+                            <strike>$360</strike>
+                            <!-- <p style="text-decoration: line-through;">$360</p> -->
+                          </div>
+                          <div class="mx-1">
+                            <span
+                              class="bg-danger-subtle rounded-pill px-2 py-1"
+                              >20%</span
+                            >
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+        </div>
+      </div>
+      <!--------------------------------------------------------------------------------------------------->
+
+      <!--Pagination-->
+      <div class="shop-footer d-flex justify-content-center my-2 py-3">
+        <div>
+          <button class="btn border border-1 py-2">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+        <div class="flex-grow-1 text-center">
+          <a
+            href="#"
+            class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative"
+            >1</a
+          >
+          <a
+            href="#"
+            class="text-decoration-none btn text-secondary mx-1 py-1 px-3"
+            >2</a
+          >
+          <a
+            href="#"
+            class="text-decoration-none btn text-secondary mx-1 py-1 px-3"
+            >3</a
+          >
+          <span class="mx-2">...</span>
+          <a href="#" class="text-decoration-none btn text-secondary mx-1">8</a>
+          <a href="#" class="text-decoration-none btn text-secondary mx-1">9</a>
+          <a href="#" class="text-decoration-none btn text-secondary mx-1"
+            >10</a
+          >
+        </div>
+        <div>
+          <button class="btn border border-1 py-2">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-
-
 
     <!-- End Shop -->
     <!------------------------------------------------------------------------------------>
@@ -421,5 +907,8 @@
     <!-- Import Our Scripts -->
     <script src="js/shop.js"></script>
     <script src="js/nav.js"></script>
+
+    <!-- progress bar js -->
+    <script src="js/progressBar.js"></script>
   </body>
 </html>
