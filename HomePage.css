@@ -7,7 +7,7 @@
     height: 100vh;
     /* height: 663px; */
     background-color: #F2F0F1;
-    background-image: url("Rectangle\ 2.jpg") ;
+    background-image: url("./images/Rectangle 2.jpg") ;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 134px;
@@ -154,29 +154,30 @@
     opacity: 0.1;
 }
 #fifthdiv{
-
+    /* width: 100vw; */
     /* height: 100vh; */
-    top: 2417px;
-    left: 100px;
+    /* top: 2417px;
+    left: 100px; */
     border-radius: 40px;
     background-color: rgba(240, 240, 240, 1);
-    margin: 95px 101px 20px 100px;
+    margin: 95px 100px;
 }
 .fifthpicone{
-    width: 407vw;
-    height: 30%;
+    width: 407px;
+    height: 289px;
     border-radius: 20px;
     margin: 0px 10px 20px 60px;
     
 }
 .fifthpictwo{
-    width: 684vw;
-    height: 30%;
+    width: 70vw;
+    /* height: 289px; */
     border-radius: 20px;
     margin: 0px 60px 20px 10px;
 }
 img{
     border-radius: 20px;
+    /* width: 100%; */
 }
 .image-container {
     position: relative;
