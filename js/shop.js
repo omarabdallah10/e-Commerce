@@ -3,14 +3,16 @@ import Products from "./database/Products.js";
 // Initializing the Products module
 let products = new Products();
 
+//mobile menu
+let mobileMenuBtn = document.getElementsByClassName("menuBtn")[0];
+let mobileMenu = document.getElementsByClassName("mobileMenu")[0];
+
 //parent container of all products
 let productCards = document.getElementById("productCards");
 
 //random 9 products
 let startingRandomProducts = products.getRandomNineProducts();
 
-//No products found Div
-let noProductsFound = document.getElementById("noProductsFound");
 
 //get the category from the url
 let shopLink = document.getElementById("shopLink");
@@ -83,37 +85,21 @@ console.log(CategoriedProducts);
 let SizedProducts = products.getProductsBySize("S");
 console.log(SizedProducts);
 
-//get array of random products
-// let startingRandomProducts = products.getRandomNineProducts();
-// console.log('random products');
-// console.log(startingRandomProducts);
-
-//get array with discount
-// let onSaleProducts = products.getOnSaleProducts();
-// console.log('on sale products');
-// console.log(onSaleProducts);
-
-//get array of products with search by name
-// let SearchedProducts = products.getProductsBySearchQuery();
-
-//new arrivals
-// let newArrivalsProductos = products.getNewArrivals();
-// console.log('new arrivals');
-// console.log(newArrivalsProductos);
-
 window.addEventListener("load", function () {
-  //display random 9 products
+
+  //toggle mobile menu in mobile view
+  mobileMenuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("d-none");
+  });
+
+ 
+
+  /*--------------------------------- Display Random Products ----------------------------------------- */
   displayProducts(startingRandomProducts);
   whichDisplayed.innerHTML = "Shop";
-  //   for (let index = 0; index < startingRandomProducts.length; index++) {
-  //     var oneProductComponent = createProductComponent(
-  //       startingRandomProducts[index]
-  //     );
-  //     productCards.innerHTML += oneProductComponent;
-  //   }
+  /*--------------------------------------------------------------------------------------------------- */
 
   /*---------------------------------Determine Selected Categories ------------------------------------------ */
-
   let selectedCategories = [];
   categoryFilterDiv.addEventListener("click", function (e) {
     if (!e.target.classList.contains("btn-dark")) {
@@ -131,31 +117,21 @@ window.addEventListener("load", function () {
     // console.log(selectedCategories);
     return selectedCategories;
   });
-
   /*----------------------------------------------------------------------------------------------------------*/
 
   /*---------------------------------Determine max and min price ------------------------------------------ */
-
  let selectedMinPrice; 
  let selectedMaxPrice;
     //1-change the value of the text of the min and max price
+    //2-save the value of the min and max price in variables
     leftSlider.addEventListener("change", function () {
       minPrice.innerHTML = "$" + leftSlider.value;
       selectedMinPrice = leftSlider.value;
-      console.log('selectedMinPrice', selectedMinPrice);
     });
     rightSlider.addEventListener("change", function () {
       maxPrice.innerHTML = "$" + rightSlider.value;
       selectedMaxPrice = rightSlider.value;
-      console.log('selectedMaxPrice', selectedMaxPrice);
     });
-
-
-    //2-return the value of the min and max price
-
-
-  // let selectedPrice = [selectedMinPrice, selectedMaxPrice];
-
   /*--------------------------------------------------------------------------------------------------------- */
 
   /*---------------------------------Determine Selected Size------------------------------------------ */
@@ -180,6 +156,8 @@ window.addEventListener("load", function () {
 
   applyFilterBtn.addEventListener("click", function () {
     let resultProductes = [];
+
+    //send the selected prices to the function in product js to filter the products with price
     let selectedPrices = [];
     selectedPrices = products.getProductsByPriceRange(selectedMinPrice,selectedMaxPrice);
     if (selectedPrices.length != 0) {
@@ -188,6 +166,7 @@ window.addEventListener("load", function () {
       }
       console.log("from price filter", selectedPrices);
     }
+
     //send the selected categories to the function in product js to filter the products with category
     if (selectedCategories.length != 0) {
       for (let i = 0; i < selectedCategories.length; i++) {
@@ -195,26 +174,14 @@ window.addEventListener("load", function () {
           products.getProductsByCategory(selectedCategories[i])
         );
       }
-      // console.log('result of categories');
-      // console.log(resultProductes);
     }
 
     //send selected sizes to the function in product js to filter the products with size
     if (selectedSizes.length != 0) {
       for (let i = 0; i < selectedSizes.length; i++) {
         resultProductes.push(products.getProductsBySize(selectedSizes[i]));
-      }
-      // console.log('result of sizes');
-      // console.log(resultProductes);
+      } 
     }
-
-    //send selected price to the function in product js to filter the products with price
-    // let selectedPrices = products.getProductsByPriceRange(selectedMinPrice, selectedMaxPrice);
-    // // console.log("selectedPrices", selectedPrices);
-    // for(let i = 0; i < selectedPrices.length; i++){
-    //   resultProductes.push(selectedPrices[i]);
-    // }
-    
 
     //display the products with the selected filters
     productCards.innerHTML = "";
@@ -244,7 +211,7 @@ window.addEventListener("load", function () {
   //when shop link is clicked --> send the return array from random products to display products function
   shopLink.addEventListener("click", function () {
     whichDisplayed.innerHTML = "Shop";
-    shopLink.classList.add("fw-bold");
+    // shopLink.classList.add("fw-bold");
     //let startingRandomProducts = products.getRandomNineProducts(); //------ if you want the products to be random every time you click on shop
     //make sure the search input is empty
     searchInput.value = "";
@@ -257,7 +224,7 @@ window.addEventListener("load", function () {
   //when onSale link is clicked --> send the return array from random products to display products function
   onSaleLink.addEventListener("click", function () {
     whichDisplayed.innerHTML = "On Sale";
-    onSaleLink.classList.add("fw-bold");
+    // onSaleLink.classList.add("fw-bold");
     let onSaleProducts = products.getOnSaleProducts();
     //make sure the search input is empty
     searchInput.value = "";
@@ -270,7 +237,7 @@ window.addEventListener("load", function () {
   //when newArrivals link is clicked --> send the return array from random products to display products function
   newArrivalsLink.addEventListener("click", function () {
     whichDisplayed.innerHTML = "New Arrivals";
-    newArrivalsLink.classList.add("fw-bold");
+    // newArrivalsLink.classList.add("fw-bold");
     let newArrivalsProducts = products.getNewArrivals();
     //make sure the search input is empty
     searchInput.value = "";
@@ -279,40 +246,8 @@ window.addEventListener("load", function () {
   });
   /*----------------------------------------------------------------------------------------------------- */
 
-  //   shopLink.addEventListener("click", function () {
-  //     console.log("shop link clicked")
-  //     productCards.innerHTML = "";
-  //     for (let index = 0; index < startingRandomProducts.length; index++) {
-  //         var oneProductComponent = createProductComponent(
-  //             startingRandomProducts[index]
-  //         );
-  //         productCards.innerHTML += oneProductComponent;
-  //     }});
 
-  //display products with category
-
-  /* ------------------------------------------------------------------------------------------- */
-  //slider in progressBar.js
-  /*--------------------------------------------------------------------------------------------------- */
-
-  // var length = 12;
-
-  // var pagination = length/9;
-  // for (let index = 0; index < pagination; index++) {
-  //   var page = `<a class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative">${index+1}</a>`;
-  //   document.getElementById("pagination").innerHTML += page;
-  // }
-
-  //   for (let index = 0; index < CategoriedProducts.length; index++) {
-  //     var oneProductComponent = createProductComponent(CategoriedProducts[index]);
-  //     productCards.innerHTML += oneProductComponent;
-  //   }
-
-  //   for (let index = 0; index < SizedProducts.length; index++) {
-  //     var oneProductComponent = createProductComponent(SizedProducts[index]);
-  //     productCards.innerHTML += oneProductComponent;
-  //   }
-});
+});//end of window load.
 
 //create product component to be added to the parent container
 function createProductComponent(product) {
@@ -387,58 +322,4 @@ function displayProducts(productsArray) {
   }
 }
 
-let itemsPerPage = 9;
-let numberOfProducts;
-function pagination(productsArray) {
-  numberOfProducts = productsArray.length;
-  let totalPages = Math.ceil(numberOfProducts / itemsPerPage);
-  for (let i = 0; i < totalPages; i++) {
-    var page = `<a class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative" onclick="changePage(${
-      index + 1
-    })">${index + 1}</a>`;
-    document.getElementById("pagination").innerHTML += page;
-  }
-}
 
-/* 
-//pagination
-1-get the number of products (length)
-2-divide the number of products by 9 (pagination)
-
-*/
-// ...
-
-// var length = 12;
-
-// var itemsPerPage = 9;
-
-// var totalPages = Math.ceil(length / itemsPerPage);
-
-// for (let index = 0; index < totalPages; index++) {
-//   var page = `<a class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative" onclick="changePage(${index + 1})">${index + 1}</a>`;
-//   document.getElementById("pagination").innerHTML += page;
-// }
-
-// ...
-
-// function changePage(pageNumber) {
-//   productCards.innerHTML = ""; // Clear existing products
-
-//   // Calculate start and end indices for the current page
-//   var startIndex = (pageNumber - 1) * itemsPerPage;
-//   var endIndex = Math.min(startIndex + itemsPerPage, length);
-
-//   for (let index = startIndex; index < endIndex; index++) {
-//     var oneProductComponent = createProductComponent(
-//       Object.values(products.getProducts())[index]
-//     );
-//     productCards.innerHTML += oneProductComponent;
-//   }
-// }
-// ...
-
-// changePage(2);
-
-// ...
-
-// ...

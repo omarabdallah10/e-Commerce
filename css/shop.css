@@ -1,3 +1,11 @@
+
+.header-menu-list li a:focus {
+	border-bottom: 2px solid #000000;
+	font-weight: normal;
+}
+	
+
+
 /*slider*/
 
 .middle {
@@ -58,7 +66,6 @@
 input[type=range] {
 	position: absolute;
 	pointer-events: none;
-	-webkit-appearance: none;
 	z-index: 2;
 	height: 10px;
 	width: 100%;

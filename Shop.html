@@ -17,12 +17,9 @@
     <link rel="stylesheet" href="css/NavFooter.css" />
     <!-- Shop Style -->
     <link rel="stylesheet" href="css/shop.css" />
-    <!-- Progress bar style -->
-    <link rel="stylesheet" href="css/progressBar.css" />
   </head>
   <body>
     <!-- Start Navbar -->
-
     <div
       id="signup-notice"
       class="w-100 d-flex justify-content-center align-items-center py-1"
@@ -41,14 +38,14 @@
       <div class="d-flex align-items-center">
         <div class="d-flex h-100 align-items-center">
           <!-- Bars for small screens-->
-          <button class="open-menu btn mx-1 text-black fs-5 d-block d-lg-none">
+          <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
             <i class="fa-solid fa-bars"></i>
           </button>
           <a href="#" class="text-decoration-none text-black fw-bold fs-3">
             SHOP.CO
           </a>
           <!--Mobile Menu-->
-          <div class="mobile-menu position-absolute w-100 d-none">
+          <div class="mobileMenu position-absolute w-100 d-none">
             <div
               class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
             >
@@ -77,7 +74,7 @@
                 </li>
                 <li class="mx-2 my-2">
                   <a class="text-decoration-none text-black shop-link" href="#">
-                    Brands
+                    About us
                   </a>
                 </li>
               </ul>
@@ -121,7 +118,7 @@
                 class="text-decoration-none text-black main-menu-link position-relative shop-link"
                 href="#"
               >
-                Brands
+                About us
               </a>
             </li>
           </ul>
@@ -151,8 +148,7 @@
             href="#"
             class="mx-2 fw-bolder text-decoration-none text-black fs-5"
           >
-            <!-- <i class="fa-solid fa-user"></i> -->
-            <i class="fa-solid fa-circle-user"></i>
+            <i id="userIcon" class="fa-solid fa-circle-user"></i>
           </a>
         </div>
       </div>
@@ -189,9 +185,10 @@
                   <h1 class="fs-5 fw-bold">Filter</h1>
                 </div>
                 <div>
-                  <i class="fs-5 fa-solid fa-sliders"></i>
+                  <i id="sliderIcon" class="fs-5 fa-solid fa-sliders"></i>
                 </div>
               </div>
+              <!-- Category -->
               <div
                 class="sizes my-3 py-2 border-bottom overflow-hidden filter-menu-item"
               >
@@ -271,7 +268,6 @@
                   </div>
                 </div>
               </div>
-
               <!-- Size -->
               <div
                 class="sizes my-3 py-2 border-bottom overflow-hidden filter-menu-item"
@@ -322,122 +318,15 @@
           </div>
           <div class="col-12 col-lg-9">
             <div class="shop-products py-2 border-bottom">
-              <!-- No Product Found-->
-              <!-- <div
-                class="alert alert-danger d-none d-flex align-items-center"
-                role="alert"
-                id="noPr"
-              >
-                <div class="mx-1">
-                  <i class="fa-solid fa-exclamation-triangle-fill"></i>
-                </div>
-                <div>No product found!</div>
-              </div> -->
-
               <div id="productCards" class="row align-items-stretch">
-                <!-- <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          loading="lazy"
-                          src="images/product1.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Blue men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $360
-                          </div>
-                          <div class="mx-1">
-                            <strike>$420</strike>
-                          </div>
-                          <div class="mx-1">
-                            <span
-                              class="bg-danger-subtle rounded-pill px-2 py-1"
-                              >20%</span
-                            >
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- No products -->
-                <div
-                  class="alert alert-warning d-flex align-items-center d-none"
-                  id="noProductsFound"
-                >
-                  <div>
-                    <i class="fa-solid fa-exclamation-triangle mx-2"></i>
-                    No product found!
-                  </div>
-                </div>
+                <!-- Generating product component dynamically With JS -->               
               </div>
             </div>
           </div>
-          <!-- <hr> -->
+          <hr>
         </div>
       </div>
-      <!--------------------------------------------------------------------------------------------------->
-
-      <!--Pagination-->
-      <div
-        id="AllPaginationDiv"
-        class="shop-footer d-flex justify-content-center my-2 py-3"
-      >
-        <div>
-          <button class="btn border border-1 py-2">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-        </div>
-        <div id="pagination" class="flex-grow-1 text-center">
-          <!-- <a
-            href="#"
-            class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative"
-            >1</a
-          >
-          <a
-            href="#"
-            class="text-decoration-none btn text-secondary mx-1 py-1 px-3"
-            >2</a
-          >
-          <a
-            href="#"
-            class="text-decoration-none btn text-secondary mx-1 py-1 px-3"
-            >3</a
-          > -->
-          <!-- <span class="mx-2">...</span> -->
-          <!-- <a href="#" class="text-decoration-none btn text-secondary mx-1">8</a>
-          <a href="#" class="text-decoration-none btn text-secondary mx-1">9</a>
-          <a href="#" class="text-decoration-none btn text-secondary mx-1"
-            >10</a
-          > -->
-        </div>
-        <div>
-          <button class="btn border border-1 py-2">
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+      <!----------------------------------------------------------------------------------------------------->
 
     <!-- End Shop -->
     <!------------------------------------------------------------------------------------>
@@ -622,7 +511,6 @@
               SHOP.CO &copy; 2020-2024, All Rights Reserved
             </div>
             <div class="d-flex my-2 my-lg-0">
-              <!--46*30-->
               <img src="images/visa.png" alt="visa" />
               <img src="images/mastercard.png" alt="visa" />
               <img src="images/paybal.png" alt="visa" />
@@ -639,10 +527,9 @@
     <!-- import Js FrameWorks -->
     <script src="js/jquery.js"></script>
     <!-- Import Our Scripts -->
-    <script src="js/shop.js" type="module"></script>
     <script src="js/nav.js"></script>
-
     <!-- progress bar js -->
-    <script src="js/progressBar.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/shop.js" type="module"></script>
   </body>
 </html>
