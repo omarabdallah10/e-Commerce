@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/shop.css" />
     <!-- Progress bar style -->
     <link rel="stylesheet" href="css/progressBar.css" />
-    k
   </head>
   <body>
     <!-- Start Navbar -->
@@ -94,6 +93,7 @@
           <ul class="header-menu-list">
             <li class="mx-2">
               <a
+                id="shopLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
                 href="#"
                 >Shop</a
@@ -101,6 +101,7 @@
             </li>
             <li class="mx-2">
               <a
+                id="onSaleLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
                 href="#"
                 >On Sale</a
@@ -108,6 +109,7 @@
             </li>
             <li class="mx-2">
               <a
+                id="newArrivalsLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
                 href="#"
                 >New Arrivals</a
@@ -115,6 +117,7 @@
             </li>
             <li class="mx-2">
               <a
+                id="brandsLink"
                 class="text-decoration-none text-black main-menu-link position-relative shop-link"
                 href="#"
               >
@@ -131,6 +134,7 @@
               <i class="fa-solid fa-search"></i>
             </button>
             <input
+              id="searchInput"
               class="form-control"
               type="search"
               placeholder="Search"
@@ -160,22 +164,22 @@
     <div class="container my-5">
       <hr />
 
-      <div class="breadcrumb">
+      <!-- Which Displayed -->
+      <div>
         <p class="fs-6">
-          <span
-            ><a href="#" class="text-decoration-none text-secondary"
+          <span>
+            <a id="whichDisplayed" class="text-decoration-none text-secondary"
               >Shop</a
-            ></span
-          ><span>&nbsp; <i class="fa-solid fa-chevron-right"></i> &nbsp;</span
-          ><span>Jeans</span>
+            >
+          </span>
         </p>
       </div>
 
       <!--------------------------------------------------------------------------------------------------->
       <div class="shop-container">
-        <div class="row">
+        <div class="row my-3">
           <div
-            class="col-12 rounded-4 col-lg-3 d-lg-block filter-menu-container overflow-y-auto"
+            class="col-12 rounded-4 col-lg-3 d-lg-block filter-menu-container overflow-y-auto mt-3"
           >
             <div
               class="shop-filter border border-1 px-4 py-2 rounded-4 bg-white"
@@ -198,12 +202,13 @@
                 </div>
 
                 <div
+                  id="categoryMenu"
                   class="d-flex flex-lg-column flex-wrap justify-content-evenly py-2 size-menu"
                 >
                   <button
                     class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
                   >
-                    T-Shirts
+                    Shirts
                   </button>
                   <button
                     class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
@@ -231,14 +236,14 @@
                     <h1 class="fs-5 fw-bold mb-5">Price</h1>
                   </div>
 
-                  <div class="middle mb-3 w-100">
+                  <div id="priceMenu" class="middle mb-3 w-100">
                     <div class="multi-range-slider">
                       <input
                         type="range"
                         id="input-left"
                         min="0"
                         max="2000"
-                        value="0"
+                        value="250"
                         step="1"
                       />
                       <input
@@ -246,7 +251,7 @@
                         id="input-right"
                         min="0"
                         max="2000"
-                        value="2000"
+                        value="1750"
                         step="1"
                       />
 
@@ -255,6 +260,12 @@
                         <div class="range"></div>
                         <div class="thumb left"></div>
                         <div class="thumb right"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="d-flex justify-content-between mt-4">
+                        <div id="minPriceText" class="fw-bold">$250</div>
+                        <div id="maxPriceText" class="fw-bold">$1750</div>
                       </div>
                     </div>
                   </div>
@@ -270,46 +281,46 @@
                     <h1 class="fs-5 fw-bold">Size</h1>
                   </div>
                 </div>
-                
-                  <div
-                    class="d-flex flex-lg-column flex-wrap justify-content-evenly py-2  size-menu"
+
+                <div
+                  id="sizeMenu"
+                  class="d-flex flex-lg-column flex-wrap justify-content-evenly py-2 size-menu"
+                >
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
                   >
-                    <button
-                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
-                    >
-                      Small
-                    </button>
-                    <button
-                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
-                    >
-                      Medium
-                    </button>
-                    <button
-                      class="btn btn-dark text-black rounded-pill my-2 mx-2 bg-alternative text-white"
-                    >
-                      Large
-                    </button>
-                    <button
-                      class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
-                    >
-                      X-Large
-                    </button>
-                  </div>
-                
+                    S
+                  </button>
+                  <button
+                    class="btn btn-dark text-white rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    M
+                  </button>
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    L
+                  </button>
+                  <button
+                    class="btn rounded-pill my-2 mx-2 bg-alternative text-secondary"
+                  >
+                    XL
+                  </button>
+                </div>
               </div>
 
               <!-- Apply Filter-->
               <div class="w-100 my-4">
                 <button
-                  class="btn btn-dark rounded-pill text-center text-white w-100"
+                  id="applyFilterBtn"
+                  class="btn btn-dark rounded-pill text-center py-3 text-white w-100"
                 >
-                  Apply Filter
+                  Apply Filters
                 </button>
               </div>
             </div>
           </div>
           <div class="col-12 col-lg-9">
-            
             <div class="shop-products py-2 border-bottom">
               <!-- No Product Found-->
               <!-- <div
@@ -323,8 +334,8 @@
                 <div>No product found!</div>
               </div> -->
 
-              <div class="row align-items-stretch">
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
+              <div id="productCards" class="row align-items-stretch">
+                <!-- <div class="col-6 col-md-4 py-1 px-2 my-4">
                   <div class="shop-item h-100">
                     <div
                       class="product-container bg-transparent h-100 p-2 rounded-3"
@@ -367,296 +378,16 @@
                       </a>
                     </div>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product2.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Red men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $500
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product3.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Pink men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $300
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product4.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">White men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $300
-                          </div>
-                          <div class="mx-1">
-                            <strike>$430</strike>
-                          </div>
-                          <div class="mx-1">
-                            <span
-                              class="bg-danger-subtle rounded-pill px-2 py-1"
-                              >30%</span
-                            >
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product5.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Light men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $345
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product6.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $400
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product7.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Green men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $420
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product8.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Orange men shirt</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $329
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-4 py-1 px-2 my-4">
-                  <div class="shop-item h-100">
-                    <div
-                      class="product-container bg-transparent h-100 p-2 rounded-3"
-                    >
-                      <a
-                        href="product.html"
-                        class="text-black text-decoration-none"
-                      >
-                        <img
-                          loading="lazy"
-                          src="images/product9.png"
-                          alt="product"
-                          class="w-100 rounded-4"
-                        />
-                        <h2 class="my-3">Jeans men short</h2>
-                        <p>
-                          <span class="text-warning">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                          </span>
-                        </p>
-                        <div class="d-flex px-1">
-                          <div class="mx-1 fw-bold" data-item-type="price">
-                            $150
-                          </div>
-                          <div class="mx-1">
-                            <strike>$360</strike>
-                            <!-- <p style="text-decoration: line-through;">$360</p> -->
-                          </div>
-                          <div class="mx-1">
-                            <span
-                              class="bg-danger-subtle rounded-pill px-2 py-1"
-                              >20%</span
-                            >
-                          </div>
-                        </div>
-                      </a>
-                    </div>
+                </div> -->
+
+                <!-- No products -->
+                <div
+                  class="alert alert-warning d-flex align-items-center d-none"
+                  id="noProductsFound"
+                >
+                  <div>
+                    <i class="fa-solid fa-exclamation-triangle mx-2"></i>
+                    No product found!
                   </div>
                 </div>
               </div>
@@ -668,14 +399,17 @@
       <!--------------------------------------------------------------------------------------------------->
 
       <!--Pagination-->
-      <div class="shop-footer d-flex justify-content-center my-2 py-3">
+      <div
+        id="AllPaginationDiv"
+        class="shop-footer d-flex justify-content-center my-2 py-3"
+      >
         <div>
           <button class="btn border border-1 py-2">
             <i class="fa-solid fa-arrow-left"></i>
           </button>
         </div>
-        <div class="flex-grow-1 text-center">
-          <a
+        <div id="pagination" class="flex-grow-1 text-center">
+          <!-- <a
             href="#"
             class="text-decoration-none btn mx-1 py-1 px-3 bg-alternative"
             >1</a
@@ -689,13 +423,13 @@
             href="#"
             class="text-decoration-none btn text-secondary mx-1 py-1 px-3"
             >3</a
-          >
-          <span class="mx-2">...</span>
-          <a href="#" class="text-decoration-none btn text-secondary mx-1">8</a>
+          > -->
+          <!-- <span class="mx-2">...</span> -->
+          <!-- <a href="#" class="text-decoration-none btn text-secondary mx-1">8</a>
           <a href="#" class="text-decoration-none btn text-secondary mx-1">9</a>
           <a href="#" class="text-decoration-none btn text-secondary mx-1"
             >10</a
-          >
+          > -->
         </div>
         <div>
           <button class="btn border border-1 py-2">
@@ -905,7 +639,7 @@
     <!-- import Js FrameWorks -->
     <script src="js/jquery.js"></script>
     <!-- Import Our Scripts -->
-    <script src="js/shop.js"></script>
+    <script src="js/shop.js" type="module"></script>
     <script src="js/nav.js"></script>
 
     <!-- progress bar js -->
