@@ -30,14 +30,14 @@
       <div class="d-flex align-items-center">
         <div class="d-flex h-100 align-items-center">
           <!-- Bars for small screens-->
-          <button class="open-menu btn mx-1 text-black fs-5 d-block d-lg-none">
+          <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
             <i class="fa-solid fa-bars"></i>
           </button>
-          <a href="#" class="text-decoration-none text-black fw-bold fs-3">
+          <a href="/index.html" class="text-decoration-none text-black fw-bold fs-3">
             SHOP.CO
           </a>
           <!--Mobile Menu-->
-          <div class="mobile-menu position-absolute w-100 d-none">
+          <div class="mobileMenu position-absolute w-100 d-none">
             <div
               class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
             >
@@ -52,7 +52,7 @@
               <hr />
               <ul class="p-0">
                 <li class="mx-2 my-2">
-                  <a class="text-decoration-none text-black" href="#">Shop</a>
+                  <a class="text-decoration-none text-black" href="">Shop</a>
                 </li>
                 <li class="mx-2 my-2">
                   <a class="text-decoration-none text-black" href="#"
@@ -66,7 +66,7 @@
                 </li>
                 <li class="mx-2 my-2">
                   <a class="text-decoration-none text-black shop-link" href="#">
-                    Brands
+                    About us
                   </a>
                 </li>
               </ul>
@@ -82,13 +82,15 @@
           <ul class="header-menu-list">
             <li class="mx-2">
               <a
+                id="shopLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
-                href="#"
+                href="/Shop.html"
                 >Shop</a
               >
             </li>
             <li class="mx-2">
               <a
+                id="onSaleLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
                 href="#"
                 >On Sale</a
@@ -96,6 +98,7 @@
             </li>
             <li class="mx-2">
               <a
+                id="newArrivalsLink"
                 class="text-decoration-none text-black main-menu-link position-relative"
                 href="#"
                 >New Arrivals</a
@@ -103,10 +106,11 @@
             </li>
             <li class="mx-2">
               <a
+                id="brandsLink"
                 class="text-decoration-none text-black main-menu-link position-relative shop-link"
                 href="#"
               >
-                Brands
+                About us
               </a>
             </li>
           </ul>
@@ -119,6 +123,7 @@
               <i class="fa-solid fa-search"></i>
             </button>
             <input
+              id="searchInput"
               class="form-control"
               type="search"
               placeholder="Search"
@@ -128,16 +133,15 @@
         </div>
 
         <div class="d-flex">
-          <a href="#" class="mx-2 text-decoration-none text-black fs-5">
+          <a href="/Cart.html" class="mx-2 text-decoration-none text-black fs-5">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
-          <a
-            href="#"
-            class="mx-2 fw-bolder text-decoration-none text-black fs-5"
-          >
-            <!-- <i class="fa-solid fa-user"></i> -->
-            <i class="fa-solid fa-circle-user"></i>
+          <a href="#" class="mx-2 text-decoration-none text-black fs-5" id="userDropdown">
+            <i id="userIcon" class="fa-solid fa-circle-user"></i>
           </a>
+          
+          
+          
         </div>
       </div>
     </nav>

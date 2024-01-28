@@ -7,7 +7,7 @@ console.log(products);
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('pid');
+const id = urlParams.get('id');
 //const id = 'pid3'
 
 var product =products.getProductById(id);
