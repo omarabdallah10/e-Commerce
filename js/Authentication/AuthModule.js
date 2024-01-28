@@ -1,7 +1,11 @@
 class AuthModule {
     static activeUser = JSON.parse(localStorage.getItem('activeuser'));
-    static redirectToAuth = false;
-    
+    static isGuest() {
+        if (!AuthModule.activeUser) {
+            return true;
+        }
+    }
+
     static isAuthorized() {
         if (!AuthModule.activeUser) {
             // Create a new container element

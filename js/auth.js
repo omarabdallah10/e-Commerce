@@ -119,9 +119,34 @@ $(function () {
     $("#authModal").html(authModalComponent);
 
     $(".fa-circle-user").on("click", function () {
-      // Trigger the modal using Bootstrap's modal method
+      if(AuthModule.isGuest()){
       var myModal = new bootstrap.Modal($("#authModal"));
       myModal.show();
+      }
+      
+      else{
+        // Drop Down appended to .fa-cricle-user with logout
+        var dropDown = `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item" href="#" id="logout">Logout</a>
+          </div>`;
+          $(".fa-circle-user").append(dropDown);
+          $("#userDropdown").on("click", function (event) {
+            event.stopPropagation(); // Prevent event propagation to avoid duplication
+            $(".dropdown-menu").toggle();
+          });
+        
+          // Close the dropdown when clicking outside of it
+          $(document).on("click", function (event) {
+            if (!$(event.target).closest("#userDropdown").length) {
+              $(".dropdown-menu").hide();
+            }
+          });
+        $("#logout").on("click", function () {
+          localStorage.removeItem("activeuser");
+          location.reload();
+        });
+      }
+
     });
     $(".eye").each(function () {
       $(this).on("click", function () {
@@ -169,7 +194,7 @@ $(function () {
                 status: 2,
               })
             );
-            window.location.replace("./Homepage.html");
+            location.reload();
           }, 1000);
         } catch (error) {
           console.log(error.message);
@@ -206,12 +231,12 @@ $(function () {
             email: user.email,
             id: user.id,
             role: user.role,
-            full_name:user.full_name,
+            full_name: user.full_name,
             status: user.status,
           })
         );
 
-        window.location.replace("./Homepage.html");
+        location.reload();
       } else {
         $("#signin_feedback").text("").text("Invalid Credentials");
       }
