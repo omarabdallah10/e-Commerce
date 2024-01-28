@@ -72,7 +72,7 @@ class Products {
    * @param {number} maxPrice - The maximum price.
    * @returns {Array} An array of product objects.
    */
-  
+
   // getProductsByPriceRange(minPrice, maxPrice) {
   //   const filteredProducts = Object.values(this.products).filter((product) => {
   //     const productPrice = product.price;
@@ -85,6 +85,7 @@ class Products {
     let fiilteredProducts = Object.values(this.products).filter((product) => {
       return product.price >= minPrice && product.price <= maxPrice;
     });
+    console.log("from product js -> Priced Products", fiilteredProducts);
     return fiilteredProducts;
   }
 
@@ -99,7 +100,6 @@ class Products {
     );
     return filteredProducts;
   }
-
 
   /**
    * Returns an array of product objects that match the specified search query.
