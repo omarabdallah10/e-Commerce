@@ -75,7 +75,7 @@ body {
 }
 .hero-main-img {
   /* width: 100%; */
-  background-image: url("./images/Rectangle 2.jpg");
+  background-image: url("../images/Rectangle 2.jpg");
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,16 +107,16 @@ i[class*="bi-arrow"] {
   transition: 0.5s all ease;
 }
 .casual {
-  background-image: url("./images/image\ 11.png");
+  background-image: url("../images/image\ 11.png");
 }
 .formal {
-  background-image: url("./images/image\ 13.png");
+  background-image: url("../images/image\ 13.png");
 }
 .party {
-  background-image: url("./images/image\ 12.png");
+  background-image: url("../images/image\ 12.png");
 }
 .gym {
-  background-image: url("./images/image\ 14.png");
+  background-image: url("../images/image\ 14.png");
 }
 
 .user-comment {
