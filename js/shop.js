@@ -13,7 +13,6 @@ let productCards = document.getElementById("productCards");
 //random 9 products
 let startingRandomProducts = products.getRandomNineProducts();
 
-
 //get the category from the url
 let shopLink = document.getElementById("shopLink");
 let onSaleLink = document.getElementById("onSaleLink");
@@ -86,13 +85,10 @@ let SizedProducts = products.getProductsBySize("S");
 console.log(SizedProducts);
 
 window.addEventListener("load", function () {
-
   //toggle mobile menu in mobile view
   mobileMenuBtn.addEventListener("click", function () {
     mobileMenu.classList.toggle("d-none");
   });
-
- 
 
   /*--------------------------------- Display Random Products ----------------------------------------- */
   displayProducts(startingRandomProducts);
@@ -102,11 +98,13 @@ window.addEventListener("load", function () {
   /*---------------------------------Determine Selected Categories ------------------------------------------ */
   let selectedCategories = [];
   categoryFilterDiv.addEventListener("click", function (e) {
-    if (!e.target.classList.contains("btn-dark")) {
-      e.target.classList.add("btn-dark", "text-white");
-    } else {
-      e.target.classList.remove("btn-dark", "text-white");
-      e.target.classList.add("btn", "text-secondary");
+    if (e.target.classList.contains("btn")) {
+      if (!e.target.classList.contains("btn-dark")) {
+        e.target.classList.add("btn-dark", "text-white");
+      } else {
+        e.target.classList.remove("btn-dark", "text-white");
+        e.target.classList.add("btn", "text-secondary");
+      }
     }
     //return the value of the buttons which are clicked (has btn-dark class)
     selectedCategories = document.querySelectorAll("#categoryMenu .btn-dark");
@@ -120,10 +118,11 @@ window.addEventListener("load", function () {
   /*----------------------------------------------------------------------------------------------------------*/
 
   /*---------------------------------Determine max and min price ------------------------------------------ */
- let selectedMinPrice; 
- let selectedMaxPrice;
-    //1-change the value of the text of the min and max price
-    //2-save the value of the min and max price in variables
+  let selectedMinPrice;
+  let selectedMaxPrice;
+  //1-change the value of the text of the min and max price
+  //2-save the value of the min and max price in variables
+  priceFilterDiv.addEventListener("click", function (e) {
     leftSlider.addEventListener("change", function () {
       minPrice.innerHTML = "$" + leftSlider.value;
       selectedMinPrice = leftSlider.value;
@@ -132,16 +131,19 @@ window.addEventListener("load", function () {
       maxPrice.innerHTML = "$" + rightSlider.value;
       selectedMaxPrice = rightSlider.value;
     });
+  });
   /*--------------------------------------------------------------------------------------------------------- */
 
   /*---------------------------------Determine Selected Size------------------------------------------ */
   let selectedSizes = [];
   sizeFilterDiv.addEventListener("click", function (e) {
-    if (!e.target.classList.contains("btn-dark")) {
-      e.target.classList.add("btn-dark", "text-white");
-    } else {
-      e.target.classList.remove("btn-dark", "text-white");
-      e.target.classList.add("btn", "text-secondary");
+    if (e.target.classList.contains("btn")) {
+      if (!e.target.classList.contains("btn-dark")) {
+        e.target.classList.add("btn-dark", "text-white");
+      } else {
+        e.target.classList.remove("btn-dark", "text-white");
+        e.target.classList.add("btn", "text-secondary");
+      }
     }
     //return the value of the buttons which are clicked (has btn-dark class)
     selectedSizes = document.querySelectorAll("#sizeMenu .btn-dark");
@@ -159,7 +161,12 @@ window.addEventListener("load", function () {
 
     //send the selected prices to the function in product js to filter the products with price
     let selectedPrices = [];
-    selectedPrices = products.getProductsByPriceRange(selectedMinPrice,selectedMaxPrice);
+
+    selectedPrices = products.getProductsByPriceRange(
+      selectedMinPrice,
+      selectedMaxPrice
+    );
+    console.log("from shop js --> priced Products", selectedPrices);
     if (selectedPrices.length != 0) {
       for (let i = 0; i < selectedPrices.length; i++) {
         resultProductes.push(selectedPrices[i]);
@@ -180,7 +187,7 @@ window.addEventListener("load", function () {
     if (selectedSizes.length != 0) {
       for (let i = 0; i < selectedSizes.length; i++) {
         resultProductes.push(products.getProductsBySize(selectedSizes[i]));
-      } 
+      }
     }
 
     //display the products with the selected filters
@@ -245,13 +252,13 @@ window.addEventListener("load", function () {
     displayProducts(newArrivalsProducts);
   });
   /*----------------------------------------------------------------------------------------------------- */
-
-
-});//end of window load.
+}); //end of window load.
 
 //create product component to be added to the parent container
 function createProductComponent(product) {
-  let productComponent = `<div class="col-6 col-md-4 py-1 px-2 mb-3">
+  let productComponent;
+  if (product.discount > 0) {
+    productComponent = `<div class="col-6 col-md-4 py-1 px-2 mb-3">
                   <div class="shop-item h-100">
                     <div
                       class="product-container bg-transparent h-100 p-2 rounded-3"
@@ -261,8 +268,6 @@ function createProductComponent(product) {
                         class="text-black text-decoration-none"
                       >
                         <img
-                          loading="lazy"
-                          loading="lazy"
                           src="${product.thumbnail}"
                           alt="product"
                           class="w-100 rounded-4"
@@ -297,6 +302,38 @@ function createProductComponent(product) {
                     </div>
                   </div>
                 </div>`;
+  } else {
+    productComponent = `<div class="col-6 col-md-4 py-1 px-2 mb-3">
+                            <div class="shop-item h-100">
+                              <div
+                                class="product-container bg-transparent h-100 p-2 rounded-3"
+                              >
+                                <a
+                                  href="product.html?id=${product.productId}"
+                                  class="text-black text-decoration-none"
+                                >
+                                  <img
+                                    src="${product.thumbnail}"
+                                    alt="product"
+                                    class="w-100 rounded-4"
+                                    style="height: 300px"
+                                  />
+                                  <h2 class="my-3">${product.productName}</h2>
+                                  <p>
+                                    <span class="text-warning">
+                                      ${generateRatingSpan(product.rating)}
+                                    </span>
+                                  </p>
+                                  <div class="d-flex px-1">
+                                    <div class="mx-1 fw-bold" data-item-type="price">
+                                      $${product.price}
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>`;
+  }
   return productComponent;
 }
 
@@ -321,5 +358,3 @@ function displayProducts(productsArray) {
     productCards.innerHTML += oneProductComponent;
   }
 }
-
-
