@@ -1,4 +1,4 @@
-import { User } from "../schemas/user.js";
+import { User } from "./user.js";
 
 /**
  * Class representing a user manager.
@@ -20,7 +20,7 @@ class UsersManagement {
    * @param {string} email - The email of the user.
    * @param {string} password - The password of the user.
    * @param {number} id - The ID of the user.
-   * @param {string} accountType - The account type of the user.
+   * @param {string} role - The account type of the user.
    * @returns {User} The added user.
    * @throws {Error} If the user already exists.
    */
@@ -31,13 +31,13 @@ class UsersManagement {
     }
     return id;
   }
-  addUser(email, password, id, accountType) {
+  addUser(email, password, id, role) {
     const existingUser = this.users.find((user) => user.email === email);
     if (existingUser) {
       throw new Error("User already exists");
     }
     
-    const user = new User(email, password, id, accountType);
+    const user = new User(email, password, id, role);
     this.users.push(user);
     this.storeUsers();
     return user;
@@ -56,7 +56,7 @@ class UsersManagement {
   retrieveUsers() {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
     this.users = storedUsers.map(
-      (user) => new User(user.email, user.password, user.id, user.accountType)
+      (user) => new User(user.email, user.password, user.id, user.role)
     );
   }
 
@@ -70,7 +70,7 @@ class UsersManagement {
         console.log(`Email: ${user.email}`);
         console.log(`Password: ${user.password}`);
         console.log(`ID: ${user.id}`);
-        console.log(`Account Type: ${user.accountType}`);
+        console.log(`Account Type: ${user.role}`);
         console.log("----------------------");
       });
     } else {
@@ -83,7 +83,7 @@ class UsersManagement {
    * @returns {User} The user with the given email.
    */
   findUserByEmail(email) {
-    return this.users.find((user) => user.email === email);
+    return this.users.find((user) => user.email.toLowerCase() === email.toLowerCase());
   }
   /**
    * Find a user by ID.
