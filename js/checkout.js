@@ -1,3 +1,19 @@
+
+window.addEventListener('load', function() {
+    // let signupDismiss = document.getElementById("signup-dismiss");
+    let signupDismiss = document.getElementById("dismisser");
+    let signupNotice = document.getElementById("signup-notice");
+  
+    signupDismiss.addEventListener("click", () => {
+      // signupNotice.style.display = "none";
+      signupNotice.classList.add("d-none");
+      console.log("signup Clicked!!");
+    });
+  
+  
+  });
+  
+
 let BackBTN = document.querySelector(".btn-two");
 let payment = document.querySelector("select[name=payment]");
 let state = document.querySelector("select[name=State]");
@@ -7,6 +23,39 @@ let purchaseBTN = document.querySelector(".btn-one");
 let allInputs = document.querySelectorAll("input");
 let errorDIV = document.querySelector(".error");
 let arr =[];
+
+
+
+if(localStorage.getItem("cart")!=null) {
+    var myProduct = JSON.parse(localStorage.getItem("cart"));
+    console.log(myProduct);
+}
+function displayCart() {
+    document.querySelector(".one").innerHTML = ``;
+    let hamada = ``;
+    for (let i = 0; i < myProduct.length; i++) {
+
+        const itemTotal = myProduct[i].price * myProduct[i].quantity;
+        subTotalPrice += itemTotal;
+        hamada = `
+        <div class="product">
+        <img src="../images/electronic-store-product-image-36-400x400.jpg" alt="">
+        <div class="info">
+            <div class="text">
+                <h2>${myProduct[i].name}</h2>
+                <p><span>Size: </span>${myProduct[i].size}</p>
+                <p><span>Color: </span>White</p>
+                <h3>$<span class="price">${myProduct[i].price * myProduct[i].quantity}</span></h3>
+            </div>
+            <input readonly type="text" class="quantity-input" value="${myProduct[i].quantity}">
+
+        </div>
+        `;
+        document.querySelector(".one").innerHTML += hamada;
+    }
+    updateTotalPrices();
+}
+
 
 
 
@@ -26,7 +75,7 @@ if (localStorage.getItem("purchase")!=null) {
 
 
 BackBTN.addEventListener("click", function () {
-    window.location.href = "Cart.html";
+    window.location.href = "    Cart.html";
 }); // end of back function
 
 
@@ -34,13 +83,13 @@ BackBTN.addEventListener("click", function () {
 payment.addEventListener("change", function (e) {
     let selectedOption = e.target.value; 
     if (selectedOption === "visa") {
-       img.src = "../images/visa.png";
+       img.src = "images/visa.png";
     }
     else if (selectedOption === "master") {
-        img.src = "../images/master.png";
+        img.src = "images/master.png";
     }
     else if (selectedOption === "express") {
-        img.src = "../images/america.png";
+        img.src = "images/america.png";
     }
 });
 
@@ -114,40 +163,40 @@ function validation(){
         allInputs[8].style.border = "2px solid green";
     }
 
-    let successPurchase = {
-        UserFnameName : allInputs[0].value,
-        UserLastName : allInputs[1].value,
-        UserMobile : allInputs[2].value,
-        UserCity : allInputs[3].value,
-        UserAddress : allInputs[4].value,
-        UserState : state.value,
-        UserCardType : payment.value,
-        UserCardNo : allInputs[5].value,
-        UserCardName : allInputs[6].value,
-        UserCardExp : allInputs[7].value,
-        UserCardCCV : allInputs[8].value,
-    };
+    // let successPurchase = {
+    //     UserFnameName : allInputs[0].value,
+    //     UserLastName : allInputs[1].value,
+    //     UserMobile : allInputs[2].value,
+    //     UserCity : allInputs[3].value,
+    //     UserAddress : allInputs[4].value,
+    //     UserState : state.value,
+    //     UserCardType : payment.value,
+    //     UserCardNo : allInputs[5].value,
+    //     UserCardName : allInputs[6].value,
+    //     UserCardExp : allInputs[7].value,
+    //     UserCardCCV : allInputs[8].value,
+    // };
 
-    arr.push(successPurchase);
-    localStorage.setItem("purchase",JSON.stringify(arr));
+    // arr.push(successPurchase);
+    // localStorage.setItem("purchase",JSON.stringify(arr));
+    // const newOrder = new Order(
+    //     'u2', // user ID
+    //     3, // order ID
+    //     'greeeeen', // orderName
+    //     6, // price
+    //     3, // status
+    //     '', // avatar
+    //     'Size = L, Color = Yellow', // details
+    //     'FullName = eee, Address = 5678 Main St, City = Los Angeles, State = CA, Zip = 90001, Phone = 213-555-5678', // deliveryDetails
+    //     's1', // sellerId
+    //     '2022-01-15' // orderDate
+    // );
+    
+    
+    // orders.addOrder('u2', newOrder);
     return true;
 
 }
-
-
-function Success() {
-    Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
-        icon: "success",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.getElementById("checkOutForm").submit(); 
-        }
-    });
-}
-
-
 
 
 
@@ -162,68 +211,92 @@ let price = document.querySelectorAll(".price");
 let trashBTN = document.querySelectorAll(".trash");
 
 
-for(let i = 0 ; i < plus.length ; i++) {
-    plus[i].addEventListener("click",function(){
-        inputValue[i].value++;
-        price[i].innerHTML = Number(price[i].innerHTML)*inputValue[i].value   ;
-    });//end plus function
-}
-
-for(let i = 0 ; i < trashBTN.length ; i++) {
-  trashBTN[i].addEventListener("click",function(e){
-    swalDelete(i);
-  });
-}
 
 
 
-for(let i = 0 ; i < minus.length ; i++) {
-    minus[i].addEventListener("click",function(e){
-        let current = --inputValue[i].value;
-        price[i].innerHTML = Number(price[i].innerHTML) / (++current)   ;
-        if(inputValue[i].value == "0") {
-          price[i].innerHTML = Number(price[i].innerHTML)   ;
-            swalDelete(i);
-        }
-    });//end plus function
-}
+
+let subTotal = document.querySelector(".subtotal");
+let DiscountTotal = document.querySelector(".Discount");
+let TotalPrice = document.querySelector(".Total");
+let DeliveryFee = document.querySelector(".fees");
+let subTotalPrice = 0;
 
 
-function swalDelete(index) {
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-          confirmButton: "btn btn-success",
-          cancelButton: "btn btn-danger"
-        },
-        buttonsStyling: false
-      });
-      swalWithBootstrapButtons.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-          });
-          trashBTN[index].parentNode.parentNode.parentNode.remove();
-          minus[index].parentNode.parentNode.parentNode.parentNode.remove();
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire({
-            title: "Cancelled",
-            text: "Your imaginary file is safe :)",
-            icon: "error"
-          });
-          inputValue[index].value ="1";
-        }
-      });
-}
 
+
+// // button Add
+function Adding(index, button) {
+    let inputValue = document.querySelectorAll(".quantity-input");
+    let price = document.querySelectorAll(".price");
+    inputValue[index].value++;
+    price[index].innerHTML = Number(inputValue[index].value) * Number(myProduct[index].price);
+    updateCartQuantity(index, inputValue[index].value);
+    subTotalPrice += Number(myProduct[index].price);
+    updateTotalPrices();
+    localStorage.setItem("cart", JSON.stringify(myProduct));
+  }
+  
+  
+  // button Trash to delete
+  function Deletion(index, button) {
+    let trashBTN = document.querySelectorAll(".trash");
+    let productName = myProduct[index].name;
+    let msg = confirm(`Do you want to delete ${productName}?`);
+    if (msg) {
+      //trashBTN[index].parentNode.parentNode.parentNode.remove();
+      subTotalPrice -= Number(myProduct[index].price);
+      myProduct.splice(index, 1);
+      displayCart();
+      localStorage.setItem("cart", JSON.stringify(myProduct));
+    }
+  }
+  
+  // button Minus to delete
+  function Delete(index, button) {
+    let inputValue = document.querySelectorAll(".quantity-input");
+    let price = document.querySelectorAll(".price");
+  
+    let productName = myProduct[index].name;
+    inputValue[index].value--;
+    price[index].innerHTML = Number(inputValue[index].value) * Number(myProduct[index].price);
+    
+    updateCartQuantity(index, inputValue[index].value);
+    
+    subTotalPrice -= Number(myProduct[index].price);
+    updateTotalPrices();
+    
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
+    
+    if (inputValue[index].value == 0) {
+      let msg = confirm(`Do you want to delete ${productName}?`);
+      if (msg) {
+        //minus[index].parentNode.parentNode.parentNode.parentNode.remove();
+        subTotalPrice -= Number(myProduct[index].price);
+        myProduct.splice(index, 1);
+        displayCart();
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+      else {
+        updateCartQuantity(index, 1);
+        price[index].innerHTML = Number(myProduct[index].price);
+        inputValue[index].value = 1;
+      }
+    }
+  }
+  
+
+  function updateTotalPrices() {
+    const Discount = (20 / 100) * subTotalPrice;
+    const Total = subTotalPrice - Discount - Number(DeliveryFee.innerHTML);
+    subTotal.innerHTML = subTotalPrice;
+    DiscountTotal.innerHTML = Discount;
+    TotalPrice.innerHTML = Total;
+  }
+  
+  function updateCartQuantity(index, newQuantity ) {
+    myProduct[index].quantity = newQuantity;
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  
+  displayCart();
