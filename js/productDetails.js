@@ -113,7 +113,6 @@ function increase() {
                   price: price,
                   quantity: currentQuantity
               };
-      
               // Get existing cart items from local storage
               //the line is checking if there are existing cart items in the local storage.
               // If there are, it parses the JSON and sets cartItems to the parsed array.

@@ -172,22 +172,71 @@ function validation(){
         allInputs[9].style.border = "2px solid green";
     }
 
-    let successPurchase = {
-        userFullName : allInputs[1].value + " " + allInputs[2].value,
-        UserMobile : allInputs[3].value,
-        UserCity : allInputs[4].value,
-        UserAddress : allInputs[5].value,
-        UserState : state.value,
-        product : products[0],
-    };
 
-    arr.push(successPurchase);
-    localStorage.setItem("purchase",JSON.stringify(arr));
+    for (let i = 0; i < myProduct.length; i++) {
+        let userFullName = allInputs[1].value + " " + allInputs[2].value;
+        let UserMobile = allInputs[3].value;
+        let UserCity = allInputs[4].value;
+        let UserAddress = allInputs[5].value;
+        let UserState = state.value;
+    
+        // let successPurchase = {
+        //     "orderId": 1,
+        //     "orderName": myProduct[i].name ,
+        //     "price": myProduct[i].price ,
+        //     "quantity" : myProduct[i].quantity,
+        //     "status": 4,
+        //     "details": `Size = ${myProduct[i].size}, Color = Blue`, 
+        //     "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+        //     "sellerId": "s1", 
+        //     "orderDate": getCurrentDate(),
+        // };
+
+
+        let successPurchase = {
+            "u1": {
+                "1": {
+                    "orderId": 1,
+                    "orderName": myProduct[i].name,
+                    "price": myProduct[i].price,
+                    "quantity": myProduct[i].quantity,
+                    "status": 4,
+                    "details": `Size = ${myProduct[i].size}, Color = Blue`,
+                    "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+                    "sellerId": "s1",
+                    "orderDate": getCurrentDate(),
+                },
+                "2": {
+                    "orderId": 2,
+                    "orderName": myProduct[i].name,
+                    "price": myProduct[i].price,
+                    "quantity": myProduct[i].quantity,
+                    "status": 4,
+                    "details": `Size = ${myProduct[i].size}, Color = Blue`,
+                    "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+                    "sellerId": "s1",
+                    "orderDate": getCurrentDate(),
+                },
+                
+            },
+        };
+        
+        arr.push(successPurchase);
+        localStorage.setItem("purchase", JSON.stringify(arr));
+        
+
     return true;
-
+    }
 }
 
 
+function getCurrentDate() {
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    let day = currentDate.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
 
 
 
