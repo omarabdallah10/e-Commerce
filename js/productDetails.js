@@ -3,7 +3,7 @@ import Products from './database/Products.js';
 
 // Initializing the Products module
 const products = new Products();
-console.log(products);
+
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -12,8 +12,16 @@ const id = urlParams.get('id');
 
 var product =products.getProductById(id);
 console.log(product);
+
+const imgBig=product.thumbnail;
+console.log(product.thumbnail);
+
+
 const imgs = product.images.split(',');
 console.log(imgs[0]);
+
+
+
 let currentQuantity=1;
 
 // var bodyContent = 
@@ -37,7 +45,7 @@ imgBlock+=`<div class="d-flex align-items-center mb-3 side ">
         <div class=" rounded-4 mb-3 d-flex justify-content-center">
             <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="">
               <img id="img0" style="max-width: 100%; max-height: 100vh; margin: auto;"
-               class="rounded-4 fit" src="${imgs[0]}" />
+               class="rounded-4 fit" src="${imgBig}" />
             </a>
           </div>
       </div>`
@@ -63,12 +71,12 @@ const productBlock =` <h1 id="productName" class="title text-dark header">${prod
 </div>
 <div class="mb-3">
   <span class=" price">$</span>
-  <span id="newPrice" class=" price">${product.price}</span>
-  <span class=" oldPrice">$300</span>
+  <span id="newPrice" class=" price">${((product.price * (100 - product.discount)) /100).toFixed(2)}</span>
+  <span class=" oldPrice">$${product.price}</span>
   <span class=" discount" >
-  <span >-</span>
-  <span id="discountVal" >${product.discount}</span>
-  <span >%</span>
+ 
+  <span id="discountVal" >-${product.discount}%</span>
+  
 </span>
 </div>
 
