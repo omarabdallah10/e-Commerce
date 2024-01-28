@@ -9,8 +9,6 @@
     <!-- Import Css FrameWorks -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!-- Import OurStyles -->
-    <!-- Main Style (GeneralRules) -->
-    <link rel="stylesheet" href="css/style.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/fontawesome.css" />
     <!-- Nav & Footer Stye-->
@@ -144,12 +142,12 @@
           <a href="#" class="mx-2 text-decoration-none text-black fs-5">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
-          <a
-            href="#"
-            class="mx-2 fw-bolder text-decoration-none text-black fs-5"
-          >
+          <a  class="mx-2 text-decoration-none text-black fs-5" id="userDropdown">
             <i id="userIcon" class="fa-solid fa-circle-user"></i>
           </a>
+          
+          
+          
         </div>
       </div>
     </nav>
@@ -523,6 +521,12 @@
     </footer>
     <!-- End Footer -->
     <!----------------------------------------------------------------------------------------->
+
+    <!-- Authentication Modal With Dependinces-->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true"></div>
+    <script src="js/auth.js" type="module"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- End Authentication Modal -->
 
     <!-- import Js FrameWorks -->
     <script src="js/jquery.js"></script>
