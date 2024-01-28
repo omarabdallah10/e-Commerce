@@ -10,7 +10,7 @@
     "stock": 75,
     "category": "shirts",
     "thumbnail": "images/product4.png",
-    "images": "img/2/1.png,img/2/2.png,img/2/3.png,img/2/4.png",
+    "images": "images/product4.png,images/product4.png,images/product4.png,images/product4.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-01"
   },
@@ -25,7 +25,7 @@
     "stock": 60,
     "category": "shorts",
     "thumbnail": "images/product11.png",
-    "images": "img/3/1.png,img/3/2.png,img/3/3.png,img/3/4.png",
+    "images": "images/product11.png,images/product11.png,images/product11.png,images/product11.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-02"
   },
@@ -40,7 +40,7 @@
     "stock": 50,
     "category": "hoodies",
     "thumbnail": "images/product21.png",
-    "images": "img/4/1.png,img/4/2.png,img/4/3.png,img/4/4.png",
+    "images": "images/product21.png,images/product21.png,images/product21.png,images/product21.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-03"
   },
@@ -55,7 +55,7 @@
     "stock": 70,
     "category": "pants",
     "thumbnail": "images/product31.png",
-    "images": "img/5/1.png,img/5/2.png,img/5/3.png,img/5/4.png",
+    "images": "images/product31.png,images/product31.png,images/product31.png,images/product31.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-04"
   },
