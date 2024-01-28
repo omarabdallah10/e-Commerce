@@ -107,6 +107,7 @@ function increase() {
       
               // Create an object to represent the product
               const product = {
+                  id : 1,
                   name: name,
                   size: selectedSize,
                   price: price,
