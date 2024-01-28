@@ -28,6 +28,7 @@ var authModalComponent = `
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
                                 <form class="form p-3" id="signin_form">
+
                                     <div class="mb-3">
                                         <!-- Email -->
                                         <label for="email" class="form-label">Email</label>
@@ -63,6 +64,14 @@ var authModalComponent = `
                         <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
                                 <!-- Sign Up Form Content -->
                                 <form class="form p-3" id="signup_form">
+                                <!-- Full Name -->
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" id="fullName" placeholder="Enter your Full Name" required>
+                                    </div>
+                                </div>
                                     <!-- Email -->
                                     <div class="mb-3">
                                         <label for="signupEmail" class="form-label">Email</label>
@@ -134,6 +143,7 @@ $(function () {
     $("#signup_form").submit(function (event) {
       event.preventDefault();
       const UsersControl = new UsersManagement();
+      var full_name= document.getElementById("fullName").value;
       var userMail = document.getElementById("signupEmail").value;
       var userPassword = document.getElementById("signupPassword").value;
       var userConfirmPassword = document.getElementById(
@@ -142,7 +152,7 @@ $(function () {
       var userId = UsersControl.generateId();
       if (userPassword === userConfirmPassword) {
         try {
-          UsersControl.addUser(userMail, userPassword, userId, "Customer");
+          UsersControl.addUser(userMail, userPassword, userId, "Customer",full_name,2);
           $("#signup_feedback")
             .text("")
             .text("Successfully Registered!")
@@ -155,6 +165,8 @@ $(function () {
                 email: userMail,
                 id: userId,
                 role: "Customer",
+                full_name:full_name,
+                status: 2,
               })
             );
             window.location.replace("./Homepage.html");
@@ -194,6 +206,8 @@ $(function () {
             email: user.email,
             id: user.id,
             role: user.role,
+            full_name:user.full_name,
+            status: user.status,
           })
         );
 

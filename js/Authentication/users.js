@@ -21,6 +21,8 @@ class UsersManagement {
    * @param {string} password - The password of the user.
    * @param {number} id - The ID of the user.
    * @param {string} role - The account type of the user.
+   * @param {string} full_name - The full name of the user.
+   * @param {string} status - The status of the user.
    * @returns {User} The added user.
    * @throws {Error} If the user already exists.
    */
@@ -31,13 +33,13 @@ class UsersManagement {
     }
     return id;
   }
-  addUser(email, password, id, role) {
+  addUser(email, password, id, role, full_name, status) {
     const existingUser = this.users.find((user) => user.email === email);
     if (existingUser) {
       throw new Error("User already exists");
     }
     
-    const user = new User(email, password, id, role);
+    const user = new User(email, password, id, role, full_name, status);
     this.users.push(user);
     this.storeUsers();
     return user;
@@ -56,7 +58,7 @@ class UsersManagement {
   retrieveUsers() {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
     this.users = storedUsers.map(
-      (user) => new User(user.email, user.password, user.id, user.role)
+      (user) => new User(user.email, user.password, user.id, user.role, user.full_name, user.status)
     );
   }
 
@@ -71,6 +73,8 @@ class UsersManagement {
         console.log(`Password: ${user.password}`);
         console.log(`ID: ${user.id}`);
         console.log(`Account Type: ${user.role}`);
+        console.log(`Full Name: ${user.full_name}`);
+        console.log(`Status: ${user.status}`);
         console.log("----------------------");
       });
     } else {

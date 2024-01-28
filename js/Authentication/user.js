@@ -8,6 +8,9 @@ class User {
     #password;
     #id;
     #role;
+    #full_name;
+    #status; 
+
     /**
      * Creates a new User instance.
      * @constructor
@@ -15,12 +18,16 @@ class User {
      * @param {string} password - The user's password.
      * @param {number} id - The user's ID.
      * @param {string} role - The user's role.
+     * @param {string} full_name - The user's full name.
+     * @param {string} status - The user's status.
      */
-    constructor(email, password, id, role) {
+    constructor(email, password, id, role, full_name, status) {
       this.email = email;
       this.password = password;
       this.id = id;
       this.role = role;
+      this.full_name = full_name;
+      this.status = status;
     }
   
     /**
@@ -75,6 +82,22 @@ class User {
     }
   
     /**
+     * Sets the user's full name.
+     * @param {string} full_name - The user's full name.
+     */
+    set full_name(full_name) {
+      this.#full_name = full_name;
+    }
+  
+    /**
+     * Sets the user's status.
+     * @param {string} status - The user's status.
+     */
+    set status(status) {
+      this.#status = status;
+    }
+  
+    /**
      * Gets the user's email address.
      * @returns {string} The user's email address.
      */
@@ -107,6 +130,22 @@ class User {
     }
   
     /**
+     * Gets the user's full name.
+     * @returns {string} The user's full name.
+     */
+    get full_name() {
+      return this.#full_name;
+    }
+  
+    /**
+     * Gets the user's status.
+     * @returns {string} The user's status.
+     */
+    get status() {
+      return this.#status;
+    }
+  
+    /**
      * Converts the User object to JSON format.
      * @returns {Object} The User object in JSON format.
      */
@@ -116,6 +155,8 @@ class User {
         password: this.#password,
         id: this.#id,
         role: this.#role,
+        full_name: this.#full_name,
+        status: this.#status,
       };
     }
   }
