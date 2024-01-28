@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Your Page Title</title>
+    <title>Document</title>
+    
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/productDetails.css">
+    <link rel="stylesheet" href="css/navfooter.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+
+  
+    
+</head>
+
+
+<body>
+    <div class="">
+        <nav class="main-nav container pt-3">
+            <div class="d-flex align-items-center">
+              <div class="d-flex h-100 align-items-center">
+                <!-- Bars for small screens-->
+                <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="#" class="text-decoration-none text-black fw-bold fs-3">
+                  SHOP.CO
+                </a>
+                <!--Mobile Menu-->
+                <div class="mobileMenu position-absolute w-100 d-none">
+                  <div
+                    class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
+                  >
+                    <div class="w-100 d-flex align-items-center">
+                      <div class="flex-grow-1">Menu</div>
+                      <div>
+                        <button class="btn fw-bold close-menu">
+                          <i class="bi bi-x-lg text-white fs-4"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <hr />
+                    <ul class="p-0">
+                      <li class="mx-2 my-2">
+                        <a class="text-decoration-none text-black" href="#">Shop</a>
+                      </li>
+                      <li class="mx-2 my-2">
+                        <a class="text-decoration-none text-black" href="#"
+                          >On Sale</a
+                        >
+                      </li>
+                      <li class="mx-2 my-2">
+                        <a class="text-decoration-none text-black" href="#"
+                          >New Arrivals</a
+                        >
+                      </li>
+                      <li class="mx-2 my-2">
+                        <a class="text-decoration-none text-black shop-link" href="#">
+                          About us
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!--End Mobile Menu-->
+              </div>
+      
+              <!--V.2 Nav Links-->
+              <div
+                class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center"
+              >
+                <ul class="header-menu-list">
+                  <li class="mx-2">
+                    <a
+                      id="shopLink"
+                      class="text-decoration-none text-black main-menu-link position-relative"
+                      href="#"
+                      >Shop</a
+                    >
+                  </li>
+                  <li class="mx-2">
+                    <a
+                      id="onSaleLink"
+                      class="text-decoration-none text-black main-menu-link position-relative"
+                      href="#"
+                      >On Sale</a
+                    >
+                  </li>
+                  <li class="mx-2">
+                    <a
+                      id="newArrivalsLink"
+                      class="text-decoration-none text-black main-menu-link position-relative"
+                      href="#"
+                      >New Arrivals</a
+                    >
+                  </li>
+                  <li class="mx-2">
+                    <a
+                      id="brandsLink"
+                      class="text-decoration-none text-black main-menu-link position-relative shop-link"
+                      href="#"
+                    >
+                      About us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <!--Search-->
+              <div class="mx-auto col-md-4">
+                <form class="d-flex">
+                  <button class="btn" type="submit">
+                    <i class="fa-solid fa-search"></i>
+                  </button>
+                  <input
+                    id="searchInput"
+                    class="form-control"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </form>
+              </div>
+      
+              <div class="d-flex">
+                <a href="#" class="mx-2 text-decoration-none text-black fs-5">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a  class="mx-2 text-decoration-none text-black fs-5" id="userDropdown">
+                  <i id="userIcon" class="fa-solid fa-circle-user"></i>
+                </a>
+                
+                
+                
+              </div>
+            </div>
+          </nav>
+        <div class="container py-4">
+        
+          <!-- Breadcrumb -->
+          <nav class="d-flex">
+            <h6 class="mb-0">
+              <a href="/index.html" class="text-black-50">Home</a>
+              <span class="text-black-50 mx-2"> > </span>
+              <a href="" class="text-black-50">Shop</a>
+              <span class="text-black-50 mx-2"> > </span>
+              <a href="" class="text-black-50">Men</a>
+              <span class="text-black-50 mx-2"> > </span>
+              <a href="" class="text-black">T-shirts</a>
+            </h6>
+          </nav>
+          <!-- Breadcrumb -->
+        </div>
+        </div>
+        <!-- Heading -->
+        <section class="py-5">
+        <div class="container">
+          <div class="row gx-5 ">
+            <aside class="col-lg-6">
+
+                 <div id="imgsContainer" class="imgsContainer">
+
+
+                 </div>
+                
+             
+              
+              <!-- thumbs-wrap.// -->
+              <!-- gallery-wrap .end// -->
+              </aside>
+              <!-- end of product photos -->
+              <main class="col-lg-6">
+                
+                <div class="ps-lg-3" >
+                 <div id="product-details">
+                 
+               </div>
+                <div>
+                 <div class="lable">Choose Size</div>
+                 <div id="size" class="opContainer">
+                 <button id="small" class="option">Small</button>
+                 <button id="medium" class="option">Medium</button>
+                 <button id="large" class="option">Large</button>
+                 <button id="xlarge" class="option">X-Large</button>
+                </div>
+                <hr/>
+                <div class="qContainer">
+                <div class="quantityContainer">
+                    <button class="operator minus" onclick=>-</button>
+                    
+                     <span id="quantityDisplay" class="numbers">1</span>
+        
+                    <button  class="operator plus" onclick="increaseQuantity()" >+</button>
+                </div>
+                <button id="addToCartBtn" class="btnCart" >Add to Cart</button>
+            </div>
+                 </div>
+        </div>
+              </main>
+        <!-- end of container & row -->
+              </div>
+        </div>
+              </section>
+              <hr/>
+
+              <section id="review">
+                <div class="reiew-heading">
+                  <!-- <span>comment</span> -->
+                  <h1><b> Reviews </b></h1>
+        
+                </div>
+        
+                <!-- box container -->
+                <div class="box-container">
+                  <div class="box">
+                    <div class="box-top">
+                      <div>
+                        
+                        <div class="user-name">
+                          <strong>Samantha D.</strong>
+                          
+                        </div>
+        
+                      </div>
+                      <!-- rivews -->
+                      <div class="reviews">
+                        <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <!-- <i class="far fa-star"></i> -->
+        
+                      </div>
+        
+                    </div>
+                    <div class="comment">
+                  <p>"I absolutely love this t-shirt! 
+                    The design is unique and the fabric 
+                    feels so comfortable. As a fellow 
+                    
+                    designer, I appreciate the attention
+                     to detail. It's become my favorite 
+                     go-to shirt."</p>            
+                          </div>
+                          <div class="comment">
+                            <p>Posted on August 14, 2023</p>
+        
+                          </div>
+                  </div>
+                
+                <!-- ---------------review----------------- -->
+                <div class="box">
+                  <div class="box-top">
+                    <div>
+                     
+                      <div class="user-name">
+                        <strong>Alex M.</strong>
+                        
+                      </div>
+        
+                    </div>
+                    <!-- rivews -->
+                    <div class="reviews">
+                      <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <!-- <i class="far fa-star"></i> -->
+        
+                    </div>
+        
+                  </div>
+                  <div class="comment">
+                
+                    <p>"The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me."</p>
+                </div>
+                <div class="comment">
+                  <p>Posted on August 14, 2023</p>
+        
+                </div>
+                </div>
+        
+        <!-- ---------------review----------------- -->
+        <div class="box">
+        <div class="box-top">
+        <div>
+        
+        <div class="user-name">
+        <strong>Ethan R.</strong>
+        
+        </div>
+        
+        </div>
+        <!-- rivews -->
+        <div class="reviews">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <!-- <i class="far fa-star"></i> -->
+        
+        </div>
+        
+        </div>
+        <div class="comment">
+        <p>"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."</p>
+        </div>
+        <div class="comment">
+        <p>Posted on August 15, 2023</p>
+        
+        </div>
+        </div>
+        <!-- ---------------review----------------- -->
+        <div class="box">
+        <div class="box-top">
+          <div>
+            
+            <div class="user-name">
+              <strong>Olivia P.</strong>
+              
+            </div>
+        
+          </div>
+          <!-- rivews -->
+          <div class="reviews">
+            <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <!-- <i class="far fa-star"></i> -->
+        
+          </div>
+        
+        </div>
+        <div class="comment">
+          <p>"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."</p>
+        </div>
+        
+        <div class="comment">
+        <p>Posted on August 17, 2023</p>
+        
+        </div>
+        </div>
+        
+        <!-- ---------------review----------------- -->
+        <div class="box">
+        <div class="box-top">
+          <div>
+           
+            <div class="user-name">
+              <strong>Liam K.</strong>
+              
+            </div>
+        
+          </div>
+          <!-- rivews -->
+          <div class="reviews">
+            <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <!-- <i class="far fa-star"></i> -->
+        
+          </div>
+        
+        </div>
+        <div class="comment">
+          <p>"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."</p>
+        </div>
+        <div class="comment">
+        <p>Posted on August 18, 2023</p>
+        
+        </div>
+        </div>
+        <!-- ---------------review----------------- -->
+        <div class="box">
+        <div class="box-top">
+        <div>
+        
+        <div class="user-name">
+        <strong>Ava H.</strong>
+        
+        </div>
+        
+        </div>
+        <!-- rivews -->
+        <div class="reviews">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <!-- <i class="far fa-star"></i> -->
+        
+        </div>
+        
+        </div>
+        <div class="comment">
+        <p>"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."</p>
+        </div>
+        <div class="comment">
+        <p>Posted on August 19, 2023</p>
+        
+        </div>
+        </div>
+        
+              </div>
+        
+              </section> 
+
+
+
+              <footer class="py-5 text-center text-lg-start">
+                <div class="container position-relative">
+                  <div class="row">
+                    <div class="my-2 col-12 col-lg-4">
+                      <a
+                        href="#"
+                        class="text-black fw-bold text-decoration-none fs-3 d-block mb-3"
+                        >SHOP.CO</a
+                      >
+                      <p class="text-secondary fw-normal mb-3">
+                        We have clothes that will give you a new style and you will be
+                        proud of yourself and your purchase. From women to men.
+                      </p>
+                      <div
+                        class="social d-flex mt-5 mb-sm-5 justify-content-center justify-content-lg-start"
+                      >
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="social-icon mx-2 text-decoration-none text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
+                        >
+                          <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                          ><i class="fa-brands fa-facebook-f"></i
+                        ></a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                          ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="mx-2 social-icon d-flex text-decoration-none text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                          ><i class="fa-brands fa-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                    <div class="footer-links my-2 col-6 col-lg-2">
+                      <h1 class="fs-3 mb-4 fw-normal">Company</h1>
+                      <ul class="list-unstyled p-0 fw-light">
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#"
+                            >About
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#"
+                            >Feature
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#"
+                            >Works</a
+                          >
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#"
+                            >Career</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="footer-links my-2 col-6 col-lg-2">
+                      <h1 class="fs-3 mb-4 fw-normal">Help</h1>
+                      <ul class="list-unstyled p-0 fw-light">
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Customer Support
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Delivery Details
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Terms & Conditions
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Privacy Policy
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="footer-links my-2 col-6 col-lg-2">
+                      <h1 class="fs-3 mb-4 fw-normal">FAQ</h1>
+                      <ul class="list-unstyled p-0 fw-light">
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Account
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Manage Deliveries
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Orders
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Payments
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="footer-links my-2 col-6 col-lg-2">
+                      <h1 class="fs-3 mb-4 fw-normal">Resources</h1>
+                      <ul class="list-unstyled p-0 fw-light">
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Free eBooks
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Development Tutorial
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            How to Blog
+                          </a>
+                        </li>
+                        <li class="my-2">
+                          <a class="text-secondary text-decoration-none" href="#">
+                            Youtube Playlist
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+          
+                    <hr class="mb-3" />
+          
+                    <div
+                      class="mx-3 d-flex flex-column flex-lg-row justify-content-between align-items-center text-secondary"
+                    >
+                      <div class="fw-light">
+                        SHOP.CO &copy; 2020-2024, All Rights Reserved
+                      </div>
+                      <div class="d-flex my-2 my-lg-0">
+                        <img src="images/visa.png" alt="visa" />
+                        <img src="images/mastercard.png" alt="visa" />
+                        <img src="images/paybal.png" alt="visa" />
+                        <img src="images/applepay.png" alt="visa" />
+                        <img src="images/googlepay.png" alt="visa" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+              <!-- End Footer -->
+
+              <script src="js/productDetails.js"  type="module"></script>
+              <script src="js/database/Products.js" type="module"></script>
+
+</body>
+</html>
