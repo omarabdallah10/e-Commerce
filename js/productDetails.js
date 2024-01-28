@@ -146,6 +146,7 @@ function updateQuantityDisplay() {
               // Create an object to represent the product
               const choosenProduct = {
                  id:id,
+                 product:product,
                   name: product.productName,
                   size: selectedSize,
                   price: priceAfterDiscount,
