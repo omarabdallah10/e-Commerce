@@ -10,7 +10,7 @@
     "stock": 75,
     "category": "shirts",
     "thumbnail": "images/product4.png",
-    "images": "img/2/1.png,img/2/2.png,img/2/3.png,img/2/4.png",
+    "images": "images/product4.png,images/product4.png,images/product4.png,images/product4.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-01"
   },
@@ -25,7 +25,7 @@
     "stock": 60,
     "category": "shorts",
     "thumbnail": "images/product11.png",
-    "images": "img/3/1.png,img/3/2.png,img/3/3.png,img/3/4.png",
+    "images": "images/product11.png,images/product11.png,images/product11.png,images/product11.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-02"
   },
@@ -40,7 +40,7 @@
     "stock": 50,
     "category": "hoodies",
     "thumbnail": "images/product21.png",
-    "images": "img/4/1.png,img/4/2.png,img/4/3.png,img/4/4.png",
+    "images": "images/product21.png,images/product21.png,images/product21.png,images/product21.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-03"
   },
@@ -55,7 +55,7 @@
     "stock": 70,
     "category": "pants",
     "thumbnail": "images/product31.png",
-    "images": "img/5/1.png,img/5/2.png,img/5/3.png,img/5/4.png",
+    "images": "images/product31.png,images/product31.png,images/product31.png,images/product31.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-04"
   },
@@ -70,7 +70,7 @@
     "stock": 80,
     "category": "shirts",
     "thumbnail": "images/product6.png",
-    "images": "img/6/1.png,img/6/2.png,img/6/3.png,img/6/4.png",
+    "images": "images/product6.png,images/product6.png,images/product6.png,images/product6.png",
     "sellerId": "s3",
     "dateAdded": "2024-01-21"
   },
@@ -85,13 +85,13 @@
     "stock": 65,
     "category": "pants",
     "thumbnail": "images/product32.png",
-    "images": "img/7/1.png,img/7/2.png,img/7/3.png,img/7/4.png",
+    "images": "images/product32.png,images/product32.png,images/product32.png,images/product32.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-06"
   },
   "pid8": {
     "productId": "pid8",
-    "productName": "Striped Polo Shirt",
+    "productName": "Polo Shirt",
     "price": 29.99,
     "details": "Look effortlessly stylish with our striped polo shirt. The classic design and comfortable fit make it a versatile addition to your wardrobe.",
     "rating": 4.2,
@@ -100,13 +100,13 @@
     "stock": 70,
     "category": "shirts",
     "thumbnail": "images/product9.png",
-    "images": "img/8/1.png,img/8/2.png,img/8/3.png,img/8/4.png",
+    "images": "images/product9.png,images/product9.png,images/product9.png,images/product9.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-07"
   },
   "pid9": {
     "productId": "pid9",
-    "productName": "Classic Denim Jacket",
+    "productName": "Classic Hoodie",
     "price": 49.99,
     "details": "Elevate your style with our classic denim jacket. Perfect for layering or wearing on its own, this jacket adds a timeless touch to any outfit.",
     "rating": 4.7,
@@ -115,7 +115,7 @@
     "stock": 60,
     "category": "hoodies",
     "thumbnail": "images/product22.png",
-    "images": "img/9/1.png,img/9/2.png,img/9/3.png,img/9/4.png",
+    "images": "images/product22.png,images/product22.png,images/product22.png,images/product22.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-08"
   },
@@ -130,13 +130,13 @@
     "stock": 75,
     "category": "shorts",
     "thumbnail": "images/product13.png",
-    "images": "img/10/1.png,img/10/2.png,img/10/3.png,img/10/4.png",
+    "images": "images/product13.png,images/product13.png,images/product13.png,images/product13.png",
     "sellerId": "s1",
     "dateAdded": "2024-01-22"
   },
   "pid11": {
     "productId": "pid11",
-    "productName": "Casual Denim Shorts",
+    "productName": "Casual Shorts",
     "price": 529.99,
     "details": "Stay cool and stylish with our casual denim shorts. Ideal for a casual day out or lounging at home, these shorts offer both comfort and fashion.",
     "rating": 4.5,
@@ -145,13 +145,13 @@
     "stock": 60,
     "category": "shorts",
     "thumbnail": "images/product12.png",
-    "images": "img/11/1.png,img/11/2.png,img/11/3.png,img/11/4.png",
+    "images": "images/product12.png,images/product12.png,images/product12.png,images/product12.pn",
     "sellerId": "s2",
     "dateAdded": "2022-09-10"
   },
   "pid12": {
     "productId": "pid12",
-    "productName": "Levi's Denim Pants",
+    "productName": "Levi's Pants",
     "price": 700.59,
     "details": "Stay cool and stylish with our casual denim shorts. Ideal for a casual day out or lounging at home, these shorts offer both comfort and fashion.",
     "rating": 4.5,
@@ -160,7 +160,7 @@
     "stock": 60,
     "category": "pants",
     "thumbnail": "images/product33.png",
-    "images": "img/12/1.png,img/12/2.png,img/12/3.png,img/12/4.png",
+    "images": "mages/product33.png,images/product33.png,images/product33.png,images/product33.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-11"
   },
@@ -175,9 +175,9 @@
     "stock": 50,
     "category": "shirts",
     "thumbnail": "images/product10.png",
-    "images": "img/13/1.png,img/13/2.png,img/13/3.png,img/13/4.png",
+    "images": "images/product10.png,images/product10.png,images/product10.png,images/product10.png",
     "sellerId": "s1",
-    "dateAdded": "2022-09-12"
+    "dateAdded": "2023-09-12"
   },
   "pid14": {
     "productId": "pid14",
@@ -190,7 +190,7 @@
     "stock": 40,
     "category": "hoodies",
     "thumbnail": "images/product24.png",
-    "images": "img/14/1.png,img/14/2.png,img/14/3.png,img/14/4.png",
+    "images": "images/product24.png,images/product24.png,images/product24.png,images/product24.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-13"
   },
@@ -205,7 +205,7 @@
     "stock": 55,
     "category": "shorts",
     "thumbnail": "images/product13.png",
-    "images": "img/15/1.png,img/15/2.png,img/15/3.png,img/15/4.png",
+    "images": "images/product13.png,images/product13.png,images/product13.png,images/product13.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-14"
   },
@@ -220,7 +220,7 @@
     "stock": 45,
     "category": "shirts",
     "thumbnail": "images/product7.png",
-    "images": "img/16/1.png,img/16/2.png,img/16/3.png,img/16/4.png",
+    "images": "images/product7.png,images/product7.png,images/product7.png,images/product7.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-15"
   },
@@ -235,7 +235,7 @@
     "stock": 30,
     "category": "pants",
     "thumbnail": "images/product34.png",
-    "images": "img/17/1.png,img/17/2.png,img/17/3.png,img/17/4.png",
+    "images": "images/product34.png,images/product34.png,images/product34.png,images/product34.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-16"
   },
@@ -250,7 +250,7 @@
     "stock": 50,
     "category": "shirts",
     "thumbnail": "images/product4.png",
-    "images": "img/18/1.png,img/18/2.png,img/18/3.png,img/18/4.png",
+    "images": "images/product4.png,images/product4.png,images/product4.png,images/product4.png",
     "sellerId": "s3",
     "dateAdded": "2024-01-17"
   },
@@ -265,7 +265,7 @@
     "stock": 65,
     "category": "shorts",
     "thumbnail": "images/product12.png",
-    "images": "img/19/1.png,img/19/2.png,img/19/3.png,img/19/4.png",
+    "images": "images/product12.png,images/product12.png,images/product12.png,images/product12.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-18"
   },
@@ -280,7 +280,7 @@
     "stock": 40,
     "category": "pants",
     "thumbnail": "images/product31.png",
-    "images": "img/20/1.png,img/20/2.png,img/20/3.png,img/20/4.png",
+    "images": "images/product31.png,images/product31.png,images/product31.png,images/product31.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-19"
   },
@@ -295,7 +295,7 @@
     "stock": 55,
     "category": "hoodies",
     "thumbnail": "images/product25.png",
-    "images": "img/21/1.png,img/21/2.png,img/21/3.png,img/21/4.png",
+    "images": "images/product25.png,images/product25.png,images/product25.png,images/product25.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-20"
   },
@@ -310,7 +310,7 @@
     "stock": 35,
     "category": "hoodies",
     "thumbnail": "images/product24.png",
-    "images": "img/22/1.png,img/22/2.png,img/22/3.png,img/22/4.png",
+    "images": "images/product24.png,images/product24.png,images/product24.png,images/product24.png",
     "sellerId": "s1",
     "dateAdded": "2024-01-21"
   },
@@ -325,7 +325,7 @@
     "stock": 40,
     "category": "hoodies",
     "thumbnail": "images/product22.png",
-    "images": "img/23/1.png,img/23/2.png,img/23/3.png,img/23/4.png",
+    "images": "images/product22.png,images/product22.png,images/product22.png,images/product22.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-22"
   },
@@ -340,7 +340,7 @@
     "stock": 50,
     "category": "shirts",
     "thumbnail": "images/product5.png",
-    "images": "img/24/1.png,img/24/2.png,img/24/3.png,img/24/4.png",
+    "images": "images/product5.png,images/product5.png,images/product5.png,images/product5.png",
     "sellerId": "s3",
     "dateAdded": "2024-01-23"
   },
@@ -355,13 +355,13 @@
     "stock": 60,
     "category": "shorts",
     "thumbnail": "images/product14.png",
-    "images": "img/25/1.png,img/25/2.png,img/25/3.png,img/25/4.png",
+    "images": "images/product14.png,images/product14.png,images/product14.png,images/product14.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-24"
   },
   "pid26": {
     "productId": "pid26",
-    "productName": "Levi's Denim Hoodie",
+    "productName": "Levi's Hoodie",
     "price": 1900.99,
     "details": "Protect your eyes in style with our sunglasses. Featuring a trendy design, these sunglasses are a must-have accessory for sunny days.",
     "rating": 4.3,
@@ -370,7 +370,7 @@
     "stock": 35,
     "category": "hoodies",
     "thumbnail": "images/product23.png",
-    "images": "img/26/1.png,img/26/2.png,img/26/3.png,img/26/4.png",
+    "images": "images/product23.png,images/product23.png,images/product23.png,images/product23.png",
     "sellerId": "s2",
     "dateAdded": "2022-09-25"
   },
@@ -385,7 +385,7 @@
     "stock": 45,
     "category": "hoodies",
     "thumbnail": "images/product21.png",
-    "images": "img/27/1.png,img/27/2.png,img/27/3.png,img/27/4.png",
+    "images": "images/product21.png,images/product21.png,images/product21.png,images/product21.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-26"
   },
@@ -400,7 +400,7 @@
     "stock": 30,
     "category": "hoodies",
     "thumbnail": "images/product25.png",
-    "images": "img/28/1.png,img/28/2.png,img/28/3.png,img/28/4.png",
+    "images": "images/product25.png,images/product25.png,images/product25.png,images/product25.png",
     "sellerId": "s1",
     "dateAdded": "2024-01-15"
   },
@@ -415,13 +415,13 @@
     "stock": 40,
     "category": "pants",
     "thumbnail": "images/product33.png",
-    "images": "img/29/1.png,img/29/2.png,img/29/3.png,img/29/4.png",
+    "images": "images/product33.png,images/product33.png,images/product33.png,images/product33.png",
     "sellerId": "s2",
     "dateAdded": "2024-01-25"
   },
   "pid30": {
     "productId": "pid30",
-    "productName": "Striped Polo Shirt",
+    "productName": "Polo Shirt",
     "price": 340.99,
     "details": "Stay stylish and comfortable with our striped polo shirt. Made from soft and breathable fabric, this shirt is perfect for both casual and dressy occasions.",
     "rating": 3.4,
@@ -430,7 +430,7 @@
     "stock": 9,
     "category": "shirts",
     "thumbnail": "images/product2.png",
-    "images": "img/30/1.png,img/30/2.png,img/30/3.png,img/30/4.png",
+    "images": "images/product2.png,images/product2.png,images/product2.png,images/product2.png",
     "sellerId": "s3",
     "dateAdded": "2022-09-29"
   },
@@ -445,7 +445,7 @@
     "stock": 60,
     "category": "shorts",
     "thumbnail": "images/product13.png",
-    "images": "img/31/1.png,img/31/2.png,img/31/3.png,img/31/4.png",
+    "images": "images/product13.png,images/product13.png,images/product13.png,images/product13.png",
     "sellerId": "s1",
     "dateAdded": "2022-09-30"
   },
@@ -460,13 +460,13 @@
     "stock": 7,
     "category": "pants",
     "thumbnail": "images/product25.png",
-    "images": "img/32/1.png,img/32/2.png,img/32/3.png,img/32/4.png",
+    "images": "images/product25.png,images/product25.png,images/product25.png,images/product25.png",
     "sellerId": "s2",
     "dateAdded": "2024-01-01"
   },
   "pid33": {
     "productId": "pid33",
-    "productName": "Printed Levi's Shirt",
+    "productName": "Printed Shirt",
     "price": 49.99,
     "details": "Make a statement with our printed maxi dress. Featuring a vibrant design, this dress is perfect for special occasions or a beach getaway.",
     "rating": 4.8,
@@ -475,7 +475,7 @@
     "stock": 45,
     "category": "shirts",
     "thumbnail": "images/product3.png",
-    "images": "img/33/1.png,img/33/2.png,img/33/3.png,img/33/4.png",
+    "images": "images/product3.png,images/product3.png,images/product3.png,images/product3.png",
     "sellerId": "s3",
     "dateAdded": "2022-10-02"
   },
@@ -490,7 +490,7 @@
     "stock": 5,
     "category": "shirts",
     "thumbnail": "images/product9.png",
-    "images": "img/34/1.png,img/34/2.png,img/34/3.png,img/34/4.png",
+    "images": "images/product9.png,images/product9.png,images/product9.png,images/product9.png",
     "sellerId": "s1",
     "dateAdded": "2024-01-03"
   },
@@ -505,7 +505,7 @@
     "stock": 40,
     "category": "hoodies",
     "thumbnail": "images/product32.png",
-    "images": "img/35/1.png,img/35/2.png,img/35/3.png,img/35/4.png",
+    "images": "images/product32.png,images/product32.png,images/product32.png,images/product32.png",
     "sellerId": "s2",
     "dateAdded": "2022-10-04"
   },
@@ -520,7 +520,7 @@
     "stock": 50,
     "category": "shorts",
     "thumbnail": "images/product15.png",
-    "images": "img/36/1.png,img/36/2.png,img/36/3.png,img/36/4.png",
+    "images": "images/product15.png,images/product15.png,images/product15.png,images/product15.png",
     "sellerId": "s3",
     "dateAdded": "2024-01-05"
   },
@@ -535,7 +535,7 @@
     "stock": 3,
     "category": "pants",
     "thumbnail": "images/product31.png",
-    "images": "img/37/1.png,img/37/2.png,img/37/3.png,img/37/4.png",
+    "images": "images/product31.png,images/product31.png,images/product31.png,images/product31.png",
     "sellerId": "s1",
     "dateAdded": "2022-10-06"
   },
@@ -550,7 +550,7 @@
     "stock": 35,
     "category": "shirts",
     "thumbnail": "images/product6.png",
-    "images": "img/38/1.png,img/38/2.png,img/38/3.png,img/38/4.png",
+    "images": "images/product6.png,images/product6.png,images/product6.png,images/product6.png",
     "sellerId": "s2",
     "dateAdded": "2022-10-07"
   },
@@ -565,13 +565,13 @@
     "stock": 45,
     "category": "shirts",
     "thumbnail": "images/product3.png",
-    "images": "img/39/1.png,img/39/2.png,img/39/3.png,img/39/4.png",
+    "images": "images/product3.png,images/product3.png,images/product3.png,images/product3.png",
     "sellerId": "s3",
     "dateAdded": "2024-01-08"
   },
   "pid40": {
     "productId": "pid40",
-    "productName": "Printed Polo Shirt",
+    "productName": "Gold Polo Shirt",
     "price": 29.99,
     "details": "Stay comfortable and stylish during your workouts with our printed leggings. Made from stretchy and breathable fabric, these leggings are perfect for any exercise.",
     "rating": 3.5,
@@ -580,7 +580,7 @@
     "stock": 10,
     "category": "shirts",
     "thumbnail": "images/product7.png",
-    "images": "img/40/1.png,img/40/2.png,img/40/3.png,img/40/4.png",
+    "images": "images/product7.png,images/product7.png,images/product7.png,images/product7.png",
     "sellerId": "s1",
     "dateAdded": "2024-01-09"
   }
