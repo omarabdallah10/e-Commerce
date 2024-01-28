@@ -15,6 +15,16 @@ class AuthModule {
             throw new Error('Not authorized');
         }
     }
+    static isAdmin(){
+        if(AuthModule.activeUser.role != 'Admin'){
+            const container = document.createElement('div');
+            container.innerHTML = this.get404HTML();
+            // Replace the body content with the container
+            document.body.innerHTML = '';
+            document.body.appendChild(container);
+            throw new Error('Not authorized');       
+        }    
+    }
 
     static get404HTML() {
         return `
