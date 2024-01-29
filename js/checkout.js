@@ -24,12 +24,21 @@ let allInputs = document.querySelectorAll("input");
 let errorDIV = document.querySelector(".error");
 let arr =[];
 
-
+let products = [] ;
 
 if(localStorage.getItem("cart")!=null) {
     var myProduct = JSON.parse(localStorage.getItem("cart"));
-    console.log(myProduct);
+    products.push(myProduct);
 }
+console.log(products);
+
+if(localStorage.getItem("purchase")!=null) {
+    arr = JSON.parse(localStorage.getItem("purchase"));
+    console.log(arr);
+}
+
+
+
 function displayCart() {
     document.querySelector(".one").innerHTML = ``;
     let hamada = ``;
@@ -39,7 +48,7 @@ function displayCart() {
         subTotalPrice += itemTotal;
         hamada = `
         <div class="product">
-        <img src="../images/electronic-store-product-image-36-400x400.jpg" alt="">
+        <img src="images/electronic-store-product-image-36-400x400.jpg" alt="">
         <div class="info">
             <div class="text">
                 <h2>${myProduct[i].name}</h2>
@@ -102,7 +111,7 @@ purchaseBTN.addEventListener("click" , function(e){
 });
 
 function validation(){
-    for(let i = 0 ; i< allInputs.length ;i++) {
+    for(let i = 1 ; i<= 9 ;i++) {
         if(allInputs[i].value == "" || allInputs[i].value == null){
             errorDIV.innerHTML = "You should fill all required inputs";
             allInputs[i].style.border = "2px solid red"; 
@@ -113,17 +122,7 @@ function validation(){
         }
     }
     //first Name validation
-    if(!regexFirstName.test(allInputs[0].value)){
-        
-        allInputs[0].style.border = "2px solid red"; 
-        return false;
-    }
-    else {
-        allInputs[0].style.border = "2px solid green"; 
-    }
-
-    // last name validation
-    if(!regexLastName.test(allInputs[1].value)){
+    if(!regexFirstName.test(allInputs[1].value)){
         
         allInputs[1].style.border = "2px solid red"; 
         return false;
@@ -132,73 +131,112 @@ function validation(){
         allInputs[1].style.border = "2px solid green"; 
     }
 
+    // last name validation
+    if(!regexLastName.test(allInputs[2].value)){
+        
+        allInputs[2].style.border = "2px solid red"; 
+        return false;
+    }
+    else {
+        allInputs[2].style.border = "2px solid green"; 
+    }
+
     // mobile phone validation
-    if (!numberRegex.test(allInputs[2].value)) {
-        allInputs[2].style.border = "2px solid red";
+    if (!numberRegex.test(allInputs[3].value)) {
+        allInputs[3].style.border = "2px solid red";
         return false;
     } else {
-        allInputs[2].style.border = "2px solid green";
+        allInputs[3].style.border = "2px solid green";
     }
 
     //credit number regex
-    if (!creditRegex.test(allInputs[5].value)) {
-        allInputs[5].style.border = "2px solid red";
-        return false;
-    } else {
-        allInputs[5].style.border = "2px solid green";
-    }
-
-    //credit card name
-    if (!fullNameRegex.test(allInputs[6].value)) {
+    if (!creditRegex.test(allInputs[6].value)) {
         allInputs[6].style.border = "2px solid red";
         return false;
     } else {
         allInputs[6].style.border = "2px solid green";
     }
-    //
-    if (!ccvRegex.test(allInputs[8].value)) {
-        allInputs[8].style.border = "2px solid red";
+
+    //credit card name
+    if (!fullNameRegex.test(allInputs[7].value)) {
+        allInputs[7].style.border = "2px solid red";
         return false;
     } else {
-        allInputs[8].style.border = "2px solid green";
+        allInputs[7].style.border = "2px solid green";
+    }
+    //
+    if (!ccvRegex.test(allInputs[9].value)) {
+        allInputs[9].style.border = "2px solid red";
+        return false;
+    } else {
+        allInputs[9].style.border = "2px solid green";
     }
 
-    // let successPurchase = {
-    //     UserFnameName : allInputs[0].value,
-    //     UserLastName : allInputs[1].value,
-    //     UserMobile : allInputs[2].value,
-    //     UserCity : allInputs[3].value,
-    //     UserAddress : allInputs[4].value,
-    //     UserState : state.value,
-    //     UserCardType : payment.value,
-    //     UserCardNo : allInputs[5].value,
-    //     UserCardName : allInputs[6].value,
-    //     UserCardExp : allInputs[7].value,
-    //     UserCardCCV : allInputs[8].value,
-    // };
 
-    // arr.push(successPurchase);
-    // localStorage.setItem("purchase",JSON.stringify(arr));
-    // const newOrder = new Order(
-    //     'u2', // user ID
-    //     3, // order ID
-    //     'greeeeen', // orderName
-    //     6, // price
-    //     3, // status
-    //     '', // avatar
-    //     'Size = L, Color = Yellow', // details
-    //     'FullName = eee, Address = 5678 Main St, City = Los Angeles, State = CA, Zip = 90001, Phone = 213-555-5678', // deliveryDetails
-    //     's1', // sellerId
-    //     '2022-01-15' // orderDate
-    // );
+    for (let i = 0; i < myProduct.length; i++) {
+        let userFullName = allInputs[1].value + " " + allInputs[2].value;
+        let UserMobile = allInputs[3].value;
+        let UserCity = allInputs[4].value;
+        let UserAddress = allInputs[5].value;
+        let UserState = state.value;
     
-    
-    // orders.addOrder('u2', newOrder);
+        // let successPurchase = {
+        //     "orderId": 1,
+        //     "orderName": myProduct[i].name ,
+        //     "price": myProduct[i].price ,
+        //     "quantity" : myProduct[i].quantity,
+        //     "status": 4,
+        //     "details": `Size = ${myProduct[i].size}, Color = Blue`, 
+        //     "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+        //     "sellerId": "s1", 
+        //     "orderDate": getCurrentDate(),
+        // };
+
+
+        let successPurchase = {
+            "u1": {
+                "1": {
+                    "orderId": 1,
+                    "orderName": myProduct[i].name,
+                    "price": myProduct[i].price,
+                    "quantity": myProduct[i].quantity,
+                    "status": 4,
+                    "details": `Size = ${myProduct[i].size}, Color = Blue`,
+                    "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+                    "sellerId": "s1",
+                    "orderDate": getCurrentDate(),
+                },
+                "2": {
+                    "orderId": 2,
+                    "orderName": myProduct[i].name,
+                    "price": myProduct[i].price,
+                    "quantity": myProduct[i].quantity,
+                    "status": 4,
+                    "details": `Size = ${myProduct[i].size}, Color = Blue`,
+                    "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+                    "sellerId": "s1",
+                    "orderDate": getCurrentDate(),
+                },
+                
+            },
+        };
+        
+        arr.push(successPurchase);
+        localStorage.setItem("purchase", JSON.stringify(arr));
+        
+
     return true;
-
+    }
 }
 
 
+function getCurrentDate() {
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    let day = currentDate.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
 
 
 
