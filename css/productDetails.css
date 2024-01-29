@@ -139,9 +139,8 @@
   .quantityContainer
   {
     display: flex;
-    
   width: 10.625rem;
-  height: 3.25rem;
+  height: 3rem;
   padding: 1rem 1.25rem;
   justify-content: space-between;
   align-items: center;
@@ -160,8 +159,8 @@
   .btnCart{
     display: flex;
   width: 25rem;
-  height: 3.1rem;
-  padding: 1rem 3.375rem;
+  height: 3rem;
+  padding: 1rem 1.25rem;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
@@ -169,12 +168,50 @@
   border-radius: 3.875rem;
   background: #000;
   color: white;
+  margin: 0.4rem;
   
   }
-  @media(max-width:825.33px)
+  @media(max-width:1265px)
   {
-
+.btnCart{
+  gap:0.5rem;
+  width: 20rem;
+}}
+@media(max-width:1125px)
+{
+.btnCart{
+gap:1rem;
+width: 17rem;
+}
+.quantityContainer
+{
+  width: 7.5rem;
+}
   }
+  @media(max-width:991px)
+  {
+.btnCart{
+  gap:1rem;
+  width: 22rem;}
+  .quantityContainer
+{
+  width: 12rem;
+}
+}
+@media(max-width:760px)
+{
+.btnCart{
+gap:1rem;
+width: 19rem;}
+.quantityContainer
+{
+width: 10rem;
+}
+.option{
+  border-radius: 2rem;
+  font-size:1rem;
+}
+}
   #review
   {
     display: flex;
