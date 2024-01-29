@@ -194,8 +194,8 @@ function updateQuantityDisplay() {
             {
               
               Swal.fire({
-                title: 'Error!',
-                text: 'please sign in first!',
+                title: 'please sign in first!',
+                text: '',
                 icon: 'error',
                 confirmButtonText: 'Ok'
               })

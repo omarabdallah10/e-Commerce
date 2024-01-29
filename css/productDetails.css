@@ -14,21 +14,15 @@
   .icon-hover:hover i {
     color: #3b71ca !important;
   }
-  /* .side
-  {
-    display: inline-block;
-  } */
+  
   .imgsContainer
   {
-    /* display: flex;
-    flex-direction: row; */
-  }
-  .smallImg{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
+  
   .img{
-    width: 9.5rem;
+   width: 9.5rem;
   height: 10.4375rem;
   flex-shrink: 0;
   border-radius: 1.25rem;
@@ -162,16 +156,7 @@
     border: none;
   
   }
-  /* .operator:hover
-  {
-    background-color: rgb(204, 218, 231);
-  } */
-  /* .quantity-input {
-    width: 50px;
-    height: 30px; 
-    text-align: center;
-    font-size: 16px;
-  } */
+  
   .btnCart{
     display: flex;
   width: 25rem;
