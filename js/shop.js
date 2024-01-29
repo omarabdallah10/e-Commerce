@@ -74,9 +74,6 @@ searchInput.addEventListener("keyup", function () {
 
 /*-------------------------------------- Start Load ------------------------------------------ */
 window.addEventListener("load", function () {
-
-
-  
   sliderIcon.addEventListener("click", function () {
     allFilterDiv.classList.toggle("d-none");
   });
@@ -87,9 +84,9 @@ window.addEventListener("load", function () {
   /*--------------------------------------------------------------------------------------------------- */
 
   /*---------------------------------Determine Selected Categories ------------------------------------------ */
-  let selectedCategories = [];
+  let selectedCategories = ["hoodies"]; //default category is hoodies
   categoryFilterDiv.addEventListener("click", function (e) {
-    if (e.target.classList.contains("btn")) {
+    if (e.target.classList.contains("btn")) { //if the clicked element is a button
       if (!e.target.classList.contains("btn-dark")) {
         e.target.classList.add("btn-dark", "text-white");
       } else {
@@ -109,8 +106,8 @@ window.addEventListener("load", function () {
   /*----------------------------------------------------------------------------------------------------------*/
 
   /*---------------------------------Determine max and min price ------------------------------------------ */
-  let selectedMinPrice;
-  let selectedMaxPrice;
+  let selectedMinPrice = 250; //default min price
+  let selectedMaxPrice = 750; //default max price
   //1-change the value of the text of the min and max price
   //2-save the value of the min and max price in variables
   priceFilterDiv.addEventListener("click", function (e) {
@@ -126,9 +123,9 @@ window.addEventListener("load", function () {
   /*--------------------------------------------------------------------------------------------------------- */
 
   /*---------------------------------Determine Selected Size------------------------------------------ */
-  let selectedSizes = [];
+  let selectedSizes = ["m"]; //default size is medium
   sizeFilterDiv.addEventListener("click", function (e) {
-    if (e.target.classList.contains("btn")) {
+    if (e.target.classList.contains("btn")) { //if the clicked element is a button
       if (!e.target.classList.contains("btn-dark")) {
         e.target.classList.add("btn-dark", "text-white");
       } else {
@@ -148,7 +145,20 @@ window.addEventListener("load", function () {
   /*-------------------------------- Apply Filters ------------------------------------------ */
 
   applyFilterBtn.addEventListener("click", function () {
+    //variable will contain an array of resulted arrayss
     let resultProductes = [];
+
+    //make the filtering div un showed again so the user can notice that there is a change in the content which is being displayed
+    allFilterDiv.classList.toggle("d-none");
+
+    //send the selected categories to the function in product js to filter the products with category
+    if (selectedCategories.length != 0) {
+      for (let i = 0; i < selectedCategories.length; i++) {
+        resultProductes.push(
+          products.getProductsByCategory(selectedCategories[i])
+        );
+      }
+    }
 
     //send the selected prices to the function in product js to filter the products with price
     let selectedPrices = [];
@@ -163,16 +173,6 @@ window.addEventListener("load", function () {
       //   resultProductes.push(selectedPrices[i]);
       // }
       resultProductes.push(selectedPrices);
-      
-    }
-
-    //send the selected categories to the function in product js to filter the products with category
-    if (selectedCategories.length != 0) {
-      for (let i = 0; i < selectedCategories.length; i++) {
-        resultProductes.push(
-          products.getProductsByCategory(selectedCategories[i])
-        );
-      }
     }
 
     //send selected sizes to the function in product js to filter the products with size
@@ -184,22 +184,88 @@ window.addEventListener("load", function () {
 
     //display the products with the selected filters
     productCards.innerHTML = "";
-    if (resultProductes.length != 0) {
-      for (let i = 0; i < resultProductes.length; i++) {
-        for (let j = 0; j < resultProductes[i].length; j++) {
-          //check if its already displayed
-          if (
-            productCards.innerHTML.includes(resultProductes[i][j].productId)
-          ) {
-            continue;
-          }
-          var oneProductComponent = createProductComponent(
-            resultProductes[i][j]
-          );
-          productCards.innerHTML += oneProductComponent;
-        }
+    // if (resultProductes.length != 0) {
+    //   for (let i = 0; i < resultProductes.length; i++) {
+    //     for (let j = 0; j < resultProductes[i].length; j++) {
+    //       //check if its already displayed
+    //       if (
+    //         productCards.innerHTML.includes(resultProductes[i][j].productId)
+    //       ) {
+    //         continue;
+    //       }
+    //       var oneProductComponent = createProductComponent(
+    //         resultProductes[i][j]
+    //       );
+    //       productCards.innerHTML += oneProductComponent;
+    //     }
+    //   }
+    // } else {
+    //   //if no products found
+    //   // displayProducts(startingRandomProducts);
+    //   productCards.innerHTML = `<div
+    //               class="alert alert-warning d-flex align-items-center"
+    //               id="noProductsFound"
+    //             >
+    //               <div>
+    //                 <i class="fa-solid fa-exclamation-triangle mx-2"></i>
+    //                 No product found!
+    //               </div>
+    //             </div>`;
+    //   console.log("no products found ..................");
+    // }
+    let totalNumberOFProducts = [];
+    for (let i = 0; i < resultProductes.length; i++) {
+      for (let j = 0; j < resultProductes[i].length; j++) {
+        totalNumberOFProducts.push(resultProductes[i][j]);
       }
-    } else {
+    }
+    console.log("totalNumberOfProducts: ", totalNumberOFProducts);
+
+      if (totalNumberOFProducts.length <= 9) {
+        for (let i = 0; i < totalNumberOFProducts.length ; i++) {
+            //check if its already displayed
+            if (
+              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+            ) {
+              continue;
+            }
+            var oneProductComponent = createProductComponent(
+              totalNumberOFProducts[i]
+            );
+            productCards.innerHTML += oneProductComponent;
+          
+        }
+      } else if (totalNumberOFProducts.length > 9) {
+        for (let i = 0; i < 9; i++) {
+            //check if its already displayed
+            if (
+              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+            ) {
+              continue;
+            }
+            var oneProductComponent = createProductComponent(
+              totalNumberOFProducts[i]
+            );
+            productCards.innerHTML += oneProductComponent;  
+        }
+        showMoreBtn.classList.remove("d-none");
+        
+        showMoreBtn.addEventListener("click", function () {
+          for (let i = 9; i < totalNumberOFProducts.length; i++) {
+            //check if its already displayed
+            if (
+              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+            ) {
+              continue;
+            }
+            var oneProductComponent = createProductComponent(
+              totalNumberOFProducts[i]
+            );
+            productCards.innerHTML += oneProductComponent;
+          }
+          showMoreBtn.classList.add("d-none");
+        });
+      } else {
       //if no products found
       // displayProducts(startingRandomProducts);
       productCards.innerHTML = `<div
@@ -211,7 +277,7 @@ window.addEventListener("load", function () {
                     No product found!
                   </div>
                 </div>`;
-      console.log("no products found ..................");
+      // console.log("no products found ..................");
     }
   });
 

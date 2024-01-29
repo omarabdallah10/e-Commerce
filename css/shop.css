@@ -3,6 +3,10 @@
 	border-bottom: 2px solid #000000;
 	font-weight: normal;
 }
+.header-menu-list li a:hover {
+	border-bottom: 2px solid #000000;
+	font-weight: normal;
+}
 	
 
 
