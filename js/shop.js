@@ -86,13 +86,11 @@ console.log(SizedProducts);
 
 window.addEventListener("load", function () {
   //toggle mobile menu in mobile view
-  /*
   mobileMenuBtn.addEventListener("click", function () {
     mobileMenu.classList.toggle("d-none");
   });
-  */
 
-  /*--------------------------------- Display Random Products ----------------------------------------- */
+  /*--------------------------------- Display Random Products at start --------------------------------- */
   displayProducts(startingRandomProducts);
   whichDisplayed.innerHTML = "Shop";
   /*--------------------------------------------------------------------------------------------------- */
@@ -158,45 +156,33 @@ window.addEventListener("load", function () {
 
   /*-------------------------------- Apply Filters ------------------------------------------ */
 
-  let selectedPrices = [];
-
   applyFilterBtn.addEventListener("click", function () {
     let resultProductes = [];
 
     //send the selected prices to the function in product js to filter the products with price
+    let selectedPrices = [];
 
     selectedPrices = products.getProductsByPriceRange(
       selectedMinPrice,
       selectedMaxPrice
     );
-    // console.log("from shop js --> priced Products", selectedPrices);
+    console.log("from shop js --> priced Products", selectedPrices);
     if (selectedPrices.length != 0) {
       // for (let i = 0; i < selectedPrices.length; i++) {
       //   resultProductes.push(selectedPrices[i]);
       // }
       resultProductes.push(selectedPrices);
-      // console.log("from price filter", resultProductes);
       // console.log("from price filter", selectedPrices);
     }
-    console.log(
-      "from price filter after end calling size function",
-      resultProductes
-    );
 
     //send the selected categories to the function in product js to filter the products with category
     if (selectedCategories.length != 0) {
       for (let i = 0; i < selectedCategories.length; i++) {
-        resultProductes.push(products.getProductsByCategory(selectedCategories[i]));
+        resultProductes.push(
+          products.getProductsByCategory(selectedCategories[i])
+        );
       }
-      console.log(
-        "from price filter inside filtering category functions",
-        resultProductes
-      );
     }
-    console.log(
-      "from price filter after end calling size , category functions",
-      resultProductes
-    );
 
     //send selected sizes to the function in product js to filter the products with size
     if (selectedSizes.length != 0) {
@@ -204,10 +190,6 @@ window.addEventListener("load", function () {
         resultProductes.push(products.getProductsBySize(selectedSizes[i]));
       }
     }
-    console.log(
-      "from price filter after end calling all functions",
-      resultProductes
-    );
 
     //display the products with the selected filters
     productCards.innerHTML = "";
@@ -215,7 +197,9 @@ window.addEventListener("load", function () {
       for (let i = 0; i < resultProductes.length; i++) {
         for (let j = 0; j < resultProductes[i].length; j++) {
           //check if its already displayed
-          if (productCards.innerHTML.includes(resultProductes[i][j].productId)) {
+          if (
+            productCards.innerHTML.includes(resultProductes[i][j].productId)
+          ) {
             continue;
           }
           var oneProductComponent = createProductComponent(
@@ -225,7 +209,18 @@ window.addEventListener("load", function () {
         }
       }
     } else {
-      displayProducts(startingRandomProducts);
+      //if no products found
+      // displayProducts(startingRandomProducts);
+      productCards.innerHTML = `<div
+                  class="alert alert-warning d-flex align-items-center"
+                  id="noProductsFound"
+                >
+                  <div>
+                    <i class="fa-solid fa-exclamation-triangle mx-2"></i>
+                    No product found!
+                  </div>
+                </div>`;
+      console.log("no products found ..................");
     }
   });
 
