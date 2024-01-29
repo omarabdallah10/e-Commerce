@@ -134,7 +134,7 @@
                     </span>
                     <a href="Admin_products_dashboard.html" class="stretched-link">Product App</a>
                     <small class="text-muted mb-0">Mange Products</small>
-                  </div>vatar
+                  </div>
                 </div>
                 <div class="row row-bordered overflow-visible g-0">
                   <div class="dropdown-shortcuts-item col">
@@ -149,19 +149,14 @@
             </div>
           </li>
           <!-- Quick links -->
-          <li>
-            <button id="powerOffButton" class="btn btn-link">
-              <i class="bx bx-power-off me-2 fa-2x"></i>
-            </button>
-          </li>
+
           <!-- User -->
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <img src="images/logo.png" alt class="w-px-40 h-auto rounded-circle">
+                <img src="" alt class="w-px-40 h-auto rounded-circle">
               </div>
             </a>
-            
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
                 <a class="dropdown-item" >
@@ -172,7 +167,7 @@
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block" id="userName">Hello</span>
+                      <span class="fw-semibold d-block" id="userName">AhmedL3swy</span>
                       <small class="text-muted" id="UserType">Admin</small>
                     </div>
                   </div>
@@ -181,12 +176,12 @@
               <li>
                 <div class="dropdown-divider"></div>
               </li>
-              <!-- <li>
+              <li>
                 <a class="dropdown-item" id="logOut"  target="_blank">
                   <i class="bx bx-power-off me-2"></i>
                   <span class="align-middle">Log Out</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </li>
           <!--/ User -->
@@ -217,23 +212,26 @@
         <div class="card-header border-bottom">
           <h5 class="card-title">Search Filter</h5>
           <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-            <div class="col-md-6 user_role"></div>
+            <div class="col-md-6 order_status"></div>
             <!-- <div class="col-md-4 user_plan"></div> -->
-            <div class="col-md-6 user_status"></div>
+            <div class="col-md-6 "></div>
           </div>
         </div>
         <div class="card-datatable table-responsive">
           <table class="datatables-users table border-top">
             <thead>
-              <tr>
-                <th></th>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
+            <!-- #TABLE -->
+            <tr>
+              <th></th>
+              <th>OrderID</th>
+              <th>OrderDetails</th>
+              <th>UserID</th>
+              <th>SellerID</th>
+              <th>OrderDate</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
             </thead>
             <tbody></tbody>
             </tbody>
@@ -377,8 +375,8 @@
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
   <!-- Page JS -->
-  <script src="js/users-analytics.js"></script>
-  <script src="js/users-dashboard.js" type="module"></script>
+  <!-- <script src="js/users-analytics.js"></script> -->
+  <script src="js/seller-orders-dashboard.js" type="module"></script>
 
 </body>
 

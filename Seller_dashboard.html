@@ -105,7 +105,7 @@
           
           <!-- Quick links  -->
           <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <a class="nav-link dropdown-toggle hide-arrow" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
               <i class='bx bx-grid-alt bx-sm'></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end py-0">
@@ -134,7 +134,7 @@
                     </span>
                     <a href="Admin_products_dashboard.html" class="stretched-link">Product App</a>
                     <small class="text-muted mb-0">Mange Products</small>
-                  </div>vatar
+                  </div>
                 </div>
                 <div class="row row-bordered overflow-visible g-0">
                   <div class="dropdown-shortcuts-item col">
@@ -149,19 +149,14 @@
             </div>
           </li>
           <!-- Quick links -->
-          <li>
-            <button id="powerOffButton" class="btn btn-link">
-              <i class="bx bx-power-off me-2 fa-2x"></i>
-            </button>
-          </li>
+
           <!-- User -->
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle hide-arrow"  data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <img src="images/logo.png" alt class="w-px-40 h-auto rounded-circle">
+                <img src="" alt class="w-px-40 h-auto rounded-circle">
               </div>
             </a>
-            
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
                 <a class="dropdown-item" >
@@ -172,7 +167,7 @@
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block" id="userName">Hello</span>
+                      <span class="fw-semibold d-block" id="userName">AhmedL3swy</span>
                       <small class="text-muted" id="UserType">Admin</small>
                     </div>
                   </div>
@@ -181,12 +176,12 @@
               <li>
                 <div class="dropdown-divider"></div>
               </li>
-              <!-- <li>
-                <a class="dropdown-item" id="logOut"  target="_blank">
+              <li id="logout">
+                <a class="dropdown-item" id="logOut"  >
                   <i class="bx bx-power-off me-2"></i>
                   <span class="align-middle">Log Out</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </li>
           <!--/ User -->
@@ -225,15 +220,18 @@
         <div class="card-datatable table-responsive">
           <table class="datatables-users table border-top">
             <thead>
-              <tr>
-                <th></th>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
+            <!-- #TABLE -->
+            <tr>
+              <th></th>
+              <th>ProductID</th>
+              <th>ProductDetails</th>
+              <th>Category</th>
+              <!-- <th>SellerID</th> -->
+              <th>Quantity</th>
+              <th>Price</th>
+              <!-- <th>Status</th> -->
+              <th>Actions</th>
+            </tr>
             </thead>
             <tbody></tbody>
             </tbody>
@@ -241,43 +239,41 @@
 
         </div>
         <!-- Offcanvas to add new user -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAddUser"
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAddProduct"
           aria-labelledby="offcanvasAddUserLabel">
           <div class="offcanvas-header">
-            <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add User</h5>
+            <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add Product</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body mx-0 flex-grow-0">
-            <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="alerthi">
+            <form class="add-new-product pt-0" id="addNewProductForm" >
               <div class="mb-3">
-                <label class="form-label" for="add-user-fullname">Full Name</label>
-                <input type="text" class="form-control" id="add-user-fullname" placeholder="John Doe"
-                  name="userFullname" aria-label="John Doe" />
+                <label class="form-label" for="add-product-name">Product Name</label>
+                <input type="text" class="form-control" id="add-product-name" placeholder="Product Name"
+                  name="productName" aria-label="Product Name" />
               </div>
               <div class="mb-3">
-                <label class="form-label" for="add-user-email">Email</label>
-                <input type="text" id="add-user-email" class="form-control" placeholder="john.doe@example.com"
-                  aria-label="john.doe@example.com" name="userEmail" />
+                <label class="form-label" for="add-product-details">Product Details</label>
+                <textarea id="add-product-details" class="form-control" placeholder="Product Details"
+                  aria-label="Product Details" name="productDetails"></textarea>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="add-user-password">Password</label>
-                <input type="password" id="add-user-password" class="form-control" placeholder="john.doe@example.com"
-                  aria-label="john.doe@example.com" name="userPassword" pattern=".{8,}" title="Password must be at least 8 characters long" required />
+                <label class="form-label" for="add-product-unitprice">Unit Price</label>
+                <input type="number" id="add-product-unitprice" class="form-control" placeholder="Unit Price"
+                  aria-label="Unit Price" name="productUnitPrice" step="1" />
               </div>
               <div class="mb-3">
-                <label class="form-label" for="user-role">User Role</label>
-                <select id="user-role" class="form-select">
-                  <option value="customer">Customer</option>
-                  <option value="seller">Seller</option>
-                  <option value="admin">Admin</option>
-                </select>
+                <label class="form-label" for="add-product-quantity">Quantity</label>
+                <input type="number" id="add-product-quantity" class="form-control" placeholder="Quantity"
+                  aria-label="Quantity" name="productQuantity" />
               </div>
               <div class="mb-3">
-                <label class="form-label" for="user-status">Status</label>
-                <select id="user-status" class="form-select">
-                  <option value="1">INACTIVE</option>
-                  <option value="2">ACIVE</option>
-                  <!-- <option value="3">Pending</option> -->
+                <label class="form-label" for="add-product-category">Category</label>
+                <select id="add-product-category" class="form-select" name="productCategory">
+                  <option value="T-Shirt">T-Shirt</option>
+                  <option value="Shorts">Shorts</option>
+                  <option value="Vest">Vest</option>
+                  <option value="Pants">Pants</option>
                 </select>
               </div>
               <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
@@ -287,46 +283,44 @@
         </div>
 
         <!-- Offcanvas to edit user -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEditUser"
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEditProduct"
           aria-labelledby="offcanvasEditUserLabel">
           <div class="offcanvas-header">
-            <h5 id="offcanvasEditUserLabel" class="offcanvas-title">Edit User</h5>
+            <h5 id="offcanvasEditUserLabel" class="offcanvas-title">Edit Product</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body mx-0 flex-grow-0">
-            <form class="edit-user pt-0" id="editUserForm" onsubmit="alerthi">
+            <form class="edit-new-product pt-0" id="editNewProductForm">
               <div class="mb-3">
-                <label class="form-label" for="edit-user-fullname">Full Name</label>
-                <input type="text" class="form-control" id="edit-user-fullname" placeholder="John Doe"
-                  name="userFullname" aria-label="John Doe" />
+                <label class="form-label" for="edit-product-name">Product Name</label>
+                <input type="text" class="form-control" id="edit-product-name" placeholder="Product Name"
+                  name="productName" aria-label="Product Name" />
               </div>
               <div class="mb-3">
-                <label class="form-label" for="edit-user-email">Email</label>
-                <input type="text" id="edit-user-email" class="form-control" placeholder="john.doe@example.com"
-                  aria-label="john.doe@example.com" name="userEmail" />
+                <label class="form-label" for="edit-product-details">Product Details</label>
+                <textarea id="edit-product-details" class="form-control" placeholder="Product Details"
+                  aria-label="Product Details" name="productDetails"></textarea>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="edit-user-password">Password</label>
-                <input type="password" id="edit-user-password" class="form-control" placeholder="Password"
-                  aria-label="john.doe@example.com" name="userPassword" pattern=".{8,}" title="Password must be at least 8 characters long" required />
+                <label class="form-label" for="edit-product-unitprice">Unit Price</label>
+                <input type="number" id="edit-product-unitprice" class="form-control" placeholder="Unit Price"
+                  aria-label="Unit Price" name="productUnitPrice" step="1" />
               </div>
               <div class="mb-3">
-                <label class="form-label" for="edit-user-role">User Role</label>
-                <select id="edit-user-role" class="form-select">
-                  <option value="Customer">Customer</option>
-                  <option value="Seller">Seller</option>
-                  <option value="Admin">Admin</option>
+                <label class="form-label" for="edit-product-quantity">Quantity</label>
+                <input type="number" id="edit-product-quantity" class="form-control" placeholder="Quantity"
+                  aria-label="Quantity" name="productQuantity" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="edit-product-category">Category</label>
+                <select id="edit-product-category" class="form-select" name="productCategory">
+                  <option value="T-Shirt">T-Shirt</option>
+                  <option value="Shorts">Shorts</option>
+                  <option value="Vest">Vest</option>
+                  <option value="Pants">Pants</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label class="form-label" for="edit-user-status">Status</label>
-                <select id="edit-user-status" class="form-select">
-                  <option value="1">INACTIVE</option>
-                  <option value="2">ACIVE</option>
-                  <!-- <option value="3">Pending</option> -->
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Save</button>
+              <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
               <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
             </form>
           </div>
@@ -377,8 +371,8 @@
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
   <!-- Page JS -->
-  <script src="js/users-analytics.js"></script>
-  <script src="js/users-dashboard.js" type="module"></script>
+  <!-- <script src="js/users-analytics.js"></script> -->
+  <script src="js/seller-dashboard.js" type="module"></script>
 
 </body>
 

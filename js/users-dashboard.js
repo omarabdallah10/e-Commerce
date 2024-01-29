@@ -7,6 +7,13 @@ import {fetchAndStoreJson} from "./dumpJson.js"
 import AuthModule from './Authentication/AuthModule.js';
 
 AuthModule.isAdmin();
+$("#powerOffButton").on("click",function(){
+  if(confirm("Are you sure you want to log out?")){
+    localStorage.removeItem("activeuser");
+    window.location.href="index.html";
+  }
+
+});
 
 const userjsonFileURL ='assets/json/user-list.json';
 fetchAndStoreJson(userjsonFileURL,'users');
@@ -487,7 +494,7 @@ $(function () {
     // Set data to the edit modal inputs
     $("#edit-user-fullname").val(row_data.full_name);
     $("#edit-user-email").val(row_data.email);
-    console.log(row_data.role);
+    $("#edit-user-password").val(row_data.password);
     $("#edit-user-role").val(row_data.role);
     $("#edit-user-status").val(row_data.status);
     // Show the edit modal
@@ -728,6 +735,5 @@ $(function () {
     });
     
   })();
-
 
 });

@@ -12,7 +12,10 @@
     
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
-  
+    <link rel="stylesheet" href="css/NavFooter.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -72,131 +75,129 @@
 <body>
  
 <div class="mb-max">
-  <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme  " id="layout-navbar">
-    <div class="container-xxl">
-      
-        
-       
-      
-      <a href="index.html" class="text-decoration-none text-black fw-bold fs-3">
-        SHOP.CO
-      </a>
+  <nav class="main-nav container pt-3">
+    <div class="d-flex align-items-center">
+      <div class="d-flex h-100 align-items-center">
+        <!-- Bars for small screens-->
+        <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="/index.html" class="text-decoration-none text-black fw-bold fs-3">
+          SHOP.CO
+        </a>
+        <div class="dropDownPag">
 
-      
-      
-      
-
-      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-
-        
-
-
-        
-
-        <ul class="navbar-nav flex-row align-items-center ms-auto">
-          
-          <!-- Language -->
-          
-
-
-          
-          
-          
-          
-          <!-- Quick links  -->
-          <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-              <i class='bx bx-grid-alt bx-sm'></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end py-0">
-              <div class="dropdown-menu-header border-bottom">
-                <div class="dropdown-header d-flex align-items-center py-3">
-                  <h5 class="text-body mb-0 me-auto">Dashboards</h5>
-                </div>
-              </div>
-
-              <div class="dropdown-shortcuts-list scrollable-container">
-                  
-                  
-                <div class="row row-bordered overflow-visible g-0">
-                  <div class="dropdown-shortcuts-item col">
-                    <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                      <i class="bx bx-user fs-4"></i>
-                    </span>
-                    <a href="Admin_users_dashboard.html" class="stretched-link">User App</a>
-                    <small class="text-muted mb-0">Manage Users</small>
-                  </div>
-                </div>
-                <div class="row row-bordered overflow-visible g-0">
-                  <div class="dropdown-shortcuts-item col">
-                    <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                      <i class="bx bx-pie-chart-alt-2 fs-4"></i>
-                    </span>
-                    <a href="Admin_products_dashboard.html" class="stretched-link">Product App</a>
-                    <small class="text-muted mb-0">Mange Products</small>
-                  </div>vatar
-                </div>
-                <div class="row row-bordered overflow-visible g-0">
-                  <div class="dropdown-shortcuts-item col">
-                    <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                      <i class="bx bx-window-open fs-4"></i>
-                    </span>
-                    <a href="Admin_orders_dashboard.html" class="stretched-link">Orders App</a>
-                    <small class="text-muted mb-0">Manage Orders</small>
-                  </div>
-                </div>
+        </div>
+        <!--Mobile Menu-->
+        <div class="mobileMenu position-absolute w-100 d-none">
+          <div
+            class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
+          >
+            <div class="w-100 d-flex align-items-center">
+              <div class="flex-grow-1">Menu</div>
+              <div>
+                <button class="btn fw-bold close-menu">
+                  <i class="bi bi-x-lg text-white fs-4"></i>
+                </button>
               </div>
             </div>
-          </li>
-          <!-- Quick links -->
-          <li>
-            <button id="powerOffButton" class="btn btn-link">
-              <i class="bx bx-power-off me-2 fa-2x"></i>
-            </button>
-          </li>
-          <!-- User -->
-          <li class="nav-item navbar-dropdown dropdown-user dropdown">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-              <div class="avatar avatar-online">
-                <img src="images/logo.png" alt class="w-px-40 h-auto rounded-circle">
-              </div>
-            </a>
-            
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" >
-                  <div class="d-flex">
-                    <div class="flex-shrink-0 me-3">
-                      <div class="avatar avatar-online">
-                        <img src="" alt class="w-px-40 h-auto rounded-circle">
-                      </div>
-                    </div>
-                    <div class="flex-grow-1">
-                      <span class="fw-semibold d-block" id="userName">Hello</span>
-                      <small class="text-muted" id="UserType">Admin</small>
-                    </div>
-                  </div>
+            <hr />
+            <ul class="p-0">
+              <li class="mx-2 my-2">
+                <a class="text-decoration-none text-black" href="/Shop.html">Shop</a>
+              </li>
+              <li class="mx-2 my-2">
+                <a class="text-decoration-none text-black" href="#"
+                  >On Sale</a
+                >
+              </li>
+              <li class="mx-2 my-2">
+                <a class="text-decoration-none text-black" href="#"
+                  >New Arrivals</a
+                >
+              </li>
+              <li class="mx-2 my-2">
+                <a class="text-decoration-none text-black shop-link" href="#">
+                  About us
                 </a>
               </li>
-              <li>
-                <div class="dropdown-divider"></div>
-              </li>
-              <!-- <li>
-                <a class="dropdown-item" id="logOut"  target="_blank">
-                  <i class="bx bx-power-off me-2"></i>
-                  <span class="align-middle">Log Out</span>
-                </a>
-              </li> -->
             </ul>
-          </li>
-          <!--/ User -->
-          
+          </div>
+        </div>
+        <!--End Mobile Menu-->
+      </div>
 
+      <!--V.2 Nav Links-->
+      <div
+        class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center"
+      >
+        <ul class="header-menu-list">
+          <li class="mx-2">
+            <a
+              id="brandsLink"
+              class="text-decoration-none text-black main-menu-link position-relative shop-link"
+              href="/index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li class="mx-2">
+            <a
+              id="shopLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="#"
+              >Shop</a
+            >
+          </li>
+          <li class="mx-2">
+            <a
+              id="onSaleLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="#"
+              >On Sale</a
+            >
+          </li>
+          <li class="mx-2">
+            <a
+              id="newArrivalsLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="#"
+              >New Arrivals</a
+            >
+          </li>
+          
         </ul>
       </div>
 
-  </div>
-</nav>
+      <!--Search-->
+      <div class="mx-auto col-md-4">
+        <form class="d-flex">
+          <button class="btn" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+          <input
+            id="searchInput"
+            class="form-control"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+      </div>
+
+      <div class="d-flex">
+        <a href="/Cart.html" class="mx-2 text-decoration-none text-black fs-5">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <a href="#" class="mx-2 text-decoration-none text-black fs-5" id="userDropdown">
+          <i id="userIcon" class="fa-solid fa-circle-user"></i>
+        </a>
+        
+        
+        
+      </div>
+    </div>
+  </nav>
 
 </div>
   <!-- Content wrapper -->
@@ -214,26 +215,29 @@
 
       <!-- Users List Table -->
       <div class="card">
-        <div class="card-header border-bottom">
+        <!-- <div class="card-header border-bottom">
           <h5 class="card-title">Search Filter</h5>
           <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-            <div class="col-md-6 user_role"></div>
-            <!-- <div class="col-md-4 user_plan"></div> -->
-            <div class="col-md-6 user_status"></div>
+            <div class="col-md-6 order_status"></div>
+            <div class="col-md-4 user_plan"></div>
+            <div class="col-md-6 "></div>
           </div>
-        </div>
+        </div> -->
         <div class="card-datatable table-responsive">
           <table class="datatables-users table border-top">
             <thead>
-              <tr>
-                <th></th>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
+            <!-- #TABLE -->
+            <tr>
+              <th></th>
+              <th>OrderID</th>
+              <th>OrderDetails</th>
+              <!-- <th>UserID</th> -->
+              <!-- <th>SellerID</th> -->
+              <th>OrderDate</th>
+              <th>Price</th>
+              <th>Status</th>
+              <!-- <th>Actions</th> -->
+            </tr>
             </thead>
             <tbody></tbody>
             </tbody>
@@ -338,7 +342,188 @@
 
   </div>
   <!-- / Content -->
+<!-- Start Footer -->
+<div class="newsletter mt-4">
+  <div class="container px-4 py-4 rounded-4">
+    <div class="row">
+      <div class="flex-grow-1 col-lg-7 my-3 ms-5">
+        <h1 class="text-white fw-bolder">
+          For support or business inquiries, we're here to assist you.</div>
+      <div class="col-lg-4 my-3 me-5">
+        
+        <div class="w-100 my-2">
+          <button class="btn bg-white rounded-pill px-5 w-100 py-2" id="SendEmail">
+           Contact US
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<footer class="py-5 text-center text-lg-start">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="my-2 col-12 col-lg-4">
+        <a
+          href="#"
+          class="text-black fw-bold text-decoration-none fs-3 d-block mb-3"
+          >SHOP.CO</a
+        >
+        <p class="text-secondary fw-normal mb-3">
+          We have clothes that will give you a new style and you will be
+          proud of yourself and your purchase. From women to men.
+        </p>
+        <div
+          class="social d-flex mt-5 mb-sm-5 justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="#"
+            target="_blank"
+            class="social-icon mx-2 text-decoration-none text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            href="#"
+            target="_blank"
+            class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="#"
+            target="_blank"
+            class="mx-2 social-icon d-flex text-decoration-none text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-links my-2 col-6 col-lg-2">
+        <h1 class="fs-3 mb-4 fw-normal">Company</h1>
+        <ul class="list-unstyled p-0 fw-light">
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#"
+              >About
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#"
+              >Feature
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#"
+              >Works</a
+            >
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#"
+              >Career</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links my-2 col-6 col-lg-2">
+        <h1 class="fs-3 mb-4 fw-normal">Help</h1>
+        <ul class="list-unstyled p-0 fw-light">
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Customer Support
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Delivery Details
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Terms & Conditions
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links my-2 col-6 col-lg-2">
+        <h1 class="fs-3 mb-4 fw-normal">FAQ</h1>
+        <ul class="list-unstyled p-0 fw-light">
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Account
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Manage Deliveries
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Orders
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Payments
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links my-2 col-6 col-lg-2">
+        <h1 class="fs-3 mb-4 fw-normal">Resources</h1>
+        <ul class="list-unstyled p-0 fw-light">
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Free eBooks
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Development Tutorial
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              How to Blog
+            </a>
+          </li>
+          <li class="my-2">
+            <a class="text-secondary text-decoration-none" href="#">
+              Youtube Playlist
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="mb-3" />
+
+      <div
+        class="mx-3 d-flex flex-column flex-lg-row justify-content-between align-items-center text-secondary"
+      >
+        <div class="fw-light">
+          SHOP.CO &copy; 2020-2024, All Rights Reserved
+        </div>
+        <div class="d-flex my-2 my-lg-0">
+          <img src="images/visa.png" alt="visa" />
+          <img src="images/mastercard.png" alt="visa" />
+          <img src="images/paybal.png" alt="visa" />
+          <img src="images/applepay.png" alt="visa" />
+          <img src="images/googlepay.png" alt="visa" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 
@@ -377,8 +562,8 @@
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
   <!-- Page JS -->
-  <script src="js/users-analytics.js"></script>
-  <script src="js/users-dashboard.js" type="module"></script>
+  <!-- <script src="js/users-analytics.js"></script> -->
+  <script src="js/orders.js" type="module"></script>
 
 </body>
 
