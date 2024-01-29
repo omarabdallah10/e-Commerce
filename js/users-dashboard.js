@@ -487,7 +487,7 @@ $(function () {
     // Set data to the edit modal inputs
     $("#edit-user-fullname").val(row_data.full_name);
     $("#edit-user-email").val(row_data.email);
-    console.log(row_data.role);
+    $("#edit-user-password").val(row_data.password);
     $("#edit-user-role").val(row_data.role);
     $("#edit-user-status").val(row_data.status);
     // Show the edit modal
