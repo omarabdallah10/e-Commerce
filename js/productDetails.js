@@ -19,10 +19,6 @@ console.log(productId);
 var product =products.getProductById(productId);
 
 const imgBig=product.thumbnail;
-console.log(product.thumbnail);
-
-const imgs = product.images.split(',');
-console.log(imgs[0]);
 
 const priceAfterDiscount=((product.price * (100 - product.discount)) /100).toFixed(2);
 const imgDiv=document.getElementById('imgsContainer');
@@ -54,7 +50,9 @@ function generateRatingSpan(rating) {
 }
 // console.log(generateRatingSpan(4.8));
 const productDiv = document.getElementById('product-details');
-const productBlock =` <h1 id="productName" class="title text-dark header">${product.productName}</h1>
+let productBlock="";
+if(product.discount>0){
+ productBlock =` <h1 id="productName" class="title text-dark header">${product.productName}</h1>
 <div class="d-flex flex-row my-3">
   <div class="text-warning mb-1 me-2">
    ${generateRatingSpan(rate)}
@@ -73,11 +71,31 @@ const productBlock =` <h1 id="productName" class="title text-dark header">${prod
   
 </span>
 </div>
-
+<p id="descriptionContent" class="description">
+${product.details}
+</p>
+<hr/>`;
+}else{
+  productBlock =` <h1 id="productName" class="title text-dark header">${product.productName}</h1>
+<div class="d-flex flex-row my-3">
+  <div class="text-warning mb-1 me-2">
+   ${generateRatingSpan(rate)}
+    <span class="ms-1 rate">
+    ${rate}/5
+    </span>
+  </div>
+</div>
+<div class="mb-3">
+  <span class=" price">$</span>
+  <span id="newPrice" class=" price">${product.price}</span>
+  
+  
+</div>
 <p id="descriptionContent" class="description">
 ${product.details}
 </p>
 <hr/>`
+}
 productDiv.innerHTML=productBlock;
 //###########################################################
 let activeuser = JSON.parse(localStorage.getItem("activeuser"));
@@ -91,9 +109,8 @@ let activeuser = JSON.parse(localStorage.getItem("activeuser"));
            // Get selected options
                // Default to Medium if no size selected
              const selectedSize = localStorage.getItem('selectedSize') || 'Medium'; 
-             
-           console.log(sizeButtons);
-
+             updateSelectedSizeUI(selectedSize);
+           
           sizeButtons.forEach(function (button) {
             button.addEventListener('click', function () {
                 // Get the clicked size from the button's text content
@@ -131,12 +148,12 @@ function updateQuantityDisplay() {
         }else
         {
           Swal.fire({
-            title: 'Error!',
-            text: 'Cannot decrease beyond zero',
+            title: 'Cannot decrease beyond one!',
+            text: '',
             icon: 'error',
             confirmButtonText: 'Ok'
           })
-          console.log("Cannot decrease beyond one.");
+          
           return 0; 
         }
         updateQuantityDisplay();
