@@ -7,6 +7,13 @@ import {fetchAndStoreJson} from "./dumpJson.js"
 import AuthModule from './Authentication/AuthModule.js';
 
 AuthModule.isAdmin();
+$("#powerOffButton").on("click",function(){
+  if(confirm("Are you sure you want to log out?")){
+    localStorage.removeItem("activeuser");
+    window.location.href="index.html";
+  }
+
+});
 
 const userjsonFileURL ='assets/json/user-list.json';
 fetchAndStoreJson(userjsonFileURL,'users');
@@ -728,6 +735,5 @@ $(function () {
     });
     
   })();
-
 
 });

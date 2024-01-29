@@ -1,7 +1,7 @@
 class AuthModule {
     static activeUser = JSON.parse(localStorage.getItem('activeuser'));
     static isGuest() {
-        if (!AuthModule.activeUser) {
+        if (!AuthModule.activeUser ) {
             return true;
         }
     }
@@ -24,7 +24,7 @@ class AuthModule {
         }
     }
     static isAdmin(){
-        if(AuthModule.activeUser.role != 'Admin'){
+        if(!AuthModule.activeUser || AuthModule.activeUser.role != 'Admin'  ){
             const container = document.createElement('div');
             container.innerHTML = this.get404HTML();
             // Replace the body content with the container
