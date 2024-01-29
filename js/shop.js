@@ -4,8 +4,8 @@ import Products from "./database/Products.js";
 let products = new Products();
 
 //mobile menu
-let mobileMenuBtn = document.getElementsByClassName("menuBtn")[0];
-let mobileMenu = document.getElementsByClassName("mobileMenu")[0];
+// let mobileMenuBtn = document.getElementsByClassName("menuBtn")[0];
+// let mobileMenu = document.getElementsByClassName("mobileMenu")[0];
 
 //parent container of all products
 let productCards = document.getElementById("productCards");
@@ -86,9 +86,9 @@ console.log(SizedProducts);
 
 window.addEventListener("load", function () {
   //toggle mobile menu in mobile view
-  mobileMenuBtn.addEventListener("click", function () {
-    mobileMenu.classList.toggle("d-none");
-  });
+    // mobileMenuBtn.addEventListener("click", function () {
+    //   mobileMenu.classList.toggle("d-none");
+    // });
 
   /*--------------------------------- Display Random Products at start --------------------------------- */
   displayProducts(startingRandomProducts);
@@ -370,3 +370,20 @@ function displayProducts(productsArray) {
     productCards.innerHTML += oneProductComponent;
   }
 }
+
+var dropdown = `<div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton1">
+          <a class="dropdown-item" href="/Admin_users_dashboard.html" id="userDashboard">Users </a>
+          <a class="dropdown-item" href="/Admin_products_dashboard.html" id="prodDashboard">Products </a>
+          <a class="dropdown-item" href="/Admin_orders_dashboard.html" id="orderDashboard">Orders </a>
+          <a class="dropdown-item" href="#" id="logout">Logout</a>
+        </div>`;
+$(".fa-bars").append(dropdown);
+$(".fa-bars").on("click", function (event) {
+  event.stopPropagation(); // Prevent event propagation to avoid duplication
+  $("#dropmenu").toggle();
+});
+$(document).on("click", function (event) {
+  if (!$(event.target).closest("#userDropdown").length) {
+    $("#dropmenu").hide();
+  }
+});

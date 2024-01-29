@@ -126,16 +126,16 @@ $(function () {
       
       else{
         var DropDownOb = {
-          "Admin": `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          Admin: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
           <a class="dropdown-item" href="/Admin_users_dashboard.html" id="userDashboard">Users </a>
           <a class="dropdown-item" href="/Admin_products_dashboard.html" id="prodDashboard">Products </a>
           <a class="dropdown-item" href="/Admin_orders_dashboard.html" id="orderDashboard">Orders </a>
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
-          "Customer": `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          Customer: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
-          "Seller":  `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          Seller: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
         };
@@ -145,13 +145,13 @@ $(function () {
           $(".fa-circle-user").append(dropDown);
           $("#userDropdown").on("click", function (event) {
             event.stopPropagation(); // Prevent event propagation to avoid duplication
-            $(".dropdown-menu").toggle();
-          });
+            $("#udropmenu").toggle();
+          }); 
         
           // Close the dropdown when clicking outside of it
           $(document).on("click", function (event) {
             if (!$(event.target).closest("#userDropdown").length) {
-              $(".dropdown-menu").hide();
+              $("#udropmenu").hide();
             }
           });
         $("#logout").on("click", function () {
