@@ -386,3 +386,15 @@ $(document).on("click", function (event) {
     $("#dropmenu").hide();
   }
 });
+
+function sendEmail() {
+  var recipientEmail = 'iti-ecommerce@support.com';
+
+  var emailSubject = 'Support or Buisness';
+
+  var mailtoUrl = 'mailto:' + recipientEmail +
+                  '?subject=' + encodeURIComponent(emailSubject);
+
+  window.location.href = mailtoUrl;
+}
+$('#SendEmail').on('click', sendEmail);
