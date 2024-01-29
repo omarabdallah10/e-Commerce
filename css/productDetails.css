@@ -20,8 +20,8 @@
   } */
   .imgsContainer
   {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
   }
   .smallImg{
     display: flex;
@@ -175,7 +175,7 @@
   .btnCart{
     display: flex;
   width: 25rem;
-  height: 3.25rem;
+  height: 3.1rem;
   padding: 1rem 3.375rem;
   justify-content: center;
   align-items: center;
@@ -185,6 +185,10 @@
   background: #000;
   color: white;
   
+  }
+  @media(max-width:825.33px)
+  {
+
   }
   #review
   {

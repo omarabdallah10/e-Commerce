@@ -28,13 +28,13 @@ const priceAfterDiscount=((product.price * (100 - product.discount)) /100).toFix
 const imgDiv=document.getElementById('imgsContainer');
 let imgBlock='';
 imgBlock+=`
-</div>
+
   <div class=" mb-3 d-flex justify-content-center">
-<a class="rounded-4" " >
+
   <img id="img0" style="max-width: 80%; max-height: 100vh; margin: auto;"
    class="rounded-4" src="${imgBig}" />
-</a>
 
+</div>
 `
 imgDiv.innerHTML=imgBlock;
 const rate = Math.floor(product.rating);
@@ -88,7 +88,11 @@ let activeuser = JSON.parse(localStorage.getItem("activeuser"));
            const plusBtn=document.getElementById('increase');
            const addToCartButton = document.getElementById('addToCartBtn');
            const sizeButtons = document.querySelectorAll('.option');
-        console.log(sizeButtons);
+           // Get selected options
+               // Default to Medium if no size selected
+             const selectedSize = localStorage.getItem('selectedSize') || 'Medium'; 
+             
+           console.log(sizeButtons);
 
           sizeButtons.forEach(function (button) {
             button.addEventListener('click', function () {
@@ -110,7 +114,7 @@ let activeuser = JSON.parse(localStorage.getItem("activeuser"));
       });
 
       // Add the 'selected' class to the clicked size button
-      const selectedButton = document.getElementById(`${selectedSize.toLowerCase()}`);
+      const selectedButton = document.getElementById(selectedSize);
       if (selectedButton) {
           selectedButton.classList.add('selected');
       }
@@ -144,19 +148,9 @@ function updateQuantityDisplay() {
       });
           // Add event listener to the "Add to Cart" button
           addToCartButton.addEventListener('click', function () {
-            if(activeuser.id ==null)
-            {
-              Swal.fire({
-                title: 'Error!',
-                text: 'please sign in first!',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-              })
-            }
-            else{
-              // Get selected options
-               // Default to Medium if no size selected
-              const selectedSize = localStorage.getItem('selectedSize') || 'Medium'; 
+            
+         
+            if(activeuser != null){
               // Create an object to represent the product
               const choosenProduct = {
                  id:productId,
@@ -178,6 +172,18 @@ function updateQuantityDisplay() {
               Swal.fire("product added to cart!");
 
             } 
+
+            else
+            {
+              
+              Swal.fire({
+                title: 'Error!',
+                text: 'please sign in first!',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+              return 0;
+            }
           });
           
       });
