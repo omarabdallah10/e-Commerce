@@ -86,9 +86,9 @@ console.log(SizedProducts);
 
 window.addEventListener("load", function () {
   //toggle mobile menu in mobile view
-    // mobileMenuBtn.addEventListener("click", function () {
-    //   mobileMenu.classList.toggle("d-none");
-    // });
+  // mobileMenuBtn.addEventListener("click", function () {
+  //   mobileMenu.classList.toggle("d-none");
+  // });
 
   /*--------------------------------- Display Random Products at start --------------------------------- */
   displayProducts(startingRandomProducts);
@@ -372,10 +372,9 @@ function displayProducts(productsArray) {
 }
 
 var dropdown = `<div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton1">
-          <a class="dropdown-item" href="/Admin_users_dashboard.html" id="userDashboard">Users </a>
-          <a class="dropdown-item" href="/Admin_products_dashboard.html" id="prodDashboard">Products </a>
-          <a class="dropdown-item" href="/Admin_orders_dashboard.html" id="orderDashboard">Orders </a>
-          <a class="dropdown-item" href="#" id="logout">Logout</a>
+          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="prodDashboard">Shop </a>
+          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="orderDashboard">On Sale </a>
+          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="logout">New Arrivals</a>
         </div>`;
 $(".fa-bars").append(dropdown);
 $(".fa-bars").on("click", function (event) {
