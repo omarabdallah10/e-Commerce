@@ -51,35 +51,15 @@ class Products {
     return this.products[productId] || null;
   }
 
-  /*-------------------------------------------------------------------------------------------------- */
+  /*------------------------------------------Omar Filters------------------------------------------- */
   //Omar Functionalities :
 
-  /**
-   * Returns an array of product objects that belong to the specified category.
-   * @param {string} category - The category to filter products.
-   * @returns {Array} An array of product objects.
-   */
   getProductsByCategory(category) {
     const filteredProducts = Object.values(this.products).filter(
       (product) => product.category.toLowerCase() === category.toLowerCase()
     );
     return filteredProducts;
   }
-
-  /**
-   * Returns an array of product objects that fall within the specified price range.
-   * @param {number} minPrice - The minimum price.
-   * @param {number} maxPrice - The maximum price.
-   * @returns {Array} An array of product objects.
-   */
-
-  // getProductsByPriceRange(minPrice, maxPrice) {
-  //   const filteredProducts = Object.values(this.products).filter((product) => {
-  //     const productPrice = product.price;
-  //     return productPrice >= minPrice && productPrice <= maxPrice;
-  //   });
-  //   return filteredProducts;
-  // }
 
   getProductsByPriceRange(minPrice, maxPrice) {
     let fiilteredProducts = Object.values(this.products).filter((product) => {
@@ -89,11 +69,6 @@ class Products {
     return fiilteredProducts;
   }
 
-  /**
-   * Returns an array of product objects that are available in the specified size.
-   * @param {string} size - The size to filter products.
-   * @returns {Array} An array of product objects.
-   */
   getProductsBySize(size) {
     const filteredProducts = Object.values(this.products).filter((product) =>
       product.size.toLowerCase().includes(size.toLowerCase())
@@ -101,11 +76,6 @@ class Products {
     return filteredProducts;
   }
 
-  /**
-   * Returns an array of product objects that match the specified search query.
-   * @param {string} query - The search query.
-   * @returns {Array} An array of product objects.
-   */
   getProductsBySearchQuery(query) {
     const filteredProducts = Object.values(this.products).filter((product) => {
       const productName = product.productName.toLowerCase();
@@ -144,14 +114,10 @@ class Products {
     let products = Object.values(this.products);
     for (let i = 0; i < products.length; i++) {
       let productDate = new Date(products[i].dateAdded);
-      // console.log("product date")
-      // console.log(productDate)
       let today = new Date();
-      // console.log('today')
-      // console.log(today)
       var difference = today - productDate;
       let days = difference / (1000 * 3600 * 24);
-      if (days <= 7) {
+      if (days <= 30) {
         newArrivals.push(products[i]);
       }
     }
@@ -159,7 +125,7 @@ class Products {
     return newArrivals;
   }
 
-  //End of omar functionalities
+  //End of Omar functionalities
   /*-------------------------------------------------------------------------------------------------- */
 
   /**

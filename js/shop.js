@@ -3,10 +3,6 @@ import Products from "./database/Products.js";
 // Initializing the Products module
 let products = new Products();
 
-//mobile menu
-// let mobileMenuBtn = document.getElementsByClassName("menuBtn")[0];
-// let mobileMenu = document.getElementsByClassName("mobileMenu")[0];
-
 //parent container of all products
 let productCards = document.getElementById("productCards");
 
@@ -18,7 +14,7 @@ let shopLink = document.getElementById("shopLink");
 let onSaleLink = document.getElementById("onSaleLink");
 let newArrivalsLink = document.getElementById("newArrivalsLink");
 
-//
+//Which displayed div
 let whichDisplayed = document.getElementById("whichDisplayed");
 
 let allFilterDiv = document.getElementById("allFilterDiv");
@@ -33,7 +29,9 @@ let rightSlider = document.getElementById("input-right"); // input of max price
 let minPrice = document.getElementById("minPriceText"); // text of min price
 let maxPrice = document.getElementById("maxPriceText"); // text of max price
 
-let applyFilterBtn = document.getElementById("applyFilterBtn");
+let applyFilterBtn = document.getElementById("applyFilterBtn"); //Apply all filters button
+
+let showMoreBtn = document.getElementById("showMoreBtn"); //Show more button
 
 /*-----------------------------------------Search------------------------------------------ */
 //inputs from the page and display the value of the input in the console
@@ -165,7 +163,7 @@ window.addEventListener("load", function () {
       //   resultProductes.push(selectedPrices[i]);
       // }
       resultProductes.push(selectedPrices);
-      // console.log("from price filter", selectedPrices);
+      
     }
 
     //send the selected categories to the function in product js to filter the products with category
@@ -223,7 +221,6 @@ window.addEventListener("load", function () {
   //when shop link is clicked --> send the return array from random products to display products function
   shopLink.addEventListener("click", function () {
     whichDisplayed.innerHTML = "Shop";
-    // shopLink.classList.add("fw-bold");
     //let startingRandomProducts = products.getRandomNineProducts(); //------ if you want the products to be random every time you click on shop
     //make sure the search input is empty
     searchInput.value = "";
@@ -342,8 +339,7 @@ function createProductComponent(product) {
   return productComponent;
 }
 
-//generate rating --done
-
+//generate rating
 function generateRatingSpan(rating) {
   let rate = Math.floor(rating);
   let ratingSpan = "";
