@@ -133,6 +133,7 @@ $(function () {
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
           Customer: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
+          <a class="dropdown-item" href="/orders.html" >Orders</a>
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
           Seller: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
