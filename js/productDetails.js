@@ -1,6 +1,9 @@
 
 import Products from './database/Products.js';
 
+// or via CommonJS
+
+
 let currentQuantity=0;
 const quantityElement =document.getElementById('quantityDisplay');
 const innerTxtQuantity = quantityElement.textContent;
@@ -10,9 +13,10 @@ currentQuantity = parseInt(innerTxtQuantity);
 const products = new Products();
 // get product id from URL
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
+const productId = urlParams.get('id');
+console.log(productId);
 //get id from database
-var product =products.getProductById(id);
+var product =products.getProductById(productId);
 
 const imgBig=product.thumbnail;
 console.log(product.thumbnail);
@@ -23,43 +27,39 @@ console.log(imgs[0]);
 const priceAfterDiscount=((product.price * (100 - product.discount)) /100).toFixed(2);
 const imgDiv=document.getElementById('imgsContainer');
 let imgBlock='';
-imgBlock+=`<div class="d-flex align-items-center mb-3 side ">
-<div class="smallImg">
-<a data-fslightbox="mygalley" class=" mx-1 rounded-2" target="_blank" data-type="image" href="" class="item-thumb">
-  <img id="img1" class="rounded-2 img" src="${imgs[1]}" />
-</a>
-<a data-fslightbox="mygalley" class=" mx-1 rounded-2" target="_blank" data-type="image" href="" class="item-thumb">
-  <img id="img2" class="rounded-2 img" src="${imgs[2]}" />
-</a>
-<a data-fslightbox="mygalley" class=" mx-1 rounded-2" target="_blank" data-type="image" href="" class="item-thumb">
-  <img id="img3" class="rounded-2 img" src="${imgs[3]}" />
-</a>
+imgBlock+=`
 </div>
-</div>
-      <div class="">
-        <div class=" rounded-4 mb-3 d-flex justify-content-center">
-            <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="">
-              <img id="img0" style="max-width: 100%; max-height: 100vh; margin: auto;"
-               class="rounded-4 fit" src="${imgBig}" />
-            </a>
-          </div>
-      </div>`
-imgDiv.innerHTML=imgBlock;
-const productDiv = document.getElementById('product-details');
+  <div class=" mb-3 d-flex justify-content-center">
+<a class="rounded-4" " >
+  <img id="img0" style="max-width: 80%; max-height: 100vh; margin: auto;"
+   class="rounded-4" src="${imgBig}" />
+</a>
 
+`
+imgDiv.innerHTML=imgBlock;
+const rate = Math.floor(product.rating);
+function generateRatingSpan(rating) {
+  let ratingSpan = "";
+  for (let i = 0; i < rating; i++) {
+    ratingSpan += `<i class="fa-solid fa-star"></i>`;
+    
+  }
+  if (rating < 5) {
+    for (let i = 0; i < 5 - rating; i++) {
+      ratingSpan += `<i class="fa-regular fa-star"></i>`;
+
+    }
+  }
+  return ratingSpan;
+}
+// console.log(generateRatingSpan(4.8));
+const productDiv = document.getElementById('product-details');
 const productBlock =` <h1 id="productName" class="title text-dark header">${product.productName}</h1>
 <div class="d-flex flex-row my-3">
   <div class="text-warning mb-1 me-2">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    
-    <!-- <i class="fas fa-star-half-alt"></i>
-    <i class="fa-solid fa-star-half-stroke"></i>
-    <i class="fa-regular fa-star-half-stroke"></i> -->
+   ${generateRatingSpan(rate)}
     <span class="ms-1 rate">
-    ${product.rating}
+    ${rate}
     </span>
   </div>
 </div>
@@ -79,17 +79,16 @@ ${product.details}
 </p>
 <hr/>`
 productDiv.innerHTML=productBlock;
-
 //###########################################################
 let activeuser = JSON.parse(localStorage.getItem("activeuser"));
-       
+     // console.log( activeuser.id);
         document.addEventListener('DOMContentLoaded', function () {
            // Get elements
            const minusBtn=document.getElementById('decrease');
            const plusBtn=document.getElementById('increase');
            const addToCartButton = document.getElementById('addToCartBtn');
            const sizeButtons = document.querySelectorAll('.option');
-        
+        console.log(sizeButtons);
 
           sizeButtons.forEach(function (button) {
             button.addEventListener('click', function () {
@@ -99,7 +98,6 @@ let activeuser = JSON.parse(localStorage.getItem("activeuser"));
                 // Store the selected size in local storage
                 localStorage.setItem('selectedSize', selectedSize);
 
-                
                  updateSelectedSizeUI(selectedSize);
                 console.log(selectedSize);
             });
@@ -124,11 +122,17 @@ function updateQuantityDisplay() {
 }
       minusBtn.addEventListener('click',function()
       {
-        if (currentQuantity != 0) {
+        if (currentQuantity >1) {
         quantityElement.innerText=currentQuantity--;
         }else
         {
-          console.log("Cannot decrease beyond zero.");
+          Swal.fire({
+            title: 'Error!',
+            text: 'Cannot decrease beyond zero',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+          console.log("Cannot decrease beyond one.");
           return 0; 
         }
         updateQuantityDisplay();
@@ -140,12 +144,22 @@ function updateQuantityDisplay() {
       });
           // Add event listener to the "Add to Cart" button
           addToCartButton.addEventListener('click', function () {
+            if(activeuser.id ==null)
+            {
+              Swal.fire({
+                title: 'Error!',
+                text: 'please sign in first!',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+            }
+            else{
               // Get selected options
                // Default to Medium if no size selected
               const selectedSize = localStorage.getItem('selectedSize') || 'Medium'; 
               // Create an object to represent the product
               const choosenProduct = {
-                 id:id,
+                 id:productId,
                  userID : activeuser.id,
                  product: product,
                   name: product.productName,
@@ -161,8 +175,9 @@ function updateQuantityDisplay() {
               localStorage.setItem('cart', JSON.stringify(cartItems));
       
               // Alert the user that the product has been added to the cart (you can replace this with a better UI)
-              alert('Product added to cart!');
-              
+              Swal.fire("product added to cart!");
+
+            } 
           });
           
       });
