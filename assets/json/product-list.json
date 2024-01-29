@@ -1,0 +1,62 @@
+{
+  "2": {
+    "productId": "2",
+    "productName": "Blue V-Neck T-Shirt",
+    "price": 24.99,
+    "details": "Casual and comfortable, our blue v-neck t-shirt is perfect for everyday wear. Made from soft cotton, it's a versatile addition to your wardrobe.",
+    "rating": 4.2,
+    "size": "S,M,L",
+    "discount": 8.0,
+    "stock": 75,
+    "category": "T-Shirt",
+    "thumbnail": "img/2/1.png",
+    "images": "img/2/1.png,img/2/2.png,img/2/3.png,img/2/4.png",
+    "sellerId": "s2",
+    "dateAdded": "2022-09-01"
+  },
+  "3": {
+    "productId": "3",
+    "productName": "Comfortable Shorts",
+    "price": 29.99,
+    "details": "Stay cool and stylish with our comfortable shorts. Ideal for a casual day out or lounging at home, these shorts offer both comfort and fashion.",
+    "rating": 4.5,
+    "size": "M,L,XL",
+    "discount": 10.5,
+    "stock": 60,
+    "category": "Shorts",
+    "thumbnail": "img/3/1.png",
+    "images": "img/3/1.png,img/3/2.png,img/3/3.png,img/3/4.png",
+    "sellerId": "s3",
+    "dateAdded": "2022-09-02"
+  },
+  "4": {
+    "productId": "4",
+    "productName": "Sleeveless Vest",
+    "price": 19.99,
+    "details": "A stylish sleeveless vest for a casual and trendy look. Perfect for layering or wearing on its own, this vest adds a touch of sophistication to your outfit.",
+    "rating": 4.0,
+    "size": "S,M,L",
+    "discount": 5.0,
+    "stock": 50,
+    "category": "Vest",
+    "thumbnail": "img/4/1.png",
+    "images": "img/4/1.png,img/4/2.png,img/4/3.png,img/4/4.png",
+    "sellerId": "s1",
+    "dateAdded": "2022-09-03"
+  },
+  "5": {
+    "productId": "5",
+    "productName": "Casual Denim Pants",
+    "price": 39.99,
+    "details": "Upgrade your wardrobe with our casual denim pants. Versatile and comfortable, these pants are perfect for a relaxed yet stylish look.",
+    "rating": 4.7,
+    "size": "L,XL",
+    "discount": 12.0,
+    "stock": 70,
+    "category": "Pants",
+    "thumbnail": "img/5/1.png",
+    "images": "img/5/1.png,img/5/2.png,img/5/3.png,img/5/4.png",
+    "sellerId": "s2",
+    "dateAdded": "2022-09-04"
+  }
+}

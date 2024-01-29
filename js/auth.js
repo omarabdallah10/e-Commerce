@@ -125,10 +125,23 @@ $(function () {
       }
       
       else{
+        var DropDownOb = {
+          "Admin": `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <a class="dropdown-item" href="/Admin_users_dashboard.html" id="userDashboard">Users </a>
+          <a class="dropdown-item" href="/Admin_products_dashboard.html" id="prodDashboard">Products </a>
+          <a class="dropdown-item" href="/Admin_orders_dashboard.html" id="orderDashboard">Orders </a>
+          <a class="dropdown-item" href="#" id="logout">Logout</a>
+        </div>`,
+          "Customer": `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <a class="dropdown-item" href="#" id="logout">Logout</a>
+        </div>`,
+          "Seller":  `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <a class="dropdown-item" href="#" id="logout">Logout</a>
+        </div>`,
+        };
         // Drop Down appended to .fa-cricle-user with logout
-        var dropDown = `<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <a class="dropdown-item" href="#" id="logout">Logout</a>
-          </div>`;
+        var dropDown = DropDownOb[JSON.parse(localStorage.getItem("activeuser")).role] || "";
+
           $(".fa-circle-user").append(dropDown);
           $("#userDropdown").on("click", function (event) {
             event.stopPropagation(); // Prevent event propagation to avoid duplication

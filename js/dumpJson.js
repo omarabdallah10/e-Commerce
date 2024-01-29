@@ -1,4 +1,13 @@
-function fetchAndStoreJson(url, key) {
+/**
+ * Fetches a JSON file from the specified URL and stores it in local storage under the specified key.
+ * If the key already exists in local storage, it logs a message indicating that the key already exists.
+ *
+ * @param {string} url - The URL of the JSON file to fetch.
+ * @param {string} key - The key to store the JSON string in local storage.
+ * @returns {void}
+ * @author AhmedL3swy
+ */
+export function fetchAndStoreJson(url, key) {
   // Check if the key already exists in local storage
   if (!localStorage.getItem(key)) {
     // Fetch the JSON file
@@ -25,13 +34,3 @@ function fetchAndStoreJson(url, key) {
     console.log(`The key "${key}" already exists in local storage.`);
   }
 }
-
-// const usersjsonFileURL = 'json/user-list.json';
-// const usersKey = 'users';
-// fetchAndStoreJson(usersjsonFileURL, usersKey);
-var productsjsonFileURL = '/js/json/products-list.json';
-var productsKey = 'products';
-fetchAndStoreJson(productsjsonFileURL, productsKey);
-var ordersjsonFileURL = '/js/json/orders-list.json';
-var ordersKey = 'orders';
-fetchAndStoreJson(ordersjsonFileURL, ordersKey);

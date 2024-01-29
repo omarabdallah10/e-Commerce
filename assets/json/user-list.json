@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "full_name": "Galen Slixby",
+    "role": "Admin",
+    "email": "gslixby0@abc.net.au",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 2,
+    "full_name": "Halsey Redmore",
+    "role": "Customer",
+    "email": "hredmore1@imgur.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 3,
+    "full_name": "Marjory Sicely",
+    "role": "Seller",
+    "email": "msicely2@who.int",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 4,
+    "full_name": "Cyrill Risby",
+    "role": "Customer",
+    "email": "crisby3@wordpress.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 5,
+    "full_name": "Maggy Hurran",
+    "role": "Seller",
+    "email": "mhurran4@yahoo.co.jp",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 6,
+    "full_name": "Silvain Halstead",
+    "role": "Customer",
+    "email": "shalstead5@shinystat.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 7,
+    "full_name": "Breena Gallemore",
+    "role": "Customer",
+    "email": "bgallemore6@boston.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 8,
+    "full_name": "Kathryne Liger",
+    "role": "Customer",
+    "email": "kliger7@vinaora.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 9,
+    "full_name": "Franz Scotfurth",
+    "role": "Customer",
+    "email": "fscotfurth8@dailymotion.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 10,
+    "full_name": "Jillene Bellanyx",
+    "role": "Customer",
+    "email": "jbellany9@kickstarter.com",
+    "status": 2,
+    "password": "12345678"
+  }
+]
