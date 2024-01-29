@@ -1,3 +1,4 @@
+
 window.addEventListener('load', function() {
   // let signupDismiss = document.getElementById("signup-dismiss");
   let signupDismiss = document.getElementById("dismisser");
@@ -169,5 +170,23 @@ function updateCartQuantity(index, newQuantity ) {
 
 displayCart();
 
+
+var dropdown = `<div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton1">
+
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/index.html" id="prodDashboard">home </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="prodDashboard">Shop </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="orderDashboard">On Sale </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="logout">New Arrivals</a>
+        </div>`;
+$(".fa-bars").append(dropdown);
+$(".fa-bars").on("click", function (event) {
+  event.stopPropagation(); // Prevent event propagation to avoid duplication
+  $("#dropmenu").toggle();
+});
+$(document).on("click", function (event) {
+  if (!$(event.target).closest("#userDropdown").length) {
+    $("#dropmenu").hide();
+  }
+});
 
 
