@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
     console.log("signup Clicked!!");
   });
 });
+let activeuser = JSON.parse(localStorage.getItem("activeuser"));
 
 let BackBTN = document.querySelector(".btn-two");
 let payment = document.querySelector("select[name=payment]");
@@ -41,10 +42,10 @@ function displayCart() {
   let hamada = ``;
   for (let i = 0; i < myProduct.length; i++) {
     if (myProduct[i].userID === activeuser.id) {
-    const itemTotal = myProduct[i].product.price * myProduct[i].quantity;
-    subTotalPrice += itemTotal;
+      const itemTotal = myProduct[i].product.price * myProduct[i].quantity;
+      subTotalPrice += itemTotal;
 
-    hamada = `
+      hamada = `
       <div class="product">
       <img src="${myProduct[i].product.thumbnail}" alt="">
       <div class="info">
@@ -61,9 +62,9 @@ function displayCart() {
           }">
       </div>
       `;
-    document.querySelector(".one").innerHTML += hamada;
+      document.querySelector(".one").innerHTML += hamada;
+    }
   }
-}
   updateTotalPrices();
 }
 
@@ -95,24 +96,47 @@ payment.addEventListener("change", function (e) {
     img.src = "images/america.png";
   }
 });
+document
+  .querySelector("#checkOutForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: "Purchase successful",
+    }).then((result) => {
+      window.location.href = "Shop.html";
+
+      const activeUserCart = myProduct.filter(
+        (item) => item.userID === activeuser.id
+      );
+      console.log("filtered cart", activeUserCart);
+      activeUserCart.forEach((myProductItem, index) => {});
+
+      const updatedTotalCart = myProduct.filter(
+        (item) => !activeUserCart.includes(item)
+      );
+      localStorage.setItem("cart", JSON.stringify(updatedTotalCart));
+    });
+  });
 
 purchaseBTN.addEventListener("click", function (e) {
   if (!validation()) {
     e.preventDefault();
-  } else {
-    for (let i = 0; i < myProduct.length; i++) {
-      myProduct[i].product.stock -= myProduct[i].quantity;
-      myProduct[i].decreaseProductQuantity(
-        myProduct[i].productId,
-        myProduct[i].quantity
-      );
-      if (myProduct[i].product.stock < 0) {
-        alert("there is no items from this product");
-      }
-    }
   }
 });
-let activeuser = JSON.parse(localStorage.getItem("activeuser"));
+
 function validation() {
   for (let i = 1; i <= 9; i++) {
     if (allInputs[i].value == "" || allInputs[i].value == null) {
@@ -170,50 +194,57 @@ function validation() {
     allInputs[9].style.border = "2px solid green";
   }
 
-  for (let i = 0; i < myProduct.length; i++) {
-    let userFullName = allInputs[1].value + " " + allInputs[2].value;
-    let UserMobile = allInputs[3].value;
-    let UserCity = allInputs[4].value;
-    let UserAddress = allInputs[5].value;
-    let UserState = state.value;
-
-    // let successPurchase = {
-    //     "orderId": 1,
-    //     "orderName": myProduct[i].name ,
-    //     "price": myProduct[i].price ,
-    //     "quantity" : myProduct[i].quantity,
-    //     "status": 4,
-    //     "details": `Size = ${myProduct[i].size}, Color = Blue`,
-    //     "DeliveryDetails": `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
-    //     "sellerId": "s1",
-    //     "orderDate": getCurrentDate(),
-    // };
-
+  // var orderDetails = {
+  //   userId: activeuser.id,
+  //   orderId: arr.length + 1,
+  //   products: [],
+  // };
+  
+  let userFullName = allInputs[1].value + " " + allInputs[2].value;
+  let UserMobile = allInputs[3].value;
+  let UserCity = allInputs[4].value;
+  let UserAddress = allInputs[5].value;
+  let UserState = state.value;
+  
+  // for (let i = 0; i < myProduct.length; i++) {
+  //   let product = myProduct[i];
     
-    let successPurchase = {
-      userId: activeuser.id,
-      orderId: arr.length + 1,
-      products: [],
+    var orderDetails = {
+      userID: activeuser.id,
+      deliveryDetails: `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+      status: 1,
+      details: `Size = ${myProduct.size}, Color = Blue`,   
+      orderDate: getCurrentDate(),
+      //orderId: findMaxOrderId(userData)+1,
+      productId: myProduct.productId,
+      orderName: `${myProduct.productName} x ${myProduct.quantity}`,
+      price: myProduct.price,
+      quantity: myProduct.quantity,
+      sellerId: "s1",
     };
-
-    for (let i = 0; i < myProduct.length; i++) {
-      let orderItem = {
-        productId: myProduct[i].productId,
-        orderName: myProduct[i].product.productName,
-        price: myProduct[i].product.price,
-        quantity: myProduct[i].quantity,
-        status: 4,
-        details: `Size = ${myProduct[i].size}, Color = Blue`,
-        deliveryDetails: `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
-        sellerId: "s1",
-        orderDate: getCurrentDate(),
-      };
-      successPurchase.products.push(orderItem);
+  // }
+  arr.push(orderDetails);
+  localStorage.setItem("purchase", JSON.stringify(arr));
+  function appendOrderToUser(userData, orderDetails) {
+    var { userID, ...restOrderDetails } = orderDetails;
+  
+    if (!userData[userID]) {
+      userData[userID] = {};
     }
-
-    arr.push(successPurchase);
-    localStorage.setItem("purchase", JSON.stringify(arr));
+  
+    var userOrders = userData[userID];
+    var orderId = orderDetails.orderId.toString(); 
+  
+    userOrders[orderId] = restOrderDetails;
+  
+    return userData;
   }
+  
+  var orders = JSON.parse(localStorage.getItem("orders")) || {};
+  var updatedOrders = appendOrderToUser(orders, orderDetails);
+  localStorage.setItem("orders", JSON.stringify(updatedOrders));
+
+
   return true;
 }
 
@@ -315,3 +346,12 @@ function updateCartQuantity(index, newQuantity) {
 }
 
 displayCart();
+
+function success(event) {
+  event.preventDefault();
+  Swal.fire({
+    title: "Good job!",
+    text: "You Have been purchased the products!",
+    icon: "success",
+  });
+}

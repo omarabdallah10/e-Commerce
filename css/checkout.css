@@ -23,6 +23,7 @@ body {
     margin: auto;
     padding: 50px;
     background-color: #100100;
+    border-radius: 8px;
 
 }
 .name , .details ,.place {
@@ -64,17 +65,35 @@ label {
     outline: none;
 }
 
-
-.btn-one , .btn-two {
+.btn-one {
+    background-color: white;
+    color: black;
+    transition: all .5s;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+ .btn-two {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-}
+    transition: all .5s;
 
-.btn-one:hover , .btn-two:hover {
+}
+.btn-one:hover  {
+    background-color: white;
+    color: black;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgb(0, 0, 0,.3);
+
+    
+}
+ .btn-two:hover {
     background-color: #0056b3;
 }
 .img {
