@@ -60,7 +60,7 @@ body {
 }
 .hero-main-img {
   /* width: 100%; */
-  background-image: url("../images/Rectangle 2.jpg");
+  background-image: url("../images/Rectangle\ 2.jpg");
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
