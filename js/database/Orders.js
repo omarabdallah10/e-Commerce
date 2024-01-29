@@ -25,7 +25,7 @@ class Orders {
     async fetchOrders() {
         try {
             // Replace 'js/database/json/orders-list.json' with the actual path or URL to your JSON file
-            const response = await fetch('js/database/json/orders-list.json');
+            const response = await fetch('js/json/orders-list.json');
             if (response.ok) {
                 console.log('Orders fetched successfully from local JSON.');
                 const data = await response.json();

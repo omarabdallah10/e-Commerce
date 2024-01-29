@@ -21,7 +21,7 @@ class Products {
    */
   async fetchProducts() {
     try {
-      const response = await fetch("js/database/json/products-list.json");
+      const response = await fetch("js/json/products-list.json");
       if (response.ok) {
         console.log("Products fetched successfully from local json.");
         const data = await response.json();
