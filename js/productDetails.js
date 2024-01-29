@@ -81,7 +81,7 @@ ${product.details}
 productDiv.innerHTML=productBlock;
 
 //###########################################################
-
+let activeuser = JSON.parse(localStorage.getItem("activeuser"));
        
         document.addEventListener('DOMContentLoaded', function () {
            // Get elements
@@ -144,13 +144,16 @@ function updateQuantityDisplay() {
                // Default to Medium if no size selected
               const selectedSize = localStorage.getItem('selectedSize') || 'Medium'; 
               // Create an object to represent the product
-              const product = {
-                  id : 1,
-                  name: name,
+              const choosenProduct = {
+                 id:id,
+                 userID : activeuser.id,
+                 product: product,
+                  name: product.productName,
                   size: selectedSize,
                   price: priceAfterDiscount,
                   quantity: currentQuantity
               };
+      
               // Get existing cart items from local storage
               let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
               cartItems.push(choosenProduct)
@@ -163,5 +166,4 @@ function updateQuantityDisplay() {
           });
           
       });
-
       
