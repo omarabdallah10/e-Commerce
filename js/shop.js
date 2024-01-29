@@ -21,6 +21,9 @@ let newArrivalsLink = document.getElementById("newArrivalsLink");
 //
 let whichDisplayed = document.getElementById("whichDisplayed");
 
+let allFilterDiv = document.getElementById("allFilterDiv");
+let sliderIcon = document.getElementById("sliderIcon");
+
 //get the filter buttons
 let sizeFilterDiv = document.getElementById("sizeMenu");
 let categoryFilterDiv = document.getElementById("categoryMenu");
@@ -71,24 +74,14 @@ searchInput.addEventListener("keyup", function () {
 }); //end of search input
 /*------------------------------------------------------------------------------------------ */
 
-// Getting the products object
-//get one product with id
-let product1 = products.getProductById("pid9");
-console.log(product1);
-
-//get array of products with category
-let CategoriedProducts = products.getProductsByCategory("shirts");
-console.log(CategoriedProducts);
-
-//get array of products with size
-let SizedProducts = products.getProductsBySize("S");
-console.log(SizedProducts);
-
+/*-------------------------------------- Start Load ------------------------------------------ */
 window.addEventListener("load", function () {
-  //toggle mobile menu in mobile view
-  // mobileMenuBtn.addEventListener("click", function () {
-  //   mobileMenu.classList.toggle("d-none");
-  // });
+
+
+  
+  sliderIcon.addEventListener("click", function () {
+    allFilterDiv.classList.toggle("d-none");
+  });
 
   /*--------------------------------- Display Random Products at start --------------------------------- */
   displayProducts(startingRandomProducts);
@@ -350,13 +343,15 @@ function createProductComponent(product) {
 }
 
 //generate rating --done
+
 function generateRatingSpan(rating) {
+  let rate = Math.floor(rating);
   let ratingSpan = "";
-  for (let i = 0; i < rating; i++) {
+  for (let i = 0; i < rate; i++) {
     ratingSpan += `<i class="fa-solid fa-star"></i>`;
   }
   if (rating < 5) {
-    for (let i = 0; i < 5 - rating; i++) {
+    for (let i = 0; i < 5 - rate; i++) {
       ratingSpan += `<i class="fa-regular fa-star"></i>`;
     }
   }

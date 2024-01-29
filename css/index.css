@@ -9,21 +9,6 @@
   --box-shadow-main: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-::-webkit-scrollbar {
-  width: 15px;
-}
-::-webkit-scrollbar-track {
-  background: var(--secondary-color);
-  box-shadow: inset 0 0 5px grey;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(11, 9, 9, 0.5);
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(11, 9, 9, 0.9);
-}
-
 * {
   transition: 0.5s all ease;
 }
@@ -80,9 +65,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.hero-main-img:hover {
-  background-size: 200%;
-}
+
 .header-menu-list {
   display: inline;
   padding: 0 !important;
@@ -106,17 +89,19 @@ i[class*="bi-arrow"] {
   box-shadow: var(--box-shadow-main);
   transition: 0.5s all ease;
 }
-.casual {
+
+.shirts {
   background-image: url("../images/image\ 11.png");
 }
-.formal {
-  background-image: url("../images/image\ 13.png");
+.shorts {
+  background-image: url("../images/shortsCover.png");
 }
-.party {
-  background-image: url("../images/image\ 12.png");
+.hoodies {
+  background-image: url("../images/hoodiesCover.png");
+  background-size: cover;
 }
-.gym {
-  background-image: url("../images/image\ 14.png");
+.pants {
+  background-image: url("../images/pantsCover.png");
 }
 
 .user-comment {

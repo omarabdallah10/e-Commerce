@@ -1,479 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CheckOut</title>
-    <link rel="stylesheet" href="css/checkout.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
-</head>
-<body>
-    
-        <!-- Start Navbar -->
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/fontawesome.css" />
+  </head>
+  <body>
+    <!-- Start Navbar -->
+    <nav class="main-nav container pt-3">
+      <div class="d-flex align-items-center">
+        <div class="d-flex h-100 align-items-center">
+          <!-- Bars for small screens-->
 
-        <div
-        id="signup-notice"
-        class="w-100 d-flex justify-content-center align-items-center py-1"
-      >
-        <div class="fw-light">
-          Sign up and get 20% off to your first order.
-          <a href="#" class="text-white fw-normal">Sign Up Now!</a>
+          <a
+            href="/index.html"
+            class="text-decoration-none text-black fw-bold fs-3"
+          >
+            SHOP.CO
+          </a>
         </div>
-        <div id="signup-dismiss">
-          <i id="dismisser" class="fa-solid fa-x"></i>
+
+        <!--V.2 Nav Links-->
+        <div
+          class="col-5 d-none d-lg-flex ms-lg-auto fw-light fs-5 justify-content-center align-items-center"
+        >
+          <ul class="header-menu-list">
+            <li class="mx-2">
+              <a
+                id="brandsLink"
+                class="text-decoration-none text-black main-menu-link position-relative shop-link"
+                href="/index.html"
+              >
+                Home
+              </a>
+            </li>
+            <li class="mx-2">
+              <a
+                id="shopLink"
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="/Shop.html"
+                >Shop</a
+              >
+            </li>
+            <li class="mx-2">
+              <a
+                id="onSaleLink"
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="/Shop.html"
+                >On Sale</a
+              >
+            </li>
+            <li class="mx-2">
+              <a
+                id="newArrivalsLink"
+                class="text-decoration-none text-black main-menu-link position-relative"
+                href="#"
+                >New Arrivals</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="d-flex ms-auto">
+          <a
+            href="/Cart.html"
+            class="mx-2 text-decoration-none text-black fs-5"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <a
+            href="#"
+            class="mx-2 text-decoration-none text-black fs-5"
+            id="userDropdown"
+          >
+            <i id="userIcon" class="fa-solid fa-circle-user"></i>
+          </a>
         </div>
       </div>
-  
-      <!-- Start Navbar -->
-      <nav class="main-nav container pt-3">
-        <div class="d-flex align-items-center">
-          <div class="d-flex h-100 align-items-center">
-            <!-- Bars for small screens-->
-            <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-            <a href="/index.html" class="text-decoration-none text-black fw-bold fs-3">
-              SHOP.CO
-            </a>
-            <!--Mobile Menu-->
-            <div class="mobileMenu position-absolute w-100 d-none">
-              <div
-                class="main-mobile-menu w-75 bg-white h-100 p-3 rounded-end-3 shadow-lg border border-3"
-              >
-                <div class="w-100 d-flex align-items-center">
-                  <div class="flex-grow-1">Menu</div>
-                  <div>
-                    <button class="btn fw-bold close-menu">
-                      <i class="bi bi-x-lg text-white fs-4"></i>
-                    </button>
-                  </div>
-                </div>
-                <hr />
-                <ul class="p-0">
-                  <li class="mx-2 my-2">
-                    <a class="text-decoration-none text-black" href="">Shop</a>
-                  </li>
-                  <li class="mx-2 my-2">
-                    <a class="text-decoration-none text-black" href="#"
-                      >On Sale</a
-                    >
-                  </li>
-                  <li class="mx-2 my-2">
-                    <a class="text-decoration-none text-black" href="#"
-                      >New Arrivals</a
-                    >
-                  </li>
-                  <li class="mx-2 my-2">
-                    <a class="text-decoration-none text-black shop-link" href="#">
-                      About us
-                    </a>
-                  </li>
-                </ul>
+    </nav>
+
+    <hr class="container" />
+    <!-- End Navbar -->
+
+    <div class="main-wrapper">
+      <div class="left">
+        <form id="checkOutForm">
+          <div class="first">
+            <h2>
+              <i class="fa-solid fa-truck-fast"></i>
+              Shipping Details
+            </h2>
+            <div class="name">
+              <div class="firstName">
+                <label for="firstName"
+                  >First Name:
+                  <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="First Name.."
+                  id="firstName"
+                  name="UserFirstName"
+                />
+              </div>
+              <div class="lastName">
+                <label for="lastName"
+                  >Last Name:
+                  <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="Last Name.."
+                  id="lastName"
+                  name="UserLastName"
+                />
               </div>
             </div>
-            <!--End Mobile Menu-->
+            <div class="phone">
+              <label for="Phone"
+                >Mobile No:
+                <span class="required" title="required">*</span></label
+              >
+              <input
+                type="text"
+                placeholder="Your Mobile.."
+                id="Phone"
+                name="UserPhone"
+              />
+            </div>
+            <div class="place">
+              <div class="city">
+                <label for="City"
+                  >City: <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="Your City.."
+                  id="City"
+                  name="UserCity"
+                />
+              </div>
+              <div class="Sreet">
+                <label for="Street"
+                  >Address:
+                  <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="Your Address.."
+                  id="street"
+                  name="UserAddress"
+                />
+              </div>
+            </div>
+            <div class="state">
+              <label for="State"
+                >Choose State:
+                <span class="required" title="required">*</span></label
+              >
+              <select name="State" required>
+                <option value="" selected disabled>Choose Your State</option>
+                <option value="cairo">Cairo</option>
+                <option value="alex">Alex</option>
+                <option value="mansoura">Mansoura</option>
+                <option value="menoufya">Menoufya</option>
+                <option value="tanta">Tanta</option>
+                <option value="aswan">Aswan</option>
+              </select>
+            </div>
           </div>
-  
-          <!--V.2 Nav Links-->
-          <div
-            class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center"
-          >
-            <ul class="header-menu-list">
-              <li class="mx-2">
-                <a
-                  id="shopLink"
-                  class="text-decoration-none text-black main-menu-link position-relative"
-                  href="/Shop.html"
-                  >Shop</a
+          <div class="second">
+            <h2>
+              <i class="fa-brands fa-cc-amazon-pay"></i>
+              Payment Information
+            </h2>
+            <div class="Paymement-methods">
+              <label
+                >Select Your Card
+                <span class="required" title="required">*</span></label
+              >
+              <select name="payment" required>
+                <option value="" disabled selected>Choose Your Method..</option>
+                <option value="visa">Visa</option>
+                <option value="master">Master Card</option>
+                <option value="express">American Express</option>
+              </select>
+            </div>
+            <div class="img">
+              <img src="" alt="" />
+            </div>
+            <div class="card-no">
+              <label for="card"
+                >Credit Card No:
+                <span class="required" title="required">*</span></label
+              >
+              <input
+                type="text"
+                placeholder="xxxx-xxxx-xxxx-xxxx"
+                id="card"
+                name="UserCardNo"
+              />
+            </div>
+            <div class="card-name">
+              <label for="card-Name"
+                >Credit Card Name:
+                <span class="required" title="required">*</span></label
+              >
+              <input
+                type="text"
+                placeholder="Your Card Name.."
+                id="card-Name"
+                name="UserCardName"
+              />
+            </div>
+            <div class="details">
+              <div class="exp">
+                <label for="Exp"
+                  >Exp: <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="00/00"
+                  id="Exp"
+                  name="UserCardExp"
+                />
+              </div>
+              <div class="ccv">
+                <label for="CCV"
+                  >CCV: <span class="required" title="required">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="xxx"
+                  id="CCV"
+                  name="UserCardCCV"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="error"></div>
+          <button class="btn-one">Purchase</button>
+          <button class="btn-two">Back To Cart</button>
+        </form>
+      </div>
+      <div class="right">
+        <div class="custom-container">
+          <div class="one"></div>
+          <div class="two">
+            <h2>Order Summary</h2>
+            <div class="price-total">
+              <div class="first">
+                <span>Subtotal</span>
+                <p>$<span class="subtotal">500</span></p>
+              </div>
+              <div class="discount">
+                <span>Discount(-20%)</span>
+                <p>-$<span class="Discount">100</span></p>
+              </div>
+              <div class="fee">
+                <span>Delivery fee</span>
+                <p>$<span class="fees">15</span></p>
+              </div>
+              <div class="total">
+                <span>Total</span>
+                <p>$<span class="Total">700</span></p>
+              </div>
+            </div>
+            <div class="coupon">
+              <input type="text" placeholder="Add promo code" />
+              <button class="apply">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Footer -->
+    <div class="newsletter mt-4">
+      <div class="container px-4 py-4 rounded-4">
+        <div class="row">
+          <div class="flex-grow-1 col-lg-7 my-3 ms-5">
+            <h1 class="text-white fw-bolder">
+              STAY UP TO DATE ABOUT <br />
+              OUR LATEST OFFERS
+            </h1>
+          </div>
+          <div class="col-lg-4 my-3 me-5">
+            <div class="w-100 my-2">
+              <input
+                type="email"
+                class="form-control rounded-pill px-5 py-2"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div class="w-100 my-2">
+              <button class="btn bg-white rounded-pill px-5 w-100 py-2">
+                Subscribe to newsletter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-5 text-center text-lg-start">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="my-2 col-12 col-lg-4">
+            <a
+              href="#"
+              class="text-black fw-bold text-decoration-none fs-3 d-block mb-3"
+              >SHOP.CO</a
+            >
+            <p class="text-secondary fw-normal mb-3">
+              We have clothes that will give you a new style and you will be
+              proud of yourself and your purchase. From women to men.
+            </p>
+            <div
+              class="social d-flex mt-5 mb-sm-5 justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="#"
+                target="_blank"
+                class="social-icon mx-2 text-decoration-none text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                target="_blank"
+                class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                target="_blank"
+                class="mx-2 social-icon d-flex text-decoration-none text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links my-2 col-6 col-lg-2">
+            <h1 class="fs-3 mb-4 fw-normal">Company</h1>
+            <ul class="list-unstyled p-0 fw-light">
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#"
+                  >About
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#"
+                  >Feature
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#"
+                  >Works</a
                 >
               </li>
-              <li class="mx-2">
-                <a
-                  id="onSaleLink"
-                  class="text-decoration-none text-black main-menu-link position-relative"
-                  href="#"
-                  >On Sale</a
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#"
+                  >Career</a
                 >
               </li>
-              <li class="mx-2">
-                <a
-                  id="newArrivalsLink"
-                  class="text-decoration-none text-black main-menu-link position-relative"
-                  href="#"
-                  >New Arrivals</a
-                >
+            </ul>
+          </div>
+          <div class="footer-links my-2 col-6 col-lg-2">
+            <h1 class="fs-3 mb-4 fw-normal">Help</h1>
+            <ul class="list-unstyled p-0 fw-light">
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Customer Support
+                </a>
               </li>
-              <li class="mx-2">
-                <a
-                  id="brandsLink"
-                  class="text-decoration-none text-black main-menu-link position-relative shop-link"
-                  href="#"
-                >
-                  About us
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Delivery Details
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Privacy Policy
                 </a>
               </li>
             </ul>
           </div>
-  
-          <!--Search-->
-          <div class="mx-auto col-md-4">
-            <form class="d-flex">
-              <button class="btn" type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-              <input
-                id="searchInput"
-                class="form-control"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </form>
+          <div class="footer-links my-2 col-6 col-lg-2">
+            <h1 class="fs-3 mb-4 fw-normal">FAQ</h1>
+            <ul class="list-unstyled p-0 fw-light">
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Account
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Manage Deliveries
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Orders
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Payments
+                </a>
+              </li>
+            </ul>
           </div>
-  
-          <div class="d-flex">
-            <a href="/Cart.html" class="mx-2 text-decoration-none text-black fs-5">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            <a href="#" class="mx-2 text-decoration-none text-black fs-5" id="userDropdown">
-              <i id="userIcon" class="fa-solid fa-circle-user"></i>
-            </a>
-            
-            
-            
+          <div class="footer-links my-2 col-6 col-lg-2">
+            <h1 class="fs-3 mb-4 fw-normal">Resources</h1>
+            <ul class="list-unstyled p-0 fw-light">
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Free eBooks
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Development Tutorial
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  How to Blog
+                </a>
+              </li>
+              <li class="my-2">
+                <a class="text-secondary text-decoration-none" href="#">
+                  Youtube Playlist
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
 
-    <div class="main-wrapper">
-        <div class="left">
-            <form id="checkOutForm">
-                <div class="first">
-                    <h2>
-                        <i class="fa-solid fa-truck-fast"></i>
-                        Shipping Details
-                    </h2>
-                    <div class="name">
-                        <div class="firstName">
-                            <label for="firstName">First Name: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="First Name.." id="firstName" name="UserFirstName">
-                        </div>
-                        <div class="lastName">
-                            <label for="lastName">Last Name: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="Last Name.." id="lastName" name="UserLastName">
-                        </div>
-                    </div>
-                    <div class="phone">
-                        <label for="Phone">Mobile No: <span class="required" title="required">*</span></label>
-                        <input type="text" placeholder="Your Mobile.." id="Phone" name="UserPhone">
-                    </div>
-                    <div class="place">
-                        <div class="city">
-                            <label for="City">City: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="Your City.." id="City" name="UserCity">
-                        </div>
-                        <div class="Sreet">
-                            <label for="Street">Address: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="Your Address.." id="street" name="UserAddress">
-                        </div>
-                    </div>
-                    <div class="state">
-                        <label for="State">Choose State: <span class="required" title="required">*</span></label>
-                        <select name="State" required>
-                            <option value="" selected disabled>Choose Your State</option>
-                            <option value="cairo">Cairo</option>
-                            <option value="alex">Alex</option>
-                            <option value="mansoura">Mansoura</option>
-                            <option value="menoufya">Menoufya</option>
-                            <option value="tanta">Tanta</option>
-                            <option value="aswan">Aswan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="second">
-                    <h2>
-                        <i class="fa-brands fa-cc-amazon-pay"></i>
-                        Payment Information
-                    </h2>
-                    <div class="Paymement-methods">
-                        <label>Select Your Card <span class="required" title="required">*</span></label>
-                        <select name="payment" required>
-                            <option value="" disabled selected>Choose Your Method..</option>
-                            <option value="visa">Visa</option>
-                            <option value="master">Master Card</option>
-                            <option value="express">American Express</option>
-                        </select>
-                    </div>
-                    <div class="img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="card-no">
-                        <label for="card">Credit Card No: <span class="required" title="required">*</span></label>
-                        <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" id="card" name="UserCardNo">
-                    </div>
-                    <div class="card-name">
-                        <label for="card-Name">Credit Card Name: <span class="required" title="required">*</span></label>
-                        <input type="text" placeholder="Your Card Name.." id="card-Name" name="UserCardName">
-                    </div>
-                    <div class="details">
-                        <div class="exp">
-                            <label for="Exp">Exp: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="00/00" id="Exp" name="UserCardExp">
-                        </div>
-                        <div class="ccv">
-                            <label for="CCV">CCV: <span class="required" title="required">*</span></label>
-                            <input type="text" placeholder="xxx" id="CCV" name="UserCardCCV">
-                        </div>
-                    </div>
-                </div>
-                <div class="error"></div>
-                <button class="btn-one">Purchase</button>
-                <button class="btn-two">Back To Cart</button>
-            </form>
-        </div>
-        <div class="right">
-            <div class="custom-container">
-                <div class="one">
+          <hr class="mb-3" />
 
-                </div>
-    <div class="two">
-        <h2>Order Summary</h2>
-        <div class="price-total">
-          <div class="first">
-            <span>Subtotal</span>
-            <p>$<span class="subtotal">500</span></p>
-          </div>
-          <div class="discount">
-            <span>Discount(-20%)</span>
-            <p>-$<span class="Discount">100</span></p>
-          </div>
-          <div class="fee">
-            <span>Delivery fee</span>
-            <p>$<span class="fees">15</span></p>
-          </div>
-          <div class="total">
-            <span>Total</span>
-            <p>$<span class="Total">700</span></p>
+          <div
+            class="mx-3 d-flex flex-column flex-lg-row justify-content-between align-items-center text-secondary"
+          >
+            <div class="fw-light">
+              SHOP.CO &copy; 2020-2024, All Rights Reserved
+            </div>
+            <div class="d-flex my-2 my-lg-0">
+              <!--46*30-->
+              <img src="images/mastercard.png" alt="visa" />
+              <img src="images/paybal.png" alt="visa" />
+              <img src="images/applepay.png" alt="visa" />
+              <img src="images/googlepay.png" alt="visa" />
+            </div>
           </div>
         </div>
-        <div class="coupon">
-          <input type="text" placeholder="Add promo code" />
-          <button class="apply">Apply</button>
-        </div>
-    </div>
-        </div>
-        </div>
-    </div>
-
-
-            <!-- Start Footer -->
-            <div class="newsletter mt-4">
-                <div class="container px-4 py-4 rounded-4">
-                  <div class="row">
-                    <div class="flex-grow-1 col-lg-7 my-3 ms-5">
-                      <h1 class="text-white fw-bolder">
-                        STAY UP TO DATE ABOUT <br />
-                        OUR LATEST OFFERS
-                      </h1>
-                    </div>
-                    <div class="col-lg-4 my-3 me-5">
-                      <div class="w-100 my-2">
-                        <input
-                          type="email"
-                          class="form-control rounded-pill px-5 py-2"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-                      <div class="w-100 my-2">
-                        <button class="btn bg-white rounded-pill px-5 w-100 py-2">
-                          Subscribe to newsletter
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <footer class="py-5 text-center text-lg-start">
-                <div class="container position-relative">
-                  <div class="row">
-                    <div class="my-2 col-12 col-lg-4">
-                      <a
-                        href="#"
-                        class="text-black fw-bold text-decoration-none fs-3 d-block mb-3"
-                        >SHOP.CO</a
-                      >
-                      <p class="text-secondary fw-normal mb-3">
-                        We have clothes that will give you a new style and you will be
-                        proud of yourself and your purchase. From women to men.
-                      </p>
-                      <div
-                        class="social d-flex mt-5 mb-sm-5 justify-content-center justify-content-lg-start"
-                      >
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="social-icon mx-2 text-decoration-none text-black bg-white rounded-circle d-flex justify-content-center align-items-center fs-5"
-                        >
-                          <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
-                          ><i class="fa-brands fa-facebook-f"></i
-                        ></a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="mx-2 social-icon text-decoration-none d-flex text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
-                          ><i class="fa-brands fa-instagram"></i
-                        ></a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="mx-2 social-icon d-flex text-decoration-none text-black bg-white rounded-circle justify-content-center align-items-center fs-5"
-                          ><i class="fa-brands fa-github"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <div class="footer-links my-2 col-6 col-lg-2">
-                      <h1 class="fs-3 mb-4 fw-normal">Company</h1>
-                      <ul class="list-unstyled p-0 fw-light">
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#"
-                            >About
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#"
-                            >Feature
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#"
-                            >Works</a
-                          >
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#"
-                            >Career</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="footer-links my-2 col-6 col-lg-2">
-                      <h1 class="fs-3 mb-4 fw-normal">Help</h1>
-                      <ul class="list-unstyled p-0 fw-light">
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Customer Support
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Delivery Details
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Terms & Conditions
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Privacy Policy
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="footer-links my-2 col-6 col-lg-2">
-                      <h1 class="fs-3 mb-4 fw-normal">FAQ</h1>
-                      <ul class="list-unstyled p-0 fw-light">
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Account
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Manage Deliveries
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Orders
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Payments
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="footer-links my-2 col-6 col-lg-2">
-                      <h1 class="fs-3 mb-4 fw-normal">Resources</h1>
-                      <ul class="list-unstyled p-0 fw-light">
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Free eBooks
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Development Tutorial
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            How to Blog
-                          </a>
-                        </li>
-                        <li class="my-2">
-                          <a class="text-secondary text-decoration-none" href="#">
-                            Youtube Playlist
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-          
-                    <hr class="mb-3" />
-          
-                    <div
-                      class="mx-3 d-flex flex-column flex-lg-row justify-content-between align-items-center text-secondary"
-                    >
-                      <div class="fw-light">
-                        SHOP.CO &copy; 2020-2024, All Rights Reserved
-                      </div>
-                      <div class="d-flex my-2 my-lg-0">
-                        <!--46*30-->
-                        <img src="images/mastercard.png" alt="visa" />
-                        <img src="images/paybal.png" alt="visa" />
-                        <img src="images/applepay.png" alt="visa" />
-                        <img src="images/googlepay.png" alt="visa" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </footer>
-              <!-- End Footer -->
-
-
-
+      </div>
+    </footer>
+    <!-- End Footer -->
 
     <!-- Authentication Modal With Dependinces-->
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true"></div>
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="authModalLabel"
+      aria-hidden="true"
+    ></div>
+    <script src="js/auth.js" type="module"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- End Authentication Modal -->
+
+    <!-- Authentication Modal With Dependinces-->
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="authModalLabel"
+      aria-hidden="true"
+    ></div>
     <script src="js/jquery.js"></script>
     <script src="js/auth.js" type="module"></script>
     <script src="js/bootstrap.js"></script>
     <!-- End Authentication Modal -->
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/fontawesome.js"></script>
-<script src="js/checkout.js"></script>
-</body>
-</html> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/fontawesome.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

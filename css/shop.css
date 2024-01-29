@@ -63,6 +63,10 @@
 	box-shadow: 0 0 0 7px rgba(37,37,37,0.1);
 }
 
+#sliderIcon:hover {
+	cursor: pointer;
+}
+
 input[type=range] {
 	position: absolute;
 	pointer-events: none;
