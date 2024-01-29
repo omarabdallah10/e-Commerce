@@ -432,7 +432,7 @@ function displayProducts(productsArray) {
 
 var dropdown = `<div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton1">
 
-          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/هىيثء.html" id="prodDashboard">أخةث </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/index.html" id="prodDashboard">Home </a>
           <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="prodDashboard">Shop </a>
           <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="orderDashboard">On Sale </a>
           <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="logout">New Arrivals</a>
