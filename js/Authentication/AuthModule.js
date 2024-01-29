@@ -5,7 +5,11 @@ class AuthModule {
             return true;
         }
     }
-
+    isGuest() {
+        if (JSON.parse(localStorage.getItem('activeuser'))) {
+            return true;
+        }
+    }
     static isAuthorized() {
         if (!AuthModule.activeUser) {
             // Create a new container element
