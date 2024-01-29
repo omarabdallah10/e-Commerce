@@ -14,21 +14,15 @@
   .icon-hover:hover i {
     color: #3b71ca !important;
   }
-  /* .side
-  {
-    display: inline-block;
-  } */
+  
   .imgsContainer
   {
     display: flex;
     flex-direction: row;
   }
-  .smallImg{
-    display: flex;
-    flex-direction: column;
-  }
+  
   .img{
-    width: 9.5rem;
+   width: 9.5rem;
   height: 10.4375rem;
   flex-shrink: 0;
   border-radius: 1.25rem;
@@ -84,7 +78,7 @@
     color: rgba(0, 0, 0, 0.60);
   
   font-family: Satoshi;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.375rem; /* 137.5% */
@@ -145,9 +139,8 @@
   .quantityContainer
   {
     display: flex;
-    
   width: 10.625rem;
-  height: 3.25rem;
+  height: 3rem;
   padding: 1rem 1.25rem;
   justify-content: space-between;
   align-items: center;
@@ -162,21 +155,12 @@
     border: none;
   
   }
-  /* .operator:hover
-  {
-    background-color: rgb(204, 218, 231);
-  } */
-  /* .quantity-input {
-    width: 50px;
-    height: 30px; 
-    text-align: center;
-    font-size: 16px;
-  } */
+  
   .btnCart{
     display: flex;
   width: 25rem;
-  height: 3.25rem;
-  padding: 1rem 3.375rem;
+  height: 3rem;
+  padding: 1rem 1.25rem;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
@@ -184,8 +168,50 @@
   border-radius: 3.875rem;
   background: #000;
   color: white;
+  margin: 0.4rem;
   
   }
+  @media(max-width:1265px)
+  {
+.btnCart{
+  gap:0.5rem;
+  width: 20rem;
+}}
+@media(max-width:1125px)
+{
+.btnCart{
+gap:1rem;
+width: 17rem;
+}
+.quantityContainer
+{
+  width: 7.5rem;
+}
+  }
+  @media(max-width:991px)
+  {
+.btnCart{
+  gap:1rem;
+  width: 22rem;}
+  .quantityContainer
+{
+  width: 12rem;
+}
+}
+@media(max-width:760px)
+{
+.btnCart{
+gap:1rem;
+width: 19rem;}
+.quantityContainer
+{
+width: 10rem;
+}
+.option{
+  border-radius: 2rem;
+  font-size:1rem;
+}
+}
   #review
   {
     display: flex;
