@@ -86,7 +86,8 @@ window.addEventListener("load", function () {
   /*---------------------------------Determine Selected Categories ------------------------------------------ */
   let selectedCategories = ["hoodies"]; //default category is hoodies
   categoryFilterDiv.addEventListener("click", function (e) {
-    if (e.target.classList.contains("btn")) { //if the clicked element is a button
+    if (e.target.classList.contains("btn")) {
+      //if the clicked element is a button
       if (!e.target.classList.contains("btn-dark")) {
         e.target.classList.add("btn-dark", "text-white");
       } else {
@@ -125,7 +126,8 @@ window.addEventListener("load", function () {
   /*---------------------------------Determine Selected Size------------------------------------------ */
   let selectedSizes = ["m"]; //default size is medium
   sizeFilterDiv.addEventListener("click", function (e) {
-    if (e.target.classList.contains("btn")) { //if the clicked element is a button
+    if (e.target.classList.contains("btn")) {
+      //if the clicked element is a button
       if (!e.target.classList.contains("btn-dark")) {
         e.target.classList.add("btn-dark", "text-white");
       } else {
@@ -213,59 +215,59 @@ window.addEventListener("load", function () {
     //             </div>`;
     //   console.log("no products found ..................");
     // }
-    let totalNumberOFProducts = [];
+
+    let totalNumberOFProducts = []; // array of all products from all filters
     for (let i = 0; i < resultProductes.length; i++) {
       for (let j = 0; j < resultProductes[i].length; j++) {
         totalNumberOFProducts.push(resultProductes[i][j]);
       }
     }
-    console.log("totalNumberOfProducts: ", totalNumberOFProducts);
+    // console.log("totalNumberOfProducts: ", totalNumberOFProducts);
 
-      if (totalNumberOFProducts.length <= 9) {
-        for (let i = 0; i < totalNumberOFProducts.length ; i++) {
-            //check if its already displayed
-            if (
-              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
-            ) {
-              continue;
-            }
-            var oneProductComponent = createProductComponent(
-              totalNumberOFProducts[i]
-            );
-            productCards.innerHTML += oneProductComponent;
-          
+    if (totalNumberOFProducts.length <= 9) {
+      for (let i = 0; i < totalNumberOFProducts.length; i++) {
+        //check if its already displayed
+        if (
+          productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+        ) {
+          continue;
         }
-      } else if (totalNumberOFProducts.length > 9) {
-        for (let i = 0; i < 9; i++) {
-            //check if its already displayed
-            if (
-              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
-            ) {
-              continue;
-            }
-            var oneProductComponent = createProductComponent(
-              totalNumberOFProducts[i]
-            );
-            productCards.innerHTML += oneProductComponent;  
+        var oneProductComponent = createProductComponent(
+          totalNumberOFProducts[i]
+        );
+        productCards.innerHTML += oneProductComponent;
+      }
+    } else if (totalNumberOFProducts.length > 9) {
+      for (let i = 0; i < 9; i++) {
+        //check if its already displayed
+        if (
+          productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+        ) {
+          continue;
         }
-        showMoreBtn.classList.remove("d-none");
-        
-        showMoreBtn.addEventListener("click", function () {
-          for (let i = 9; i < totalNumberOFProducts.length; i++) {
-            //check if its already displayed
-            if (
-              productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
-            ) {
-              continue;
-            }
-            var oneProductComponent = createProductComponent(
-              totalNumberOFProducts[i]
-            );
-            productCards.innerHTML += oneProductComponent;
+        var oneProductComponent = createProductComponent(
+          totalNumberOFProducts[i]
+        );
+        productCards.innerHTML += oneProductComponent;
+      }
+      showMoreBtn.classList.remove("d-none");
+
+      showMoreBtn.addEventListener("click", function () {
+        for (let i = 9; i < totalNumberOFProducts.length; i++) {
+          //check if its already displayed
+          if (
+            productCards.innerHTML.includes(totalNumberOFProducts[i].productId)
+          ) {
+            continue;
           }
-          showMoreBtn.classList.add("d-none");
-        });
-      } else {
+          var oneProductComponent = createProductComponent(
+            totalNumberOFProducts[i]
+          );
+          productCards.innerHTML += oneProductComponent;
+        }
+        showMoreBtn.classList.add("d-none");
+      });
+    } else {
       //if no products found
       // displayProducts(startingRandomProducts);
       productCards.innerHTML = `<div
@@ -429,9 +431,11 @@ function displayProducts(productsArray) {
 }
 
 var dropdown = `<div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton1">
-          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="prodDashboard">Shop </a>
-          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="orderDashboard">On Sale </a>
-          <a style="letter-spacing: 0.2rem;" class="dropdown-item" href="/shop.html" id="logout">New Arrivals</a>
+
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/هىيثء.html" id="prodDashboard">أخةث </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="prodDashboard">Shop </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="orderDashboard">On Sale </a>
+          <a style="letter-spacing: 0.1rem;" class="dropdown-item" href="/shop.html" id="logout">New Arrivals</a>
         </div>`;
 $(".fa-bars").append(dropdown);
 $(".fa-bars").on("click", function (event) {
