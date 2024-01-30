@@ -548,8 +548,14 @@ $(function () {
 
           }).draw();
         
-        
-        localStorage.setItem('products', JSON.stringify(dt_user.data().toArray()));
+          function convertArrayToObject(arr) {
+            return arr.reduce((result, current) => {
+              const key = current.productId;
+              result[key] = current;
+              return result;
+            }, {});
+          }
+        localStorage.setItem('products', JSON.stringify(convertArrayToObject(dt_user.data().toArray())));
 
         // Reset the form
         editNewProductForm.reset();

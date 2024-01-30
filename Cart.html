@@ -7,85 +7,95 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/NavFooter.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Fonts -->
   </head>
   <body>
-
-
-    <!-- Start Navbar -->
-    <nav class="main-nav container pt-3">
-      <div class="d-flex align-items-center">
-        <div class="d-flex h-100 align-items-center">
-          <!-- Bars for small screens-->
-          
-          <a
-            href="/index.html"
-            class="text-decoration-none text-black fw-bold fs-3"
-          >
-            SHOP.CO
-          </a>
-          <div class="dropDownPag">
-
-          </div>
-        </div>
-
-        <!--V.2 Nav Links-->
-        <div
-          class="col-5 d-none d-lg-flex ms-lg-auto fw-light fs-5 justify-content-center align-items-center"
+    <div
+    id="signup-notice"
+    class="w-100 d-flex justify-content-center align-items-center py-1"
+  >
+    <div class="fw-light">
+      Sign up and get 20% off to your first order.
+      <a href="#" class="text-white fw-normal">Sign Up Now!</a>
+    </div>
+    <div id="signup-dismiss">
+      <i id="dismisser" class="fa-solid fa-x"></i>
+    </div>
+  </div>
+  <!-- Start Navbar -->
+  <nav class="main-nav container pt-3 mb-3">
+    <div class="d-flex align-items-center">
+      <div class="d-flex h-100 align-items-center">
+        <a
+          href="/index.html"
+          class="text-decoration-none text-black fw-bold fs-3"
         >
-          <ul class="header-menu-list">
-            <li class="mx-2">
-              <a
-                id="brandsLink"
-                class="text-decoration-none text-black main-menu-link position-relative shop-link"
-                href="/index.html"
-              >
-                Home
-              </a>
-            </li>
-            <li class="mx-2">
-              <a
-                id="shopLink"
-                class="text-decoration-none text-black main-menu-link position-relative"
-                href="/Shop.html"
-                >Shop</a
-              >
-            </li>
-            <li class="mx-2">
-              <a
-                id="onSaleLink"
-                class="text-decoration-none text-black main-menu-link position-relative"
-                href="/Shop.html"
-                >On Sale</a
-              >
-            </li>
-            <li class="mx-2">
-              <a
-                id="newArrivalsLink"
-                class="text-decoration-none text-black main-menu-link position-relative"
-                href="#"
-                >New Arrivals</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="d-flex ms-auto">
-          <a
-            href="/Cart.html"
-            class="mx-2 text-decoration-none text-black fs-5"
-          >
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-          <a
-            href="#"
-            class="mx-2 text-decoration-none text-black fs-5"
-            id="userDropdown"
-          >
-            <i id="userIcon" class="fa-solid fa-circle-user"></i>
-          </a>
-        </div>
+          SHOP.CO
+        </a>
+        <div class="dropDownPag"></div>
       </div>
-    </nav>
+
+      <!--V.2 Nav Links-->
+      <div
+        class="col-5 d-none d-lg-flex ms-lg-auto fw-light fs-5 justify-content-center align-items-center"
+      >
+        <ul class="header-menu-list">
+          <li class="mx-2">
+            <a
+              id="brandsLink"
+              class="text-decoration-none text-black main-menu-link position-relative shop-link"
+              href="#"
+            >
+              Home
+            </a>
+          </li>
+          <li class="mx-2">
+            <a
+              id="shopLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="./Shop.html"
+              >Shop</a
+            >
+          </li>
+          <li class="mx-2">
+            <a
+              id="onSaleLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="./Shop.html"
+              >On Sale</a
+            >
+          </li>
+          <li class="mx-2">
+            <a
+              id="newArrivalsLink"
+              class="text-decoration-none text-black main-menu-link position-relative"
+              href="./Shop.html"
+              >New Arrivals</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex ms-auto">
+        <a
+          href="/Cart.html"
+          class="mx-2 text-decoration-none text-black fs-5"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <a
+          href="#"
+          class="mx-2 text-decoration-none text-black fs-5"
+          id="userDropdown"
+        >
+          <i id="userIcon" class="fa-solid fa-circle-user"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
 
     <hr class="container">
     <!-- End Navbar -->
@@ -131,21 +141,12 @@
         <div class="row">
           <div class="flex-grow-1 col-lg-7 my-3 ms-5">
             <h1 class="text-white fw-bolder">
-              STAY UP TO DATE ABOUT <br />
-              OUR LATEST OFFERS
-            </h1>
-          </div>
+              For support or business inquiries, we're here to assist you.</div>
           <div class="col-lg-4 my-3 me-5">
+            
             <div class="w-100 my-2">
-              <input
-                type="email"
-                class="form-control rounded-pill px-5 py-2"
-                placeholder="Enter your email address"
-              />
-            </div>
-            <div class="w-100 my-2">
-              <button class="btn bg-white rounded-pill px-5 w-100 py-2">
-                Subscribe to newsletter
+              <button class="btn bg-white rounded-pill px-5 w-100 py-2" id="SendEmail">
+               Contact US
               </button>
             </div>
           </div>
@@ -319,10 +320,18 @@
     <!-- End Footer -->
 
      <!-- Authentication Modal With Dependinces-->
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true"></div>
-    <script src="js/auth.js" type="module"></script>
-    <script src="js/bootstrap.js"></script>
-    <!-- End Authentication Modal -->
+<div
+class="modal fade"
+id="authModal"
+tabindex="-1"
+aria-labelledby="authModalLabel"
+aria-hidden="true"
+></div>
+<script src="js/nav.js"></script>
+<script src="js/auth.js" type="module"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<!-- End Authentication Modal -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/bootstrap.js"></script>

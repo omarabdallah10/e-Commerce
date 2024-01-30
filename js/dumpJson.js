@@ -34,3 +34,9 @@ export function fetchAndStoreJson(url, key) {
     console.log(`The key "${key}" already exists in local storage.`);
   }
 }
+const UsersList="js/json/users-list.json"
+fetchAndStoreJson(UsersList,"users")
+const ProductsList="js/json/products-list.json"
+fetchAndStoreJson(ProductsList,"products")
+const ordersList="js/json/orders-list.json"
+fetchAndStoreJson(ordersList,"orders")

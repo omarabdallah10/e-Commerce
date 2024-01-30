@@ -1,82 +1,106 @@
 [
   {
     "id": 1,
-    "full_name": "Galen Slixby",
+    "full_name": "AhmedL3swy",
     "role": "Admin",
-    "email": "gslixby0@abc.net.au",
+    "email": "AhmedL3swy@gmail.com",
     "status": 2,
     "password": "12345678"
   },
   {
     "id": 2,
-    "full_name": "Halsey Redmore",
-    "role": "Customer",
-    "email": "hredmore1@imgur.com",
+    "full_name": "Omar Abdallah",
+    "role": "Admin",
+    "email": "omar@gmail.com",
     "status": 1,
     "password": "12345678"
   },
   {
     "id": 3,
-    "full_name": "Marjory Sicely",
-    "role": "Seller",
-    "email": "msicely2@who.int",
+    "full_name": "Emad Nasef",
+    "role": "Admin",
+    "email": "emad@gmail.com",
     "status": 2,
-    "password": "12345678"
-  },
-  {
-    "id": 4,
-    "full_name": "Cyrill Risby",
-    "role": "Customer",
-    "email": "crisby3@wordpress.com",
-    "status": 2,
-    "password": "12345678"
-  },
-  {
-    "id": 5,
-    "full_name": "Maggy Hurran",
-    "role": "Seller",
-    "email": "mhurran4@yahoo.co.jp",
-    "status": 1,
     "password": "12345678"
   },
   {
     "id": 6,
-    "full_name": "Silvain Halstead",
-    "role": "Customer",
-    "email": "shalstead5@shinystat.com",
+    "full_name": "AhmedL3swy",
+    "role": "Seller",
+    "email": "AhmedL3swy_seller@gmail.com",
     "status": 2,
     "password": "12345678"
   },
   {
     "id": 7,
-    "full_name": "Breena Gallemore",
+    "full_name": "AhmedL3swy",
     "role": "Customer",
-    "email": "bgallemore6@boston.com",
-    "status": 1,
+    "email": "AhmedL3swy_customer@gmail.com",
+    "status": 2,
     "password": "12345678"
   },
   {
     "id": 8,
-    "full_name": "Kathryne Liger",
-    "role": "Customer",
-    "email": "kliger7@vinaora.com",
+    "full_name": "Omar Abdallah",
+    "role": "Seller",
+    "email": "omar_seller@gmail.com",
     "status": 1,
     "password": "12345678"
   },
   {
     "id": 9,
-    "full_name": "Franz Scotfurth",
+    "full_name": "Omar Abdallah",
     "role": "Customer",
-    "email": "fscotfurth8@dailymotion.com",
+    "email": "omar_customer@gmail.com",
     "status": 1,
     "password": "12345678"
   },
   {
     "id": 10,
-    "full_name": "Jillene Bellanyx",
-    "role": "Customer",
-    "email": "jbellany9@kickstarter.com",
+    "full_name": "Emad Nasef",
+    "role": "Seller",
+    "email": "emad_seller@gmail.com",
     "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 11,
+    "full_name": "Emad Nasef",
+    "role": "Customer",
+    "email": "emad_customer@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 12,
+    "full_name": "Fatma",
+    "role": "Seller",
+    "email": "Fatma_seller@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 13,
+    "full_name": "Fatma",
+    "role": "Customer",
+    "email": "Fatma_customer@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 14,
+    "full_name": "Nada",
+    "role": "Seller",
+    "email": "Nada_seller@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 15,
+    "full_name": "Nada",
+    "role": "Customer",
+    "email": "Nada_customer@gmail.com",
+    "status": 1,
     "password": "12345678"
   }
 ]

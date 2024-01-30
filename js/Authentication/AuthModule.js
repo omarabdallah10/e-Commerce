@@ -43,6 +43,26 @@ class AuthModule {
             throw new Error('Not authorized');       
         }    
     }
+    static isCustomer(){
+        if(!AuthModule.activeUser || AuthModule.activeUser.role != 'Customer'  ){
+            const container = document.createElement('div');
+            container.innerHTML = this.get404HTML();
+            // Replace the body content with the container
+            document.body.innerHTML = '';
+            document.body.appendChild(container);
+            throw new Error('Not authorized');       
+        }    
+    }
+    static isSignedIn(){
+        if(!AuthModule.activeUser || (AuthModule.activeUser.role != 'Customer' && AuthModule.activeUser.role != 'Seller' && AuthModule.activeUser.role != 'Admin') ){
+            const container = document.createElement('div');
+            container.innerHTML = this.get404HTML();
+            // Replace the body content with the container
+            document.body.innerHTML = '';
+            document.body.appendChild(container);
+            throw new Error('Not authorized');       
+        }    
+    }
 
     static get404HTML() {
         return `
@@ -85,8 +105,8 @@ class AuthModule {
     }
 
     static logout() {
+        window.location.replace('./');
         localStorage.removeItem('activeuser');
-        window.location.replace('./Auth.html');
     }
     }
         

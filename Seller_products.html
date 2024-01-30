@@ -12,7 +12,11 @@
     
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
-  
+    <link rel="stylesheet" href="css/NavFooter.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Fonts -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -191,7 +195,49 @@
       </div>
 
   </div>
+</nav><!-- Start Navbar -->
+<nav class="main-nav container pt-3">
+ <div class="d-flex align-items-center">
+   <div class="d-flex h-100 align-items-center">
+     <!-- Bars for small screens-->
+     <button class="menuBtn btn mx-1 text-black fs-5 d-block d-lg-none">
+       <i class="fa-solid fa-bars"></i>
+     </button>
+     <a
+       href="/index.html"
+       class="text-decoration-none text-black fw-bold fs-3"
+     >
+       SHOP.CO
+     </a>
+     <div class="dropDownPag"></div>
+   </div>
+
+   <!--V.2 Nav Links-->
+   <div
+     class="col-5 d-none d-lg-flex fw-light fs-5 justify-content-center align-items-center"
+   >
+     
+   </div>
+
+   <!--Search-->
+   <div class="mx-auto col-md-4">
+     
+   </div>
+
+   <div class="d-flex">
+     
+     <a
+       href="#"
+       class="mx-2 text-decoration-none text-black fs-5"
+       id="userDropdown"
+     >
+       <i id="userIcon" class="fa-solid fa-circle-user"></i>
+     </a>
+   </div>
+ </div>
 </nav>
+<!-- End Navbar -->
+
 
 </div>
   <!-- Content wrapper -->
@@ -373,6 +419,18 @@
   <!-- Page JS -->
   <!-- <script src="js/users-analytics.js"></script> -->
   <script src="js/admin-products-dashboard.js" type="module"></script>
+<!-- Authentication Modal With Dependinces-->
+<div
+class="modal fade"
+id="authModal"
+tabindex="-1"
+aria-labelledby="authModalLabel"
+aria-hidden="true"
+></div>
+<script src="js/auth.js" type="module"></script>
+<script src="js/bootstrap.js"></script>
+<!-- End Authentication Modal -->
+<script src="js/nav.js"></script>
 
 </body>
 

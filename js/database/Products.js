@@ -6,7 +6,7 @@ class Products {
   constructor() {
     this.products = {};
     // Assume the products are loaded from a JSON file
-    const storedProducts = localStorage.getItem("Products");
+    const storedProducts = localStorage.getItem("products");
     if (storedProducts) {
       this.products = JSON.parse(storedProducts);
       console.log("Products loaded from local storage.");
@@ -121,9 +121,12 @@ class Products {
         newArrivals.push(products[i]);
       }
     }
-    // return difference;
+
+    // Sort newArrivals by dateAdded in descending order
+    newArrivals.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+
     return newArrivals;
-  }
+}
 
   //End of Omar functionalities
   /*-------------------------------------------------------------------------------------------------- */

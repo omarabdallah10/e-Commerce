@@ -4,6 +4,8 @@ import {fetchAndStoreJson} from "./dumpJson.js"
 
 import AuthModule from './Authentication/AuthModule.js';
 
+AuthModule.isSignedIn();
+
 // AuthModule.isAdmin();
 
 const productjsonFileURL ='assets/json/order-list.json';
@@ -43,8 +45,10 @@ $(function () {
   }
 
   var activeuser= JSON.parse(localStorage.getItem('activeuser'));
-  var userId=activeuser.id;
-  var userData = Object.values(JSON.parse(localStorage.getItem('orders'))[userId.toString()]) || [];
+  // console.log(activeuser)
+  var userId=activeuser.id.toString();
+// console.log(userId)
+  var userData = Object.values(JSON.parse(localStorage.getItem('orders'))[userId] || {});
 
   if (dt_user_table.length) {
       var dt_user = dt_user_table.DataTable({

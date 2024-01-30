@@ -88,12 +88,12 @@ $(function () {
           }
         },
         {
-          // #UserID_Mapping
+          // #SellerID_Mapping
           targets: 3,
           render: function (data, type, full, meta) {
-            return '<div class="d-flex col-1 flex-row">' +
-              '<span class="fw-bold ">' +
-              full['userId'] +
+            return '<div class="d-flex col-1 flex-row id">' +
+              '<span class="fw-bold">' +
+              full['sellerId'] +
               '</span>' +
               '</div>';
           }

@@ -4,12 +4,13 @@
       "orderId": 1,
       "orderName": "Blue Ocean Shirt",
       "price": 29.99,
-      "status": 4,
+      "status": 3,
       "avatar": "",
       "details": "Size = M, Color = Blue",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-01"
+      "orderDate": "2022-01-01",
+      "userId": "u1"
     },
     "2": {
       "orderId": 2,
@@ -20,7 +21,8 @@
       "details": "Size = L, Color = Black",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-02"
+      "orderDate": "2022-01-02",
+      "userId": "u1"
     },
     "3": {
       "orderId": 3,
@@ -31,7 +33,8 @@
       "details": "Size = S, Color = Red",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-03"
+      "orderDate": "2022-01-03",
+      "userId": "u1"
     },
     "4": {
       "orderId": 4,
@@ -42,7 +45,8 @@
       "details": "Size = XL, Color = Green",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-04"
+      "orderDate": "2022-01-04",
+      "userId": "u1"
     },
     "5": {
       "orderId": 5,
@@ -53,7 +57,8 @@
       "details": "Size = M, Color = Blue",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-05"
+      "orderDate": "2022-01-05",
+      "userId": "u1"
     },
     "6": {
       "orderId": 6,
@@ -64,7 +69,8 @@
       "details": "Size = L, Color = Black",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-06"
+      "orderDate": "2022-01-06",
+      "userId": "u1"
     },
     "7": {
       "orderId": 7,
@@ -75,7 +81,8 @@
       "details": "Size = S, Color = Red",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-07"
+      "orderDate": "2022-01-07",
+      "userId": "u1"
     },
     "8": {
       "orderId": 8,
@@ -86,7 +93,8 @@
       "details": "Size = XL, Color = Green",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-08"
+      "orderDate": "2022-01-08",
+      "userId": "u1"
     },
     "9": {
       "orderId": 9,
@@ -97,7 +105,8 @@
       "details": "Size = M, Color = Blue",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s1",
-      "orderDate": "2022-01-09"
+      "orderDate": "2022-01-09",
+      "userId": "u1"
     },
     "10": {
       "orderId": 10,
@@ -107,9 +116,9 @@
       "avatar": "",
       "details": "Size = L, Color = Black",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
-
       "sellerId": "s1",
-      "orderDate": "2022-01-10"
+      "orderDate": "2022-01-10",
+      "userId": "u1"
     }
   },
   "2": {
@@ -122,7 +131,8 @@
       "details": "Size = S, Color = Red",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s2",
-      "orderDate": "2022-01-11"
+      "orderDate": "2022-01-11",
+      "userId": "u2"
     },
     "2": {
       "orderId": 12,
@@ -133,7 +143,8 @@
       "details": "Size = M, Color = Blue",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s2",
-      "orderDate": "2022-01-12"
+      "orderDate": "2022-01-12",
+      "userId": "u2"
     }
   },
   "3": {
@@ -146,7 +157,8 @@
       "details": "Size = L, Color = Black",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s3",
-      "orderDate": "2022-01-13"
+      "orderDate": "2022-01-13",
+      "userId": "u3"
     },
     "2": {
       "orderId": 14,
@@ -157,7 +169,8 @@
       "details": "Size = XL, Color = Green",
       "DeliveryDetails": "FullName = John Doe, Address = 1234 Main St, City = San Francisco, State = CA, Zip = 94123, Phone = 415-555-1234",
       "sellerId": "s3",
-      "orderDate": "2022-01-14"
+      "orderDate": "2022-01-14",
+      "userId": "u3"
     }
   }
 }

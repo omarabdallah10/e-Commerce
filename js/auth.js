@@ -114,6 +114,21 @@ var authModalComponent = `
                 </div>
             </div>
         </div>`;
+var signupGuestComponent=`
+<div
+      id="signup-notice"
+      class="w-100 d-flex justify-content-center align-items-center py-1"
+    >
+      <div class="fw-light">
+        Sign up and get 20% off to your first order.
+        <a href="#" class="text-white fw-normal">Sign Up Now!</a>
+      </div>
+      <div id="signup-dismiss">
+        <i id="dismisser" class="fa-solid fa-x"></i>
+      </div>
+    </div>
+`
+
 $(function () {
   $(document).ready(function () {
     $("#authModal").html(authModalComponent);
@@ -130,6 +145,7 @@ $(function () {
           <a class="dropdown-item" href="/Admin_users_dashboard.html" id="userDashboard">Users </a>
           <a class="dropdown-item" href="/Admin_products_dashboard.html" id="prodDashboard">Products </a>
           <a class="dropdown-item" href="/Admin_orders_dashboard.html" id="orderDashboard">Orders </a>
+          <a class="dropdown-item" href="/orders.html" >MyOrders</a>
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
           Customer: `<div class="dropdown-menu" id="udropmenu" aria-labelledby="dropdownMenuButton1">
@@ -140,7 +156,6 @@ $(function () {
           <a class="dropdown-item" href="/Seller_dashboard.html" >Products</a>
           <a class="dropdown-item" href="/Seller_orders_dashboard.html" >Orders</a>
           <a class="dropdown-item" href="/orders.html" >MyOrders</a>
-          
           <a class="dropdown-item" href="#" id="logout">Logout</a>
         </div>`,
         };

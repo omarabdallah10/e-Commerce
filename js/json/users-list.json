@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "full_name": "AhmedL3swy",
+    "role": "Admin",
+    "email": "AhmedL3swy@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 2,
+    "full_name": "Omar Abdallah",
+    "role": "Admin",
+    "email": "omar@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 3,
+    "full_name": "Emad Nasef",
+    "role": "Admin",
+    "email": "emad@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 6,
+    "full_name": "AhmedL3swy",
+    "role": "Seller",
+    "email": "AhmedL3swy_seller@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 7,
+    "full_name": "AhmedL3swy",
+    "role": "Customer",
+    "email": "AhmedL3swy_customer@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 8,
+    "full_name": "Omar Abdallah",
+    "role": "Seller",
+    "email": "omar_seller@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 9,
+    "full_name": "Omar Abdallah",
+    "role": "Customer",
+    "email": "omar_customer@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 10,
+    "full_name": "Emad Nasef",
+    "role": "Seller",
+    "email": "emad_seller@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 11,
+    "full_name": "Emad Nasef",
+    "role": "Customer",
+    "email": "emad_customer@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 12,
+    "full_name": "Fatma",
+    "role": "Seller",
+    "email": "Fatma_seller@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 13,
+    "full_name": "Fatma",
+    "role": "Customer",
+    "email": "Fatma_customer@gmail.com",
+    "status": 2,
+    "password": "12345678"
+  },
+  {
+    "id": 14,
+    "full_name": "Nada",
+    "role": "Seller",
+    "email": "Nada_seller@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  },
+  {
+    "id": 15,
+    "full_name": "Nada",
+    "role": "Customer",
+    "email": "Nada_customer@gmail.com",
+    "status": 1,
+    "password": "12345678"
+  }
+]

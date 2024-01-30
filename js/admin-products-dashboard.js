@@ -553,22 +553,26 @@ $(function () {
         // If the form is valid, proceed with adding the product
         var maxId = 0;
         dt_user.data().each(function (row) {
-          if (Number(row.productId) > Number(maxId)) {
-            maxId = Number(row.productId);
+          var currentId = row.productId;
+          var numericPart = currentId.replace("PID", "");
+          var numericValue = Number(numericPart);
+
+          if (!isNaN(numericValue) && numericValue > maxId) {
+            maxId = numericValue;
           }
         });
       
         let currentDate = new Date().toISOString().split('T')[0];
   
         dt_user.row.add({
-          productId:maxId+1,
+          productId:"pid"+(maxId+1),
           productName: $("#add-product-name").val(),
           details:  $("#add-product-details").val(),
           price: $("#add-product-unitprice").val(),
           stock: $("#add-product-quantity").val(),
           category: $("#add-product-category option:selected").text(),
-          thumbnail: 'img/4/1.png',
-          images: 'img/4/1.png,img/4/2.png,img/4/3.png,img/4/4.png',
+          thumbnail: 'images/product4.png',
+          images: 'images/product4.png',
           sellerId: 's1',
           dateAdded: currentDate,
           discount: 10,
@@ -576,8 +580,14 @@ $(function () {
           size: 'M,L,XL,XXL'
           }).draw();
         
-        
-        localStorage.setItem('products', JSON.stringify(dt_user.data().toArray()));
+          function convertArrayToObject(arr) {
+            return arr.reduce((result, current) => {
+              const key = current.productId;
+              result[key] = current;
+              return result;
+            }, {});
+          }
+        localStorage.setItem('products', JSON.stringify(convertArrayToObject(dt_user.data().toArray())));
 
         // Reset the form
         addNewProductForm.reset();

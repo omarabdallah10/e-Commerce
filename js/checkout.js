@@ -50,7 +50,7 @@ function displayCart() {
       <img src="${myProduct[i].product.thumbnail}" alt="">
       <div class="info">
           <div class="text">
-              <h2>${myProduct[i].product.productName}</h2>
+              <h2>${myProduct[i].name}</h2>
               <p><span>Size: </span>${myProduct[i].product.size}</p>
               <p><span>Color: </span>White</p>
               <h3>$<span class="price">${(
@@ -205,25 +205,28 @@ function validation() {
   let UserCity = allInputs[4].value;
   let UserAddress = allInputs[5].value;
   let UserState = state.value;
-  
+  console.log(myProduct);
   // for (let i = 0; i < myProduct.length; i++) {
   //   let product = myProduct[i];
-    
+  function sumPrice(arryOfObjects) { let sum = 0; for (const obj of arryOfObjects) { sum += Number(obj.price); } return sum; }
+  function sumOrderNames(arryOfObjects) { let sum = ""; for (const obj of arryOfObjects) { sum += obj.name + " x " + obj.quantity + ", "; } return sum; }
+  function findMaxOrderId(data) { let maxOrderId = 0; for (const user in data) { for (const order in data[user]) { const orderId = data[user][order].orderId; if (orderId > maxOrderId) { maxOrderId = orderId; } } } return maxOrderId;}  
+  var userData = JSON.parse(localStorage.getItem("orders")) || {};
     var orderDetails = {
       userID: activeuser.id,
-      deliveryDetails: `FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
+      DeliveryDetails: `userId=${activeuser.id}, FullName = ${userFullName}, Address = ${UserAddress}, City = ${UserCity}, State = ${UserState}, Phone = ${UserMobile}`,
       status: 1,
-      details: `Size = ${myProduct.size}, Color = Blue`,   
+      details: `Size = ${myProduct[0].size}, Color = Blue`,   
       orderDate: getCurrentDate(),
-      //orderId: findMaxOrderId(userData)+1,
-      productId: myProduct.productId,
-      orderName: `${myProduct.productName} x ${myProduct.quantity}`,
-      price: myProduct.price,
-      quantity: myProduct.quantity,
+      orderId: findMaxOrderId(userData)+1,
+      productId: myProduct[0].productId,
+      orderName: sumOrderNames(myProduct),
+      price: updateTotalPrices(),
+      quantity: -1,
       sellerId: "s1",
     };
   // }
-  arr.push(orderDetails);
+  // arr.push(orderDetails);
   localStorage.setItem("purchase", JSON.stringify(arr));
   function appendOrderToUser(userData, orderDetails) {
     var { userID, ...restOrderDetails } = orderDetails;
@@ -332,12 +335,13 @@ function updateTotalPrices() {
   const Discount = ((20 / 100) * subTotalPrice).toFixed(2);
   const Total = (
     subTotalPrice -
-    Discount -
+    Discount +
     Number(DeliveryFee.innerHTML)
   ).toFixed(2);
   subTotal.innerHTML = subTotalPrice.toFixed(2);
   DiscountTotal.innerHTML = Discount;
   TotalPrice.innerHTML = Total;
+  return Total;
 }
 
 function updateCartQuantity(index, newQuantity) {
