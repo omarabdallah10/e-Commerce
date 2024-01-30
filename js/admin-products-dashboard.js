@@ -552,9 +552,9 @@ $(function () {
       if (status === 'Valid') {
         // If the form is valid, proceed with adding the product
         var maxId = 0;
-        dt_user.data().each(function (row) {
+        dt_user.rows().data().each(function (row) {
           var currentId = row.productId;
-          var numericPart = currentId.replace("PID", "");
+          var numericPart = currentId.replace("pid", "");
           var numericValue = Number(numericPart);
 
           if (!isNaN(numericValue) && numericValue > maxId) {

@@ -578,16 +578,20 @@ $(function () {
       if (status === 'Valid') {
         // If the form is valid, proceed with adding the product
         var maxId = 0;
-        dt_user.data().each(function (row) {
-          if (Number(row.productId) > Number(maxId)) {
-            maxId = Number(row.productId);
+        dt_user.rows().data().each(function (row) {
+          var currentId = row.productId;
+          var numericPart = currentId.replace("pid", "");
+          var numericValue = Number(numericPart);
+
+          if (!isNaN(numericValue) && numericValue > maxId) {
+            maxId = numericValue;
           }
         });
       
         let currentDate = new Date().toISOString().split('T')[0];
   
         dt_user.row.add({
-          productId:maxId+1,
+          productId:"pid"+(maxId+1),
           productName: $("#add-product-name").val(),
           details:  $("#add-product-details").val(),
           price: $("#add-product-unitprice").val(),
