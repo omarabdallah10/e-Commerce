@@ -64,6 +64,13 @@
 ## About The Project
 This project is a client-side implementation of an e-commerce website built using JavaScript, Bootstrap, jQuery, and Local Storage. The aim of this project is to provide a seamless and user-friendly shopping experience for customers while leveraging modern web development technologies.
 
+### Team members
+**Omar Abdallah**
+**Ahmed Elesawy**
+**Emad Nassef**
+**Nada Ali**
+**Fatma Atef**
+
 ### Features
 **Responsive Design**: The project is designed to be responsive, ensuring a consistent and enjoyable experience across various devices, including desktops, tablets, and smartphones.
 
